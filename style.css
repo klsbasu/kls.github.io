@@ -111,7 +111,7 @@ strong {
   color: white;
 }
 .Rtable-cell--medium {
-  background-color: #EBEDEF;
+  background-color: white;
   border-color: black;
 }
 
@@ -282,4 +282,15 @@ table tbody tr:nth-child(odd) {
 .scrollable > div ::-webkit-scrollbar-thumb {
   background: #ccc;
   border-radius: 6px;
+}
+
+img {
+  float:right;
+  Padding: 0px, 5px, 5px, 5px;
+}
+
+.responsive {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
 }
