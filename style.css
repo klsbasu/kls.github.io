@@ -201,7 +201,7 @@ strong {
   width: 33.33%;
 }
 .Rtable-cell.Rtable-cell--1of4 {
-  width: 25%;
+  width: 50%;
 }
 .Rtable-cell.Rtable-cell--1of5 {
   width: 20%;
@@ -284,12 +284,3 @@ table tbody tr:nth-child(odd) {
   border-radius: 6px;
 }
 
-img {
-  float:right;
-  Padding: 0px, 5px, 5px, 5px;
-}
-
-.responsive {
-  max-width: 200px;
-  max-height: 200px;
-}
