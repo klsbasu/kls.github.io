@@ -288,8 +288,3 @@ table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
 }
-
-caption { 
-  display: table-caption;
-  text-align: center;
-}
