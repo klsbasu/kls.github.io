@@ -284,3 +284,12 @@ table tbody tr:nth-child(odd) {
   border-radius: 6px;
 }
 
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+caption { 
+  display: table-caption;
+  text-align: center;
+}
