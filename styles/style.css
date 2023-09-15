@@ -298,11 +298,15 @@ table, th, td {
   outline: none;
   border: none;
   text-align: center;
+  color: black;
+  font-size: medium;
 }
 
 .active, .collapsible:hover {
   background-color: powderblue;
   border: solid 3px black;
+  color: black;
+  font-size: medium;
 }
 
 .content {
