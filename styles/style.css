@@ -302,7 +302,7 @@ table, th, td {
   font-size: medium;
 }
 
-.active, .collapsible:hover {
+.active, .collapsible:active {
   background-color: powderblue;
   border: solid 3px black;
   color: black;
@@ -317,3 +317,4 @@ table, th, td {
   background-color: white;
   font-size: medium;
 }
+
