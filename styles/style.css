@@ -307,6 +307,7 @@ table, th, td {
   border: solid 3px black;
   color: black;
   font-size: medium;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .collapsible:after {
