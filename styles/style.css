@@ -288,3 +288,28 @@ table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
 }
+
+.collapsible {
+  background-color: antiquewhite;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  border: none;
+  text-align: center;
+}
+
+.active, .collapsible:hover {
+  background-color: powderblue;
+  border: solid 3px black;
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: white;
+  font-size: medium;
+}
