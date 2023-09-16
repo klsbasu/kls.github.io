@@ -247,7 +247,7 @@ table th, table td {
 table th {
   background: #ddd;
   font-weight: 900;
-  text-align: center;
+  text-align: left;
   white-space: nowrap;
 }
 table tbody tr:nth-child(odd) {
