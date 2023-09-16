@@ -296,17 +296,18 @@ table, th, td {
   width: 100%;
   text-align: left;
   outline: none;
-  border: none;
+  border:none;
   text-align: center;
   color: black;
-  font-size: medium;
+
 }
 
 .active, .collapsible:active {
   background-color: white;
-  border: solid 3px black;
+  border: none;
   color: black;
   font-size: medium;
+  border: solid 3px black;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -321,6 +322,9 @@ table, th, td {
 .active:after {
   content: "\2212";
 }
+
+
+
 
 .content {
   padding: 0 18px;
