@@ -247,7 +247,7 @@ table th, table td {
 table th {
   background: #ddd;
   font-weight: 900;
-  text-align: left;
+  text-align: center;
   white-space: nowrap;
 }
 table tbody tr:nth-child(odd) {
@@ -326,8 +326,13 @@ table, th, td {
   padding: 0 18px;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.2s ease-out;
   background-color: antiquewhite;
+  transition: max-height 0.2s ease-out;
   font-size: medium;
 }
 
+.contentNote {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
