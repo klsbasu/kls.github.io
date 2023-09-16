@@ -331,12 +331,10 @@ table, th, td {
   max-height: 0;
   overflow: hidden;
   background-color: antiquewhite;
-  transition: max-height 0.2s ease-out;
   font-size: medium;
 }
 
 .contentNote {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.2s ease-out;
 }
