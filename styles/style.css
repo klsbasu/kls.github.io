@@ -300,3 +300,16 @@ table, th, td {
   max-height: 0;
   overflow: hidden;
 }
+
+.spoiler, .spoiler2, .spoiler a, .spoiler2 a{ 
+  color: white; 
+  background-color: white;
+}
+
+.spoiler:hover, .spoiler:hover a {
+  color: black;
+}
+
+.spoiler2:hover, .spoiler2:hover a { 
+ background-color: black; 
+}
