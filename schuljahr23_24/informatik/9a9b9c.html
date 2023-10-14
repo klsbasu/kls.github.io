@@ -342,7 +342,19 @@ repeat 10:
             </div>
             <!--Stundeninhalt-->
             <div style="order: 1; font-size: medium;" class="Rtable-cell">
-            <a href="https://python-online.ch/turtle.php?inhalt_links=turtle/navigation.inc.php&inhalt_mitte=turtle/variablen.inc.php" target="_blank"><b>Variablen</b></a>:Erste Schritte
+            <a href="https://python-online.ch/turtle.php?inhalt_links=turtle/navigation.inc.php&inhalt_mitte=turtle/variablen.inc.php" target="_blank">Variablen</a>: Erste Schritte <br>
+<pre style="margin: 0px;"> <code class="python" style="padding: 0px;">from gturtle import *
+
+makeTurtle()
+
+size = 100        
+#defines a function that draws a square of length 100 units
+def square():
+    repeat 4:
+        forward(size)
+        right(90)
+
+square() </code></pre>
            </div>
             <!--Zusätzliche Lernmaterialien-->
             <div style="order: 1; font-size: medium; background-color: beige; display: none;" class="Rtable-cell"></div> 
@@ -353,9 +365,20 @@ repeat 10:
             </div>
             <!--Stundeninhalt-->
             <div style="order: 1; font-size: medium;" class="Rtable-cell">
-            <a href="https://python-online.ch/turtle.php?inhalt_links=turtle/navigation.inc.php&inhalt_mitte=turtle/parameter.inc.php"><b>Weiter</b></a> mit Variablen und Einführung in Parameter<br> <br>
+            <a href="https://python-online.ch/turtle.php?inhalt_links=turtle/navigation.inc.php&inhalt_mitte=turtle/parameter.inc.php">Weiter</a> mit Variablen und Einführung in Parameter<br> 
+<pre style="margin: 0px;"> <code class="python" style="padding: 0px;">from gturtle import *
 
-            <a href="https://replit.com/login" target="_blank"><b>Replit-Konto</b></a> erstellen. Funktionalität verstehen
+makeTurtle()
+     
+#defines a function that takes side length as input
+def square():
+    repeat 4:
+        forward(size)
+        right(90)
+
+square(100) </code></pre> <br>
+
+            <a href="https://replit.com/login" target="_blank">Replit-Konto</a> erstellen. Funktionalität verstehen
             </div>
             <!--Zusätzliche Lernmaterialien-->
             <div style="order: 1; font-size: medium; background-color: beige; display: none;" class="Rtable-cell"></div> 
