@@ -10,30 +10,33 @@
     </head>
 
     <body>
-        <h2 style="text-align: center; color: purple; margin-bottom: 2px;">Cheat Sheet (nicht vollständig)</h2>
+        <h2 style="text-align: center; color: purple; margin-bottom: 2px;">Cheat Sheet</h2>
         <h5 style="text-align: center;">Turtle & Python</h5>
 
-        <dl class="Rtable Rtable--2cols Rtable--collapse">
+<dl class="Rtable Rtable--2cols Rtable--collapse">
 
-            <dt class="Rtable-cell Rtable-cell--medium Rtable-cell--1of4">xx</dt>
-            <dd class="Rtable-cell Rtable-cell--3of4"><pre style="margin: 0px;"><code class="python" style="padding: 0px;">from gturtle import *
-        
-makeTurtle()
-                                    
-#draws a square in a random position
-def random_square():
-    setRandomPos(400, 400)
-    repeat 4:
-        forward(100)
-        right(90)
-                    
-repeat 10:
-    random_square() 
+
+<dt style="background-color: antiquewhite" class="Rtable-cell Rtable-cell--medium Rtable-cell--1of4">Basic setup</dt>
+<dd class="Rtable-cell Rtable-cell--3of4">
+<pre style="margin: 0px;">
+<code class="python" style="padding: 0px;">import turtle
+
+# (width, height)
+turtle.Screen().setup(400,500)
+
+turtle.title('My turtle program')
+
+t = turtle.Turtle()
+
+# your code logic goes here
+
+# always write at the end
+turtle.done()
 </code></pre>
-            </dd>
-          
-          
-        </dl>
+</dd>
+
+
+ </dl>
 
     
 
