@@ -13,30 +13,68 @@
         <h2 style="text-align: center; color: purple; margin-bottom: 2px;">Cheat Sheet</h2>
         <h5 style="text-align: center;">Turtle & Python</h5>
 
-<dl class="Rtable Rtable--2cols Rtable--collapse">
+    <p style="font-weight: bolder; color:crimson;">Basic setup</p>    
+    <pre  style="margin: -2em;">
+    <code class="python" style="padding: 0px;"> 
+    import turtle
 
+    turtle.Screen().setup(400,500)
+    turtle.title('My turtle program')
 
-<dt style="background-color: antiquewhite" class="Rtable-cell Rtable-cell--medium Rtable-cell--1of4">Basic setup</dt>
-<dd class="Rtable-cell Rtable-cell--3of4">
-<pre style="margin: 0px;">
-<code class="python" style="padding: 0px;">import turtle
+    t = turtle.Turtle()
 
-# (width, height)
-turtle.Screen().setup(400,500)
+    # your code logic goes here
 
-turtle.title('My turtle program')
+    t.hideturtle()
+    turtle.done()
+    </code></pre> <br> 
 
-t = turtle.Turtle()
+    <p style="font-weight: bolder; color:crimson;">All relevant commands</p>    
+    <pre  style="margin: -2em;">
+    <code class="python" style="padding: 0px;">
+    t.forward(100)
+    t.backward(100)
+    t.right(90)
+    t.left(90)
+    t.goto(100,200)
+    t.xcor()
+    t.ycor()
 
-# your code logic goes here
+  
+    t.penup()
+    t.penup()
+    t.pensize(10)
+    t.pencolor('green')
+    t.pencolor('#98D567')
+    turtle.colormode(255)
+    t.pencolor(245, 232, 245)
+    t.speed(10)
 
-# always write at the end
-turtle.done()
-</code></pre>
-</dd>
+    turtle.bgcolor('red')
+    t.fillcolor('green')
+    t.begin_fill()
+    t.end_fill()
 
+    t.dot(20)
+    t.circle(20)
+    t.circle(180)
 
- </dl>
+    t.shape('turtle')
+    t.shape('arrow')
+    t.shape('circle')
+
+    turtle.register_shape('dino.gif')
+    t.shape('dino.gif')
+
+    for _ in range(4): 
+        t.forward(100)
+        t.left(90)
+
+    from random import randint
+    randint(1,10)
+    </code></pre><br>
+    
+
 
     
 
