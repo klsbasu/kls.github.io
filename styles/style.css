@@ -313,15 +313,3 @@ table, th, td {
 .spoiler2:hover, .spoiler2:hover a { 
  background-color: black; 
 }
-
-.image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height:  auto; 
-}
-
-.centered-image {
-  max-width: 40%;
-  height: auto; 
-}
