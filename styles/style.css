@@ -313,3 +313,7 @@ table, th, td {
 .spoiler2:hover, .spoiler2:hover a { 
  background-color: black; 
 }
+
+ol > li::marker {
+  font-weight: bold;
+}
