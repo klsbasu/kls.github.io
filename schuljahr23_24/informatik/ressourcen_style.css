@@ -1,0 +1,30 @@
+.code {
+    margin: auto;
+}
+
+.beispiel1 {
+    background-color: tomato;
+    color: darkblue;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: underline;
+    border: solid 2px blue;
+    margin: auto;
+    padding: 50px;
+    height: 50px;
+    width: 50%;
+    border-radius: 20px;
+    transition: all 0.5s ease; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    transform: scale(1);
+}
+
+.beispiel1:hover {
+    background-color: green;
+    color: white;
+    transform: scale(1.01); /* Enlarge scale on hover */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.75); /* Enhanced shadow on hover */
+}
+
+
+
