@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ressourcen</title>
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/atom-one-dark.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+        <link rel="stylesheet" href="ressourcen_style.css">
     <link rel="stylesheet" href="../../styles/style.css" />
-    <link rel="stylesheet" href="ressourcen_style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
 </head>
@@ -31,17 +31,20 @@
             <div class="code-wrapper">
                 <div class="code-label">CSS</div>
                 <pre><code class="code">.beispiel1 {
-    background-color: tomato;
-    color: darkblue;
-    font-size: 20px;
-    text-align: center;
+    font-family: 'Brush Script MT';
+    background-color: yellow;
+    color: blue;
+    font-size: 30px;
+    text-align: right;
     text-decoration: underline;
-    border: solid 2px blue;
-    margin: auto;
+    text-decoration-color: purple;
+    text-decoration-thickness: 5px;
+    border: dotted 10px red;
+    margin-left: 2px;
     padding: 50px;
-    height: 50px;
+    height: 30px;
     width: 50%;
-    border-radius: 20px;
+    border-radius: 80px;
 }
 </code></pre>
             </div>
@@ -55,5 +58,92 @@
             <div class="beispiel1">
                 Text Beispiel 1
             </div>
+<br>
+            <div class="code-wrapper">
+                <div class="code-label">CSS</div>
+                <pre><code class="code">table.beispiel2 { 
+    border-collapse: collapse;
+    width: 100%;
+    border:solid 5px red;
+}
+  
+table.beispiel2 td {
+    padding: 8px;
+    text-align: left;
+    border: solid 2px purple;
+}
+  
+table.beispiel2 th {
+    padding: 20px;
+    text-align: right;
+    background-color: yellow;
+    border: solid 2px blue;
+}
+  
+table.beispiel2 td:hover {
+      background-color: green;
+      color: white;
+}
+</code></pre>
+            </div>
+            <div class="code-wrapper">
+                <div class="code-label">HTML</div>
+                <pre><code class="code">&lt;table class="beispiel2"&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Vorname&lt;/th&gt;
+        &lt;th&gt;Nachname&lt;/th&gt;
+        &lt;th&gt;Punkte&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;A&lt;/td&gt;
+        &lt;td&gt;Mueller&lt;/td&gt;
+        &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;B&lt;/td&gt;
+        &lt;td&gt;Mueller&lt;/td&gt;
+        &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;C&lt;/td&gt;
+        &lt;td&gt;Mueller&lt;/td&gt;
+        &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;D&lt;/td&gt;
+        &lt;td&gt;Mueller&lt;/td&gt;
+        &lt;td&gt;4&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+            </div>
+            <table class="beispiel2">
+                <tr>
+                  <th>Beispiel 2</th>
+                  <th>Name</th>
+                  <th>Punkte</th>
+                </tr>
+                <tr>
+                  <td>Fahre über die Tabelle mit der Maus
+                  </td>
+                  <td>Mueller</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>A</td>
+                  <td>Mueller</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>B</td>
+                  <td>Mueller</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>C</td>
+                  <td>Mueller</td>
+                  <td>4</td>
+                </tr>
+              </table>
 </body>
 </html>

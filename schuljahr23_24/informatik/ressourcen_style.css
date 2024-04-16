@@ -1,15 +1,42 @@
 .beispiel1 {
-    background-color: tomato;
-    color: darkblue;
-    font-size: 20px;
-    text-align: center;
+    font-family: 'Brush Script MT';
+    background-color: yellow;
+    color: blue;
+    font-size: 30px;
+    text-align: right;
     text-decoration: underline;
-    border: solid 2px blue;
-    margin: auto;
+    text-decoration-color: purple;
+    text-decoration-thickness: 5px;
+    border: dotted 10px red;
+    margin-left: 2px;
     padding: 50px;
-    height: 50px;
+    height: 30px;
     width: 50%;
-    border-radius: 20px;
+    border-radius: 80px;
+}
+
+table.beispiel2 {
+    border-collapse: collapse;
+    width: 100%;
+    border: solid 5px red;
+}
+
+table.beispiel2 td {
+    padding: 8px;
+    text-align: left;
+    border: solid 2px purple;
+}
+
+table.beispiel2 th {
+    padding: 20px;
+    text-align: right;
+    background-color: yellow;
+    border: solid 2px blue;
+}
+
+table.beispiel2 td:hover {
+    background-color: green;
+    color: white;
 }
 
 .code-wrapper {
