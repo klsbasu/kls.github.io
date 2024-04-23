@@ -13,28 +13,17 @@
     <script>hljs.highlightAll();</script>
 </head>
 <body>
-    <h3 style="text-align: center;  color: purple; margin-bottom: 12px;">Online Ressourcen</h1>
-        <div class="container" style="width: 100%;font-size: medium;">
-            <div class="scrollable">
-                <div>
-                    <table style="width: 100%;" cellpadding="1" cellspacing="1">
-                        <tr>
-                            <td>HTML Tutorial</td>
-                            <td><a href="https://www.w3schools.com/html/default.asp" target="_blank">W3Schools</a></td>
-                        </tr>
-                        <tr>
-                            <td>CSS Tutorial</td>
-                            <td><a href="https://www.w3schools.com/css/default.asp" target="_blank">W3Schools</a></td>
-                        </tr>
-                        <tr>
-                            <td>Dokumentation zu HTML und CSS</td>
-                            <td><a href="https://wiki.selfhtml.org/" target="_blank">SELFHTML</a></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <br><br>
+<h3 style="text-align: center;  color: purple; margin-bottom: 12px;">Online Ressourcen</h1> 
+ <a href="https://www.w3schools.com/html/default.asp" target="_blank">HTML Tutorial</a>
+ <br><br>
+<a href="https://www.w3schools.com/css/default.asp" target="_blank">CSS Tutorial</a>
+<br><br>
+<a href="https://wiki.selfhtml.org/" target="_blank">SELFHTML</a>: Deutschsprachige Dokumentation zu HTML und CSS
+<br><br>
+<a href="https://www.w3schools.com/css/css3_animations.asp" target="_blank">CSS Animations</a>. 
+Benutze die Animations-Effekte sparsam und nur, wenn du sie wirklich verstehst, sonst könntest du Probleme haben, 
+Fehler zu finden, wenn etwas nicht richtig funktioniert.
+<br><br>
         <h3 style="text-align: center; color: purple; margin-bottom: 1px;">Code Snippets</h1>
             <div class="code-wrapper">
                 <div class="code-label">CSS</div>
@@ -156,5 +145,93 @@ table.beispiel2 td:hover {
                 </tr>
               </table>
             </div>
+            <br>
+        <div class="code-wrapper">
+                <div class="code-label">CSS</div>
+                <pre><code class="code">.stylish-link {
+    display: inline-block;
+    background-color: violet;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    border: 4px solid red;
+    animation: effekt 5s infinite;
+}
+
+.stylish-link:hover {
+    background-color: green;
+}
+
+@keyframes effekt {
+    50% {border-color: yellow;}
+}
+</code></pre>
+</div>
+<div class="code-wrapper">
+<div class="code-label">HTML</div>
+<pre><code class="code">&lt;a class="stylish-link" href="#" target="_blank"&gt;Linktext&lt;/a&gt;
+</code></pre>
+</div>
+        <a class="stylish-link" href="#" target="_blank">Linktext</a>
+            <br><br>
+            Der Code für den folgenden Fuchs-Div findest du <a href="https://drive.google.com/file/d/1lzaS-D0qGjzFi8C2VSX6bz1gBrbkxxPN/view?usp=sharing" target="_blank">hier</a> als separate HTML-Datei. 
+            Das <a href="https://drive.google.com/file/d/1pxR3gUPEM3jVsWvTr9J8Qz0Ye-TEV6Od/view?usp=sharing" target="_blank">Bild</a> vom Fuchs musst du im gleichen Ordner wie die HTML-Datei haben.
+            Zur Vereinfachung habe ich Inline-CSS geschrieben, aber kopiere den CSS-Code in dein separates Stylesheet. 
+            Der Code ist nicht einfach zu verstehen. Achte darauf, wenn du ihn nutzt, denn 
+            <span style="color:red;">bloßes Kopieren kann deine Webseite durcheinanderbringen.</span> 
+            <div class="beispiel-container">
+
+                <div class="beispiel-card">
+                    <div class="beispiel-card-image beispiel-card1"></div>
+                    <h2>Titel 1</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        <br><br>
+                        Distinctio veritatis mollitia, qui nesciunt aliquid molestiae,
+                        non incidunt quos iusto reiciendis voluptates
+                        reprehenderit dolorem tempora vero sapiente,
+                        culpa provident quia tempore?
+                    </p>
+                </div>
+        
+                <div class="beispiel-card">
+                    <div class="beispiel-card-image beispiel-card2"></div>
+                    <h2>Titel 2</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        <br><br>
+                        Distinctio veritatis mollitia, qui nesciunt aliquid molestiae,
+                        non incidunt quos iusto reiciendis voluptates
+                        reprehenderit dolorem tempora vero sapiente,
+                        culpa provident quia tempore?
+                    </p>
+                </div>
+        
+                <div class="beispiel-card">
+                    <div class="beispiel-card-image beispiel-card3"></div>
+                    <h2>Titel 3</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        <br><br>
+                        Distinctio veritatis mollitia, qui nesciunt aliquid molestiae,
+                        non incidunt quos iusto reiciendis voluptates
+                        reprehenderit dolorem tempora vero sapiente,
+                        culpa provident quia tempore?
+                    </p>
+                </div>
+            </div>
+            Divs positionieren mithilfe von Flexbox. <br>
+            Code in einer HTML-Datei unter diesem 
+            <a href="https://drive.google.com/file/d/1U4AvrGrV9rAMssnZUcrKBvItzG-hCx_7/view?usp=sharing" target="_blank">Link</a>. <br>
+            <b><span style="color: red;">Es ist absolut wichtig</span></b>, dass du verstehst, was der Code macht, bevor du ihn nutzt. 
+            Mach einen separaten Ordner und teste und experimentiere mit ihm, indem du verschiedene Werte ausprobierst.
+            <br>
+            <br>
+            <div class="bsp-container">
+                <div class="bsp-item1">1</div>
+                <div class="bsp-item2">2</div>
+                <div class="bsp-item3">3</div>  
+              </div>
 </body>
 </html>
