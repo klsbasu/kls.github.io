@@ -1,738 +1,887 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AB 1</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AB 1</title>
+        <!--  <link rel="stylesheet" href="style.css"> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/stackoverflow-light.min.css" />
+        <style>
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 400;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjQbMZhKg.ttf) format("truetype");
+            }
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/vs2015.min.css">
+            @font-face {
+                font-family: "Josefin Sans";
+                font-style: normal;
+                font-weight: 700;
+                src: url(https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_N_XbMZhKg.ttf) format("truetype");
+            }
 
-    <style>
-        @font-face {
-            font-family: 'Josefin Sans';
-            font-style: normal;
-            font-weight: 400;
-            src: url(https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjQbMZhKg.ttf) format('truetype');
-        }
+            html {
+                height: 100%;
+                background-color: #eee;
+            }
 
-        @font-face {
-            font-family: 'Josefin Sans';
-            font-style: normal;
-            font-weight: 700;
-            src: url(https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_N_XbMZhKg.ttf) format('truetype');
-        }
+            body {
+                box-sizing: border-box;
+                min-height: 100%;
+                margin: auto;
+                padding-left: 2em;
+                padding-right: 2em;
+                padding-top: 2em;
+                padding-bottom: 2em;
+                max-width: 800px;
+                font-family: "Times New Roman", Times, serif;
+                /* font-family: 'Josefin Sans', sans-serif; */
+                font-size: 0.9em;
+                background-color: white;
+                border: double 3px #ddd;
+                border-top: none;
+                border-bottom: none;
+            }
 
-        body {
-            background-color: antiquewhite !important;
-            font-family: 'Josefin Sans', Arial, sans-serif !important;
-            margin: 20px;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                margin-top: 0;
+                margin-bottom: 2px;
+            }
 
-        .markdown-body {
-            box-sizing: border-box;
-            min-width: 200px;
-            max-width: 980px;
-            margin: 0 auto;
-            padding: 45px;
-        }
+            h3 {
+                font-size: 1.2em;
+            }
 
-        ol {
-            margin-left: 5px !important;
-            padding-left: 10px !important;
-        }
+            h4 {
+                font-size: 1em;
+            }
 
-        ul {
-            margin-left: 10px !important;
-            padding-left: 10px !important;
-        }
+            strong {
+                color: purple;
+                margin-bottom: 2px;
+            }
 
-        ol ul {
-            list-style-type: none !important;
-            margin-left: 2px !important;
-            counter-reset: nested-counter;
-        }
+            a {
+                color: blue;
+                text-decoration: none;
+            }
 
-        ol ul li {
-            counter-increment: nested-counter;
-        }
+            a:visited {
+                color: blue;
+            }
 
-        ol ul li::before {
-            content: counter(nested-counter, lower-alpha) ") ";
-            font-weight: normal !important;
-        }
+            a:hover {
+                color: blue;
+                text-decoration: underline;
+            }
 
-        table {
-            margin-left: 20px; /* Adjust this value as needed */
-        }
+            a:active {
+                color: #0000ff;
+            }
 
-        pre,
-        code {
-            background-color: black !important;
-            color: white !important;
-            padding: 5px !important;
-            border-radius: 5px;
-            font-family: "Consolas", "Courier New", monospace;
-            font-size: 0.95em;
-            overflow-x: auto;
-        }
+            body h2 {
+                margin-top: 14px;
+            }
 
-        pre.nohighlight {
-            border: 1px solid #ddd;
-        }
+            body h3 {
+                margin-top: 14px;
+            }
 
-        pre.nohighlight code {
-            padding-left: 0 !important;
-        }
+            body p {
+                margin-top: 0px !important;
+                margin-bottom: 0px !important;
+                width: 100vh!;
+            }
 
-        li::marker {
-            font-weight: bolder !important;
-        }
+            pre,
+            code {
+                background-color: #f6f6f6 !important;
+                font-size: 14px !important;
+                margin-top: 0px;
+                margin-bottom: 0px;
+                font-weight: 550;
+                /*   color: white !important; */
+                padding-left: 30px !important; /* Increase padding for more indentation */
+                margin-left: 0px !important;
+                margin-top: 2px;
+                padding: 2px !important;
+                border-radius: 0px !important;
+                font-family: "Consolas", "Courier New", monospace;
+                width: 100% !important;
+                overflow: hidden;
+                line-height: 1em !important;
+            }
 
-        ol ul li::marker,
-        ul ol li::marker,
-        ul ul li::marker,
-        ol ol li::marker {
-            font-weight: normal !important;
-        }
-    </style>
-</head>
+            pre.nohighlight {
+                /* border: 1px solid #ddd; */
+                line-height: 1em;
+            }
 
-<body class="markdown-body">
-    <h1 id="programmierung-mit-python">Programmierung mit Python</h1>
-    <h2 id="ab-1">AB 1</h2>
-    <h3 id="dein-erstes-programm">Dein erstes Programm</h3>
-    <p>Schau dir das folgende Video an. Mach das Gezeigte nach und schau
-    nicht einfach nur passiv zu.</p>
-    <p><strong>Bemerkung:</strong> Im Video arbeitet er mit dem
-    PyCharm-Editor, aber wir verwenden VS Code. Beide Editoren sehen
-    jedoch ähnlich aus. Er schreibt seinen Code in der Datei main.py,
-    aber wir haben unsere Datei script.py genannt.</p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/oxXAb8IikHM?si=MLdOkWfkzgTbfg8W&amp;start=578" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-    </iframe>
-    <h3 id="die-funktion-print">Die Funktion
-    <code class="language-python" style="font-size:smaller;">
-    print()</code></h3>
-    <p>Mit der Funktion <code>print()</code> kannst du Texte im Terminal
-    anzeigen:</p>
-    <div class="sourceCode" id="cb1"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Hallo Welt&quot;</span>)</span></code></pre></div>
-    <p><strong>Ausgabe im Terminal:</strong></p>
-    <pre class="nohighlight"><code>Hallo Welt</code></pre>
-    <h2 id="aufgaben">Aufgaben</h2>
-    <ol type="1">
-    <li>Verwende zwei <code>print()</code>-Befehle, um die folgende
-    Ausgabe im Terminal zu erzeugen:</li>
-    </ol>
-    <pre class="nohighlight"><code>Python ist super :-)
+            pre.nohighlight code {
+                padding-left: 0 !important;
+            }
+
+            .snip {
+                font-family: Menlo, monospace;
+                font-size: 0.75em;
+            }
+
+            ul {
+                padding-left: 13px !important; /* Slight increase for better readability */
+                list-style-type: disc !important;
+            }
+
+            ul ul {
+                list-style-type: disc !important; /* Ensure nested lists also use disc markers */
+            }
+
+            ul li::marker {
+                list-style-type: disc !important; /* Force disc marker for all list items */
+            }
+
+            table {
+                border-spacing: 0;
+                border-collapse: collapse;
+                width: auto;
+            }
+
+            table th,
+            table td {
+                padding: 6px 8px;
+                vertical-align: top;
+                white-space: nowrap;
+            }
+
+            table th {
+                background: #ddd;
+                font-weight: 900;
+                text-align: left;
+                white-space: nowrap;
+            }
+
+            table tbody tr:nth-child(odd) {
+                background: white;
+            }
+
+            table,
+            th,
+            td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+        </style>
+    </head>
+
+    <body class="markdown-body">
+        <h1 id="ab-1-programmierung-mit-python"><strong>AB 1
+        Programmierung mit Python</strong></h1>
+        <hr />
+        <ul>
+        <li><a href="#dein-erstes-programm">Dein erstes
+        Programm</a></li>
+        <li><a href="#die-print-funktion">Die <span
+        class="snip">print()</span>-Funktion</a></li>
+        <li><a href="#kommentare">Kommentare</a>
+        <ul>
+        <li><a href="#einzeilige-kommentare">Einzeilige
+        Kommentare</a></li>
+        <li><a href="#mehrzeilige-kommentare">Mehrzeilige
+        Kommentare</a></li>
+        </ul></li>
+        <li><a href="#zahlen-und-berechnungsoperatoren">Zahlen und
+        Berechnungsoperatoren</a>
+        <ul>
+        <li><a
+        href="#berechnungsoperatoren">Berechnungsoperatoren</a></li>
+        </ul></li>
+        <li><a href="#strings">Strings</a>
+        <ul>
+        <li><a href="#verkettung-mit-dem-operator">Verkettung mit dem
+        <span class="snip">+</span> Operator</a></li>
+        </ul></li>
+        <li><a href="#variablen">Variablen</a>
+        <ul>
+        <li><a href="#wie-definiert-man-variablen">Wie definiert man
+        Variablen?</a></li>
+        <li><a href="#überschreiben-von-variablenwerten">Überschreiben
+        von Variablenwerten</a></li>
+        </ul></li>
+        <li><a href="#datentypen">Datentypen</a></li>
+        <li><a href="#die-input-funktion">Die <span
+        class="snip">input()</span>-Funktion</a></li>
+        <li><a href="#datentypen-umwandeln">Datentypen
+        umwandeln</a></li>
+        </ul>
+        <hr />
+        <p>Schau dir die folgenden Videos an. Mach das Gezeigte nach und
+        schau nicht einfach nur passiv zu.</p>
+        <p><br></p>
+        <p>In den Videos arbeitet er mit dem PyCharm-Editor, aber wir
+        verwenden VS Code. Beide Editoren sehen jedoch ähnlich aus.</p>
+        <p><br></p>
+        <p>Er schreibt in der Datei main.py, du schreibst in der Datei
+        script.py.</p>
+        <h2 id="dein-erstes-programm">Dein erstes Programm</h2>
+        <hr />
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/oxXAb8IikHM?si=MLdOkWfkzgTbfg8W&amp;start=578">
+        </iframe>
+        <h2 id="die-print-funktion">Die <span
+        class="snip">print()</span>-Funktion</h2>
+        <hr />
+        <p>Mit der <span class="snip">print()</span>-Funktion kannst du
+        Texte im Terminal anzeigen:</p>
+        <div class="sourceCode" id="cb1"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Hallo Welt&quot;</span>)</span></code></pre></div>
+        <p><br></p>
+        <p>Ausgabe im Terminal:</p>
+        <pre class="nohighlight"><code>Hallo Welt</code></pre>
+        <p><br></p>
+        <p><strong>Aufgabe 1</strong> <br> Verwende zwei <span
+        class="snip">print()</span>-Funktionen, um die folgende Ausgabe
+        im Terminal zu zeigen:</p>
+        <pre class="nohighlight"><code>Python ist super :-)
 Ich bin in der 10. Klasse</code></pre>
-    <ol start="2" type="1">
-    <li>Verwende zwei <code>print()</code>-Befehle, um die folgende
-    Ausgabe zweimal hintereinander auf zwei Zeilen im Terminal zu
-    erzeugen:</li>
-    </ol>
-    <pre class="nohighlight"><code>Ich verstehe nur Bahnhof!
+        <p><br></p>
+        <p><strong>Aufgabe 2</strong> <br> Verwende zwei <span
+        class="snip">print()</span>-Funktionen, um die folgende Ausgabe
+        zweimal hintereinander <br> auf zwei Zeilen im Terminal zu
+        zeigen:</p>
+        <pre class="nohighlight"><code>Ich verstehe nur Bahnhof!
 Ich verstehe nur Bahnhof!</code></pre>
-    <h3 id="kommentare">Kommentare</h3>
-    <p>In Python sind Kommentare Textteile im Code, die nicht ausgeführt
-    werden. Sie helfen, den Code zu erklären oder zu dokumentieren.</p>
-    <h4 id="einzeilige-kommentare">Einzeilige Kommentare</h4>
-    <p>Sie beginnen mit einem <code>#</code>, und alles danach wird
-    ignoriert.</p>
-    <div class="sourceCode" id="cb5"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dies ist ein Kommentar, der nicht ausgeführt wird</span></span>
+        <h2 id="kommentare">Kommentare</h2>
+        <hr />
+        <p>In Python sind Kommentare Textteile im Code, die nicht
+        ausgeführt werden. <br> Sie helfen, den Code zu erklären oder zu
+        dokumentieren.</p>
+        <h3 id="einzeilige-kommentare">Einzeilige Kommentare</h3>
+        <p>Sie beginnen mit einem <span class="snip">#</span> und alles
+        danach wird ignoriert.</p>
+        <div class="sourceCode" id="cb5"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dies ist ein Kommentar, der nicht ausgeführt wird</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Hallo Welt&quot;</span>)  <span class="co"># Dies ist ein Kommentar neben einer Codezeile</span></span></code></pre></div>
-    <p><strong>Ausgabe im Terminal:</strong></p>
-    <pre class="nohighlight"><code>Hallo Welt</code></pre>
-    <p><strong>Erklärung:</strong> Die erste Zeile wird komplett
-    ignoriert, und der Text rechts vom <code>#</code> wird ebenfalls
-    ignoriert, während die <code>print()</code>-Funktion ausgeführt
-    wird.</p>
-    <h4 id="mehrzeilige-kommentare">Mehrzeilige Kommentare:</h4>
-    <p>Sie beginnen und enden mit drei Anführungszeichen
-    <code>"""</code>. Alles dazwischen wird ignoriert.</p>
-    <div class="sourceCode" id="cb7"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
+        <p><br></p>
+        <p>Ausgabe im Terminal:</p>
+        <pre class="nohighlight"><code>Hallo Welt</code></pre>
+        <p><br></p>
+        <p>
+        Erklärung: Die erste Zeile wird komplett ignoriert, und der Text
+        rechts vom # wird ebenfalls ignoriert, während die <span
+        class="snip">print()</span>-Funktion ausgeführt wird.
+        </p>
+        <h3 id="mehrzeilige-kommentare">Mehrzeilige Kommentare</h3>
+        <p>Sie beginnen und enden mit drei Anführungszeichen <span
+        class="snip">"""</span>. Alles dazwischen wird ignoriert.</p>
+        <div class="sourceCode" id="cb7"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">Das ist ein</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">mehrzeiliger Kommentar.</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">Er erstreckt sich über mehrere Zeilen.</span></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Python ist super!&quot;</span>)</span></code></pre></div>
-    <p><strong>Ausgabe im Terminal:</strong></p>
-    <pre class="nohighlight"><code>Python ist super!</code></pre>
-    <p><strong>Erklärung:</strong> Der gesamte Text zwischen den
-    dreifachen Anführungszeichen wird ignoriert, und der
-    <code>print()</code>-Befehl wird ausgeführt.</p>
-    <h2 id="aufgaben-1">Aufgaben</h2>
-    <ol start="3" type="1">
-    <li>Füge einen einzeiligen Kommentar zu folgendem Code hinzu, der
-    erklärt, was der Code macht:</li>
-    </ol>
-    <div class="sourceCode" id="cb9"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Hallo Welt&quot;</span>)</span></code></pre></div>
-    <ol start="4" type="1">
-    <li>Kommentiere den folgenden Code so, dass die erste
-    <code>print()</code>-Anweisung nicht ausgeführt wird:</li>
-    </ol>
-    <div class="sourceCode" id="cb10"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Dieser Code soll nicht ausgeführt werden&quot;</span>)</span>
+        <p><br></p>
+        <p>Ausgabe im Terminal:</p>
+        <pre class="nohighlight"><code>Python ist super!</code></pre>
+        <p><br></p>
+        <p>Erklärung: Der gesamte Text zwischen den dreifachen
+        Anführungszeichen wird ignoriert, und die <span
+        class="snip">print()</span>-Funktion wird ausgeführt.</p>
+        <p><br></p>
+        <p><strong>Aufgabe 3</strong> <br> Füge einen einzeiligen
+        Kommentar zu folgendem Code hinzu, der erklärt, was der Code
+        macht:</p>
+        <div class="sourceCode" id="cb9"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Hallo Welt&quot;</span>)</span></code></pre></div>
+        <p><br></p>
+        <p><strong>Aufgabe 4</strong> <br> Kommentiere den folgenden
+        Code so, dass die erste <span
+        class="snip">print()</span>-Funktion nicht ausgeführt wird:</p>
+        <div class="sourceCode" id="cb10"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Dieser Code soll nicht ausgeführt werden&quot;</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Dieser Code wird ausgeführt&quot;</span>)</span></code></pre></div>
-    <h3 id="zahlen-und-berechnungsoperatoren-in-python">Zahlen und
-    Berechnungsoperatoren in Python</h3>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/VtiDkRDPA_c?si=hrx5Fbi3XAS_VmDp&amp;start=578" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-    </iframe>
-    <div style="height:10px;">
-
-    </div>
-    <p>Mit der Funktion <code>print()</code> kannst du nicht nur Text,
-    sondern auch Zahlen (Ganze Zahlen und Dezimalzahlen) anzeigen
-    lassen:</p>
-    <div class="sourceCode" id="cb11"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">22</span>)</span>
+        <h2 id="zahlen-und-berechnungsoperatoren">Zahlen und
+        Berechnungsoperatoren</h2>
+        <hr />
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/VtiDkRDPA_c?si=hrx5Fbi3XAS_VmDp">
+        </iframe>
+        <p><br></p>
+        <p>Mit der <span class="snip">print()</span>-Funktion kannst du
+        nicht nur Text, sondern auch ganze Zahlen und Dezimalzahlen im
+        Terminal ausgeben:</p>
+        <div class="sourceCode" id="cb11"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">22</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="op">-</span><span class="dv">11</span>)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="fl">2.62</span>)</span></code></pre></div>
-    <p><strong>Ausgabe im Terminal:</strong></p>
-    <pre class="nohighlight"><code>22
+        <p><br></p>
+        <p>Ausgabe im Terminal:</p>
+        <pre class="nohighlight"><code>22
 -11
 2.62</code></pre>
-    <p><strong>Bemerkung:</strong> Zahlen stehen ohne Anführungszeichen.
-    Texte müssen immer in Anführungszeichen stehen.</p>
-    <h2 id="aufgabe">Aufgabe</h2>
-    <ol start="5" type="1">
-    <li>Welche Ausgabe erhältst du im Terminal, wenn du die folgenden
-    <code>print()</code>-Befehle ausführst?</li>
-    </ol>
-    <div class="sourceCode" id="cb13"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">15</span>)</span>
+        <p><br></p>
+        <p>Wichtig: Zahlen stehen ohne Anführungszeichen. Texte müssen
+        immer in Anführungszeichen stehen.</p>
+        <p><br></p>
+        <p><strong>Aufgabe 5</strong> <br> Welche Ausgabe erhältst du im
+        Terminal, wenn du die folgenden <span
+        class="snip">print()</span>-Funktionen ausführst?</p>
+        <div class="sourceCode" id="cb13"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">15</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="op">-</span><span class="fl">7.5</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">0</span>)</span></code></pre></div>
-    <h4 id="berechnungsoperatoren">Berechnungsoperatoren</h4>
-    <p>Mit Berechnungsoperatoren kannst du mathematische Operationen wie
-    Addition, Subtraktion, Multiplikation und Division durchführen.</p>
-    <p>Zusätzlich ermöglicht der Operator <code>**</code> das
-    Potenzieren von Zahlen.</p>
-    <p>Der Operator <code class="language-python">//</code> führt eine
-    Ganzzahldivision durch, das heißt, das Ergebnis wird als ganze Zahl
-    zurückgegeben.</p>
-    <p>Beim Modulo-Operator <code class="language-python">%</code> wird
-    ebenfalls eine Division ausgeführt, jedoch gibt er nur den Rest der
-    Division zurück.</p>
-    <table>
-    <colgroup>
-    <col style="width: 36%" />
-    <col style="width: 34%" />
-    <col style="width: 28%" />
-    </colgroup>
-    <thead>
-    <tr>
-    <th style="text-align: left;"><strong>Operation</strong></th>
-    <th style="text-align: left;"><strong>Beispiel</strong></th>
-    <th style="text-align: left;"><strong>Ausgabe</strong></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td style="text-align: left;">+ Addition</td>
-    <td style="text-align: left;"><code class="language-python">print(10
-    + 3)</code></td>
-    <td style="text-align: left;">13</td>
-    </tr>
-    <tr>
-    <td style="text-align: left;">- Subtraktion</td>
-    <td style="text-align: left;"><code class="language-python">print(10
-    - 3)</code></td>
-    <td style="text-align: left;">7</td>
-    </tr>
-    <tr>
-    <td style="text-align: left;">* Multiplikation</td>
-    <td style="text-align: left;"><code class="language-python">print(10
-    * 3)</code></td>
-    <td style="text-align: left;">30</td>
-    </tr>
-    <tr>
-    <td style="text-align: left;">** Potenzieren</td>
-    <td style="text-align: left;"><code class="language-python">print(10
-    ** 3)</code></td>
-    <td style="text-align: left;">1000</td>
-    </tr>
-    <tr>
-    <td style="text-align: left;">/ Division</td>
-    <td style="text-align: left;"><code class="language-python">print(10
-    / 3)</code></td>
-    <td style="text-align: left;">3.33333333333</td>
-    </tr>
-    <tr>
-    <td style="text-align: left;">// Ganzzahldivision</td>
-    <td style="text-align: left;"><code class="language-python">print(10
-    // 3)</code></td>
-    <td style="text-align: left;">3</td>
-    </tr>
-    <tr>
-    <td style="text-align: left;">% Modulo-Operator</td>
-    <td style="text-align: left;"><code class="language-python">print(10
-    % 3)</code></td>
-    <td style="text-align: left;">1</td>
-    </tr>
-    </tbody>
-    </table>
-    <h2 id="aufgaben-2">Aufgaben</h2>
-    <ol start="6" type="1">
-    <li><p>Führe die folgenden Befehle einzeln durch. Welche Ausgaben
-    erscheinen im Terminal?</p>
-    <div style="height:2px;">
+        <h3 id="berechnungsoperatoren">Berechnungsoperatoren</h3>
+        <p>Mit Berechnungsoperatoren kannst du mathematische Operationen
+        wie die Addition, die Subtraktion, die Multiplikation und die
+        Division durchführen.</p>
+        <p><br></p>
+        <p>Zusätzlich ermöglicht der Operator
+        <span class="snip">**</span> das Potenzieren von Zahlen.</p>
+        <p><br></p>
+        <p>Der Operator <span class="snip">//</span> führt eine
+        Ganzzahldivision durch, das heißt, das Ergebnis wird als ganze
+        Zahl zurückgegeben.</p>
+        <p><br></p>
+        <p>Beim Modulo-Operator <span class="snip">%</span> wird
+        ebenfalls eine Division ausgeführt, jedoch gibt er nur den Rest
+        der Division zurück.</p>
+        <p><br></p>
+        <table>
+        <colgroup>
+        <col style="width: 36%" />
+        <col style="width: 34%" />
+        <col style="width: 28%" />
+        </colgroup>
+        <thead>
+        <tr>
+        <th style="text-align: left;">Operation</th>
+        <th style="text-align: left;">Beispiel</th>
+        <th style="text-align: left;">Ausgabe</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td style="text-align: left;"><span class="snip">+</span>
+        Addition</td>
+        <td style="text-align: left;"><span class="snip">print(10 +
+        3)</span></td>
+        <td style="text-align: left;"><span class="snip">13 </span></td>
+        </tr>
+        <tr>
+        <td style="text-align: left;"><span class="snip">-</span>
+        Subtraktion</td>
+        <td style="text-align: left;"><span class="snip">print(10 -
+        3)</span></td>
+        <td style="text-align: left;"><span class="snip">7 </span></td>
+        </tr>
+        <tr>
+        <td style="text-align: left;"><span class="snip">*</span>
+        Multiplikation</td>
+        <td style="text-align: left;"><span class="snip">print(10 *
+        3)</span></td>
+        <td style="text-align: left;"><span class="snip">30 </span></td>
+        </tr>
+        <tr>
+        <td style="text-align: left;"><span class="snip">**</span>
+        Potenzieren</td>
+        <td style="text-align: left;"><span class="snip">print(10 **
+        3)</span></td>
+        <td style="text-align: left;"><span class="snip">1000
+        </span></td>
+        </tr>
+        <tr>
+        <td style="text-align: left;"><span class="snip">/</span>
+        Division</td>
+        <td style="text-align: left;"><span class="snip">print(10 /
+        3)</span></td>
+        <td style="text-align: left;"><span class="snip">3.33333333333
+        </span></td>
+        </tr>
+        <tr>
+        <td style="text-align: left;"><span class="snip">//</span>
+        Ganzzahldivision</td>
+        <td style="text-align: left;"><span class="snip">print(10 //
+        3)</span></td>
+        <td style="text-align: left;"><span class="snip">3 </span></td>
+        </tr>
+        <tr>
+        <td style="text-align: left;"><span class="snip">%</span>
+        Modulo-Operator</td>
+        <td style="text-align: left;"><span class="snip">print(10 %
+        3)</span></td>
+        <td style="text-align: left;"><span class="snip">1 </span></td>
+        </tr>
+        </tbody>
+        </table>
+        <p><br></p>
+        <p><strong>Aufgabe 6</strong> <br> Führe die folgenden Befehle
+        einzeln aus. Welche Ausgaben erscheinen im Terminal? <br> a)
+        <span class="snip">print(100 + 25)</span> <br> b) <span
+        class="snip">print(2 ** 5)</span> <br> c) <span
+        class="snip">print(80 // 3)</span> <br> d) <span
+        class="snip">print(25 % 4)</span> <br> e) <span
+        class="snip">print(3 * 5 + 8)</span> <br> f) <span
+        class="snip">print(3 ** 3 % 5)</span> <br> g) <span
+        class="snip">print(60 / 5 - 2)</span> <br> h) <span
+        class="snip">print(3 * 15 // 4)</span> <br></p>
+        <p><br></p>
+        <p><strong>Aufgabe 7</strong> <br> Schreibe ein Programm, das
+        die Summe, die Differenz, das Produkt und den Quotienten der
+        Zahlen <span class="snip">12</span> und <span
+        class="snip">8</span> berechnet und das Ergebnis jeweils mit
+        einem <span class="snip">print()</span>-Befehl im Terminal
+        anzeigt.</p>
+        <p><br></p>
+        <p><strong>Aufgabe 8</strong> <br> Berechne mit Python <span
+        class="snip">(25 + 5) * 3 - 12 // 2</span> und zeige das
+        Ergebnis im Terminal an.</p>
+        <p><br></p>
+        <p><strong>Aufgabe 9</strong> <br> Berechne mit Python den
+        Durchschnitt von vier beliebigen Zahlen (z. B. <span
+        class="snip">23</span>, <span class="snip">67</span>, <span
+        class="snip">12</span>, <span class="snip">90</span>). Verwende
+        dazu den <span class="snip">print()</span>-Befehl, um das
+        Ergebnis im Terminal anzuzeigen.</p>
+        <h2 id="strings">Strings</h2>
+        <hr>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/sTEf4_mrLvw?si=5zHDcQWrtrglEfCu">
+        </iframe>
+        <p><br></p>
+        <p>In Python sind Strings (Zeichenketten) eine Folge von
+        Zeichen, die als Text dargestellt werden. Sie werden von
+        doppelten Anführungszeichen <span class="snip">" "</span>
+        umschlossen.</p>
+        <p><br></p>
+        <p>Du kannst sie aber auch von einfachen Anführungszeichen <span
+        class="snip">' '</span> umschließen. Strings können Buchstaben,
+        Zahlen, Symbole oder eine Kombination davon enthalten.</p>
+        <h3 id="verkettung-mit-dem-operator">Verkettung mit dem <span
+        class="snip">+</span> Operator</h3>
+        <p>Mit dem <span class="snip">+</span> Operator kannst du Texte
+        (Strings) miteinander verbinden. <br> Dies nennt man auch
+        <i>Verketten</i>.</p>
+        <p><br></p>
+        <p>Bemerkung: Wenn du den <span class="snip">+</span> Operator
+        verwendest, werden die Strings direkt aneinandergefügt, ohne
+        dass automatisch Leerzeichen zwischen den Werten eingefügt
+        werden. Um ein Leerzeichen hinzuzufügen, musst du es explizit
+        als <span class="snip">" "</span> in die Verkettung
+        einfügen.</p>
+        <p><br></p>
+        <div style="height:5px;">
 
-    </div>
-    <ul>
-    <li><code class="language-python">print(100 + 25)</code></li>
-    <li><code class="language-python">print(2 ** 5)</code></li>
-    <li><code class="language-python">print(80 // 3)</code></li>
-    <li><code class="language-python">print(25 % 4)</code></li>
-    <li><code class="language-python">print(3 * 5 + 8)</code></li>
-    <li><code class="language-python">print(3 ** 3 % 5)</code></li>
-    <li><code class="language-python">print(60 / 5 - 2)</code></li>
-    <li><code class="language-python">print(3 * 15 // 4)</code></li>
-    </ul></li>
-    <li><p>Schreibe ein Programm, das die Summe, die Differenz, das
-    Produkt und den Quotienten der Zahlen 12 und 8 berechnet und das
-    Ergebnis jeweils mit einem <code>print()</code>-Befehl im Terminal
-    anzeigt.</p></li>
-    <li><p>Berechne mit Python <code>(25 + 5) * 3 - 12 // 2</code> und
-    zeige das Ergebnis im Terminal an.</p></li>
-    <li><p>Berechne mit Python den Durchschnitt von vier beliebigen
-    Zahlen (z. B. 23, 67, 12, 90). Verwende dazu den
-    <code>print()</code>-Befehl, um das Ergebnis im Terminal
-    anzuzeigen.</p></li>
-    </ol>
-    <h3 id="strings-in-python">Strings in Python</h3>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/sTEf4_mrLvw?si=5zHDcQWrtrglEfCu&amp;start=578" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-    </iframe>
-    <div style="height:10px;">
-
-    </div>
-    <p>In Python sind Strings (Zeichenketten) eine Folge von Zeichen,
-    die als Text dargestellt werden. Sie werden von doppelten
-    Anführungszeichen " " umschlossen. Du kannst sie aber auch von
-    einfachen Anführungszeichen ' ' umschließen. Strings können
-    Buchstaben, Zahlen, Symbole oder eine Kombination davon
-    enthalten.</p>
-    <h3 id="verkettung-mit-dem-operator">Verkettung mit dem
-    <code class="language-python" style="font-size:smaller;">+</code>
-    Operator</h3>
-    <p>Mit dem <code class="language-python">+</code> Operator kannst du
-    Strings miteinander verbinden. Dies nennt man auch „Verketten“.</p>
-    <p><strong>Bemerkung:</strong> Wenn du den
-    <code class="language-python">+</code> Operator verwendest, werden
-    die Strings direkt aneinandergefügt, ohne dass automatisch
-    Leerzeichen zwischen den Werten eingefügt werden. Um ein Leerzeichen
-    hinzuzufügen, musst du es explizit als <code>" "</code> in die
-    Verkettung einfügen.</p>
-    <p><strong>Beispiel:</strong></p>
-    <div class="sourceCode" id="cb14"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Hallo&quot;</span> <span class="op">+</span> <span class="st">&quot;Welt&quot;</span>)</span>
+        </div>
+        <p>Beispiel:</p>
+        <div class="sourceCode" id="cb14"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Hallo&quot;</span> <span class="op">+</span> <span class="st">&quot;Welt&quot;</span>)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Hallo&quot;</span> <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="st">&quot;Welt&quot;</span>)</span></code></pre></div>
-    <p><strong>Ausgabe im Terminal:</strong></p>
-    <pre class="nohighlight"><code>HalloWelt
+        <p><br></p>
+        <p>Ausgabe im Terminal:</p>
+        <pre class="nohighlight"><code>HalloWelt
 Hallo Welt</code></pre>
-    <h2 id="aufgaben-3">Aufgaben</h2>
-    <ol start="10" type="1">
-    <li>Was wird im Terminal ausgegeben, wenn du die folgenden Befehle
-    ausführst?</li>
-    </ol>
-    <div class="sourceCode" id="cb16"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Guten&quot;</span> <span class="op">+</span> <span class="st">&quot;Tag&quot;</span>)</span>
+        <p><br></p>
+        <p><strong>Aufgabe 10</strong> <br> Was wird im Terminal
+        ausgegeben, wenn du die folgenden <span
+        class="snip">print()</span>-Befehle ausführst?</p>
+        <div class="sourceCode" id="cb16"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Guten&quot;</span> <span class="op">+</span> <span class="st">&quot;Tag&quot;</span>)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Guten&quot;</span> <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="st">&quot;Tag&quot;</span>)</span></code></pre></div>
-    <ol start="11" type="1">
-    <li>Welche Ausgabe erhältst du, wenn du diesen Code ausführst?</li>
-    </ol>
-    <div class="sourceCode" id="cb17"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Ein&quot;</span> <span class="op">+</span> <span class="st">&quot;-&quot;</span> <span class="op">+</span> <span class="st">&quot;Zwei&quot;</span> <span class="op">+</span> <span class="st">&quot;-&quot;</span> <span class="op">+</span> <span class="st">&quot;Drei&quot;</span>)</span></code></pre></div>
-    <ol start="12" type="1">
-    <li>Verkette die folgenden Teile eines Satzes zu einem vollständigen
-    Satz, und füge dabei Leerzeichen ein, wo nötig:</li>
-    </ol>
-    <div class="sourceCode" id="cb18"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Ich&quot;</span> <span class="op">+</span> <span class="st">&quot;habe&quot;</span> <span class="op">+</span> <span class="st">&quot;Hunger.&quot;</span>)</span></code></pre></div>
-    <ol start="13" type="1">
-    <li>Führe den folgenden Code aus und erkläre die Ausgabe, die im
-    Terminal erscheint.</li>
-    </ol>
-    <div class="sourceCode" id="cb19"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">10</span> <span class="op">+</span> <span class="dv">5</span>) </span>
+        <p><br></p>
+        <p><strong>Aufgabe 11</strong> <br> Welche Ausgabe erhältst du,
+        wenn du diesen <span class="snip">print()</span>-Befehl
+        ausführst?</p>
+        <div class="sourceCode" id="cb17"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Ein&quot;</span> <span class="op">+</span> <span class="st">&quot;-&quot;</span> <span class="op">+</span> <span class="st">&quot;Zwei&quot;</span> <span class="op">+</span> <span class="st">&quot;-&quot;</span> <span class="op">+</span> <span class="st">&quot;Drei&quot;</span>)</span></code></pre></div>
+        <p><br></p>
+        <p><strong>Aufgabe 12</strong> <br> Verkette die folgenden Teile
+        eines Satzes zu einem vollständigen Satz, und füge dabei
+        Leerzeichen ein, wo nötig:</p>
+        <div class="sourceCode" id="cb18"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Ich&quot;</span> <span class="op">+</span> <span class="st">&quot;habe&quot;</span> <span class="op">+</span> <span class="st">&quot;Hunger.&quot;</span>)</span></code></pre></div>
+        <p><br></p>
+        <p><strong>Aufgabe 13</strong> <br> Führe den folgenden Code aus
+        und erkläre die Ausgabe im Terminal.</p>
+        <div class="sourceCode" id="cb19"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">10</span> <span class="op">+</span> <span class="dv">5</span>) </span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;10&quot;</span> <span class="op">+</span> <span class="st">&quot;5&quot;</span>)  </span></code></pre></div>
-    <ol start="14" type="1">
-    <li>Was ist der Fehler im folgenden Code, und warum tritt er
-    auf?</li>
-    </ol>
-    <div class="sourceCode" id="cb20"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;10&quot;</span> <span class="op">+</span> <span class="dv">5</span>)  </span></code></pre></div>
-    <h3 id="was-sind-variablen">Was sind Variablen?</h3>
-    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/jfOLXKPGXJ0?si=6mmLW7Grv7wRWzI4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-    </iframe>
-    <div style="height:10px">
-
-    </div>
-    <p>Variablen sind Speicherorte für Informationen, die später im
-    Programm verwendet werden können.</p>
-    <p><strong>Beispiel:</strong></p>
-    <div class="sourceCode" id="cb21"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">&quot;Lara&quot;</span></span>
+        <p><br></p>
+        <p><strong>Aufgabe 14</strong> <br> Führe den folgenden Code aus
+        und beschreibe den Fehler, der auftritt. Erkläre, warum der
+        Fehler passiert.</p>
+        <div class="sourceCode" id="cb20"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;10&quot;</span> <span class="op">+</span> <span class="dv">5</span>)  </span></code></pre></div>
+        <p><br></p>
+        <h2 id="variablen">Variablen</h2>
+        <hr>
+        <iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/jfOLXKPGXJ0?si=6mmLW7Grv7wRWzI4">
+        </iframe>
+        <p><br></p>
+        <p>Variablen sind Speicherorte für Informationen, die später im
+        Programm verwendet werden können.</p>
+        <p><br></p>
+        <p>Beispiel:</p>
+        <div class="sourceCode" id="cb21"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">&quot;Lara&quot;</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">40</span></span></code></pre></div>
-    <p><strong>Bemerkung:</strong> Text (wie „Lara“) muss immer in
-    Anführungszeichen stehen, während Zahlen ohne Anführungszeichen
-    geschrieben werden.</p>
-    <p>Du kannst auch Variablen, die du definiert hast, mit der
-    <code>print()</code>-Funktion ausgeben:</p>
-    <div class="sourceCode" id="cb22"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">&#39;Lara&#39;</span></span>
+        <p><br></p>
+        <p>Bemerkung: Text (wie <span class="snip">"Lara"</span>) muss
+        immer in Anführungszeichen stehen, während Zahlen ohne
+        Anführungszeichen geschrieben werden.</p>
+        <p><br></p>
+        <p>Du kannst auch Variablen, die du definiert hast, mit der
+        <span class="snip">print()</span>-Funktion ausgeben:</p>
+        <div class="sourceCode" id="cb22"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">&#39;Lara&#39;</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">40</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(name)</span>
 <span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(age)</span></code></pre></div>
-    <p><strong>Ausgabe im Terminal:</strong></p>
-    <pre class="nohighlight"><code>Lara
+        <p><br></p>
+        <p>Ausgabe im Terminal:</p>
+        <pre class="nohighlight"><code>Lara
 40</code></pre>
-    <h3 id="wie-definiert-man-variablen-in-python">Wie definiert man
-    Variablen in Python?</h3>
-    <p>Eine Variable erhält einen Namen und einen Wert, die durch den
-    Zuweisungsoperator <code>=</code> (Gleichheitszeichen) miteinander
-    verbunden sind. Beim Benennen einer Variablen gibt es jedoch einige
-    Regeln, die du beachten musst:</p>
-    <ul>
-    <li>Ein Variablenname muss mit einem Buchstaben oder einem
-    Unterstrich beginnen, aber niemals mit einer Zahl.</li>
-    <li>Ein Variablenname darf keine Leerzeichen oder Sonderzeichen wie
-    Umlaute (ä, ö, ü) enthalten.</li>
-    <li>Du darfst keine reservierten Schlüsselwörter wie
-    <code>class</code>, <code class="language-python">if</code> oder
-    <code>while</code> als Variablennamen verwenden.</li>
-    <li>Python unterscheidet zwischen Groß- und Kleinschreibung. Das
-    bedeutet, dass <code>name</code> und <code>Name</code> zwei
-    verschiedene Variablen sind.</li>
-    </ul>
-    <h2 id="überschreiben-von-variablenwerten">Überschreiben von
-    Variablenwerten</h2>
-    <p>In Python kannst du den Wert einer Variable jederzeit ändern. Das
-    nennt man Überschreiben. Wenn du einer bereits existierenden
-    Variablen einen neuen Wert zuweist, wird der alte Wert durch den
-    neuen ersetzt.</p>
-    <div class="sourceCode" id="cb24"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span>  </span>
+        <h3 id="wie-definiert-man-variablen">Wie definiert man
+        Variablen?</h3>
+        <p>Eine Variable erhält einen Namen und einen Wert, die durch
+        den Zuweisungsoperator <span class="snip">=</span>
+        (Gleichheitszeichen) miteinander verbunden sind. Beim Benennen
+        einer Variablen gibt es jedoch einige Regeln, die du beachten
+        musst:</p>
+        <ul>
+        <li>Ein Variablenname muss mit einem Buchstaben oder einem
+        Unterstrich beginnen, aber niemals mit einer Zahl.</li>
+        <li>Ein Variablenname darf keine Leerzeichen oder Sonderzeichen
+        wie Umlaute (<span class="snip">ä</span>, <span
+        class="snip">ö</span>, <span class="snip">ü</span>)
+        enthalten.</li>
+        <li>Du darfst keine reservierten Schlüsselwörter wie <span
+        class="snip">class</span>, <span class="snip">if</span> oder
+        <span class="snip">while</span> als Variablennamen
+        verwenden.</li>
+        <li>Python unterscheidet zwischen Groß- und Kleinschreibung. Das
+        bedeutet, dass <span class="snip">name</span> und <span
+        class="snip">Name</span> zwei verschiedene Variablen sind.</li>
+        </ul>
+        <h3 id="überschreiben-von-variablenwerten">Überschreiben von
+        Variablenwerten</h3>
+        <p>In Python kannst du den Wert einer Variable jederzeit ändern.
+        Das nennt man das Überschreiben einer Variablen, wenn der alte
+        Wert durch einen neuen ersetzt wird.</p>
+        <div class="sourceCode" id="cb24"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span>  </span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)  </span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">20</span>  </span>
 <span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)  </span></code></pre></div>
-    <p><strong>Ausgabe im Terminal:</strong></p>
-    <pre class="nohighlight"><code>10
+        <p><br></p>
+        <p>Ausgabe im Terminal:</p>
+        <pre class="nohighlight"><code>10
 20</code></pre>
-    <p><strong>Erklärung:</strong> Zuerst hat die Variable x den Wert
-    10. Danach wird sie mit dem Wert 20 überschrieben. Der alte Wert
-    (10) wird also komplett ersetzt.</p>
-    <p><strong>Bemerkung:</strong> - Du kannst Variablen so oft
-    überschreiben, wie du möchtest. - Der neue Wert muss nicht den
-    gleichen Datentyp wie der alte Wert haben. Du kannst zum Beispiel
-    einen String in eine Variable speichern, die vorher eine Zahl
-    war.</p>
-    <div class="sourceCode" id="cb26"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">100</span>  </span>
+        <p><br></p>
+        <p>Erklärung: Zuerst hat die Variable <span
+        class="snip">x</span> den Wert <span class="snip">10</span>.
+        Danach wird sie mit dem Wert <span class="snip">20</span>
+        überschrieben. Der alte Wert <span class="snip">10</span> wird
+        also komplett ersetzt.</p>
+        <p><br></p>
+        <p>Bemerkung: Du kannst Variablen so oft überschreiben, wie du
+        möchtest. Der neue Wert muss nicht den gleichen Datentyp wie der
+        alte Wert haben. Du kannst zum Beispiel einen String in eine
+        Variable speichern, die vorher eine Zahl war.</p>
+        <div class="sourceCode" id="cb26"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">100</span>  </span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="st">&quot;Hallo&quot;</span>  </span>
 <span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x) </span></code></pre></div>
-    <h2 id="aufgaben-4">Aufgaben</h2>
-    <ol start="15" type="1">
-    <li>Definiere zwei Variablen:</li>
-    </ol>
-    <ul>
-    <li>Eine Variable mit dem Namen <code>vorname</code>, die den Wert
-    <code>"Max"</code> hat.</li>
-    <li>Eine Variable mit dem Namen
-    <code class="language-python">alter</code>, die den Wert
-    <code class="language-python">25</code> hat.</li>
-    </ul>
-    <p>Verwende anschließend die <code>print()</code>-Funktion, um beide
-    Variablen im Terminal auszugeben.</p>
-    <ol start="16" type="1">
-    <li>Weise den folgenden Variablen die entsprechenden Werte zu und
-    gib sie mit der <code>print()</code>-Funktion aus. Achte darauf, ob
-    der Wert in Anführungszeichen gesetzt werden muss oder nicht:</li>
-    </ol>
-    <table>
-    <thead>
-    <tr>
-    <th>Variable</th>
-    <th>Wert</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td>postleitzahl</td>
-    <td>10629</td>
-    </tr>
-    <tr>
-    <td>stadt</td>
-    <td>Berlin</td>
-    </tr>
-    <tr>
-    <td>wetter</td>
-    <td>regnerisch und kühl</td>
-    </tr>
-    <tr>
-    <td>hoehe_m</td>
-    <td>450</td>
-    </tr>
-    <tr>
-    <td>sportart</td>
-    <td>Basketball</td>
-    </tr>
-    </tbody>
-    </table>
-    <ol start="17" type="1">
-    <li>Welche der folgenden Variablennamen sind in Python erlaubt?</li>
-    </ol>
-    <ul>
-    <li><code>and</code></li>
-    <li><code>Schüler</code></li>
-    <li><code>Zeit</code></li>
-    <li><code>class</code></li>
-    <li><code>URL</code></li>
-    <li><code>print</code></li>
-    <li><code>town name</code></li>
-    <li><code>global_index</code></li>
-    <li><code>Wetter</code></li>
-    <li><code class="language-python">IN/OUT</code></li>
-    </ul>
-    <h3 id="datentypen">Datentypen</h3>
-    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/1WqFJ5wsA4o?si=9RCQUiKh8X60EYNk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-    </iframe>
-    <div style="height:10px">
-
-    </div>
-    <p>In Python gibt es verschiedene Datentypen, die bestimmen, wie
-    Daten behandelt werden. Wir haben bereits drei kennengelernt.</p>
-    <p><strong>String (Zeichenkette):</strong> Ein Text, der in
-    Anführungszeichen steht.</p>
-    <div class="sourceCode" id="cb27"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;Hallo, Welt!&quot;</span></span></code></pre></div>
-    <p><strong>Integer (Ganzzahl):</strong> Eine Zahl ohne
-    Dezimalstellen.</p>
-    <div class="sourceCode" id="cb28"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>zahl <span class="op">=</span> <span class="dv">42</span></span></code></pre></div>
-    <p><strong>Float (Gleitkommazahl):</strong> Eine Zahl mit
-    Dezimalstellen.</p>
-    <div class="sourceCode" id="cb29"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>pi <span class="op">=</span> <span class="fl">3.14</span></span></code></pre></div>
-    <p>Mit der Funktion <code>type()</code> kannst du herausfinden,
-    welcher Datentyp ein Wert hat:</p>
-    <div class="sourceCode" id="cb30"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="st">&quot;Hallo Welt&quot;</span>))</span>
+        <p><br></p>
+        <p><strong>Aufgabe 15</strong> <br> Definiere zwei Variablen:
+        <br> a) Eine Variable mit dem Namen <span
+        class="snip">vorname</span>, die den Wert <span
+        class="snip">"Max"</span> hat. <br> b) Eine Variable mit dem
+        Namen <span class="snip">alter</span>, die den Wert <span
+        class="snip">25</span> hat. <br> Verwende anschließend die <span
+        class="snip">print()</span>-Funktion, um beide Variablen im
+        Terminal auszugeben.</p>
+        <p><br></p>
+        <p><strong>Aufgabe 16</strong> <br> Weise den folgenden
+        Variablen die entsprechenden Werte zu und gib sie mit der <span
+        class="snip">print()</span>-Funktion aus. Achte darauf, ob der
+        Wert in Anführungszeichen gesetzt werden muss oder nicht:</p>
+        <table>
+        <colgroup>
+        <col style="width: 38%" />
+        <col style="width: 61%" />
+        </colgroup>
+        <thead>
+        <tr>
+        <th>Variable</th>
+        <th>Wert</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td><span class="snip">postleitzahl</span></td>
+        <td><span class="snip">10629 </span></td>
+        </tr>
+        <tr>
+        <td><span class="snip">stadt</span></td>
+        <td><span class="snip">Berlin </span></td>
+        </tr>
+        <tr>
+        <td><span class="snip">wetter </span></td>
+        <td><span class="snip">regnerisch und kühl </span></td>
+        </tr>
+        <tr>
+        <td><span class="snip">hoehe_m </span></td>
+        <td><span class="snip">450 </span></td>
+        </tr>
+        <tr>
+        <td><span class="snip">sportart </span></td>
+        <td><span class="snip">Basketball </span></td>
+        </tr>
+        </tbody>
+        </table>
+        <p><br></p>
+        <p><strong>Aufgabe 17</strong> <br> Welche der folgenden
+        Variablennamen sind in Python erlaubt? <br> a) <span
+        class="snip">and</span> <br> b) <span
+        class="snip">Schüler</span> <br> c) <span
+        class="snip">Zeit</span> <br> d) <span class="snip">class</span>
+        <br> e) <span class="snip">URL</span> <br> f) <span
+        class="snip">print</span> <br> g) <span class="snip">town
+        name</span> <br> h) <span class="snip">global_index</span> <br>
+        i) <span class="snip">Wetter</span> <br> j) <span
+        class="snip">IN/OUT</span> <br></p>
+        <h2 id="datentypen">Datentypen</h2>
+        <hr />
+        <iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/1WqFJ5wsA4o?si=9RCQUiKh8X60EYNk">
+        </iframe>
+        <p><br></p>
+        <p>In Python gibt es verschiedene Datentypen, die bestimmen, wie
+        Daten behandelt werden. Wir haben bereits drei
+        kennengelernt.</p>
+        <p><br></p>
+        <p>String (Zeichenkette): Ein Text, der in Anführungszeichen
+        steht.</p>
+        <div class="sourceCode" id="cb27"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;Hallo, Welt!&quot;</span></span></code></pre></div>
+        <p><br></p>
+        <p>Integer (Ganzzahl): Eine Zahl ohne Dezimalstellen.</p>
+        <div class="sourceCode" id="cb28"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>zahl <span class="op">=</span> <span class="dv">42</span></span></code></pre></div>
+        <p><br></p>
+        <p>Float (Gleitkommazahl): Eine Zahl mit Dezimalstellen.</p>
+        <div class="sourceCode" id="cb29"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>pi <span class="op">=</span> <span class="fl">3.14</span></span></code></pre></div>
+        <p><br></p>
+        <p>Mit der <span class="snip">type()</span>-Funktion kannst du
+        herausfinden, welcher Datentyp ein Wert hat:</p>
+        <div class="sourceCode" id="cb30"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="st">&quot;Hallo Welt&quot;</span>))</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="dv">42</span>))</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(<span class="fl">3.14</span>))</span></code></pre></div>
-    <p><strong>Ausgabe im Terminal:</strong></p>
-    <pre class="nohighlight"><code>&lt;class &#39;str&#39;&gt;
+        <p><br></p>
+        <p>Ausgabe im Terminal:</p>
+        <pre class="nohighlight"><code>&lt;class &#39;str&#39;&gt;
 &lt;class &#39;int&#39;&gt;
 &lt;class &#39;float&#39;&gt;</code></pre>
-    <h2 id="aufgaben-5">Aufgaben</h2>
-    <ol start="18" type="1">
-    <li>Nenne den Datentyp der folgenden Werte.
-    <ul>
-    <li><code>45</code></li>
-    <li><code>20.00</code></li>
-    <li><code>"Oktober"</code></li>
-    <li><code>75.375</code></li>
-    <li><code>"PC"</code></li>
-    <li><code>"Klasse 9a"</code></li>
-    </ul></li>
-    </ol>
-    <div style="height:10px">
-
-    </div>
-    <ol start="19" type="1">
-    <li>Schreibe Python-Code, um den Datentyp der folgenden Werte
-    mithilfe der <code>type()</code>-Funktion herauszufinden und im
-    Terminal auszugeben:
-    <ul>
-    <li><code>99</code></li>
-    <li><code>30.6</code></li>
-    <li><code>"Stuttgart"</code></li>
-    <li><code>100.0</code></li>
-    </ul></li>
-    </ol>
-    <hr />
-    <h3 id="eingabe-von-werten-die-funktion-input-in-python">Eingabe von
-    Werten: Die Funktion
-    <code class="language-python" style="font-size:smaller;">
-    input()</code> in Python</h3>
-    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/I9h1c-121Uk?si=p55OkcqgbHFJ8xBE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-    </iframe>
-    <div style="height:10px">
-
-    </div>
-    <p>Manchmal möchtest du, dass der Benutzer deines Programms dir
-    Informationen gibt, wie z.B. seinen Namen, sein Alter oder seinen
-    Wohnort. Dafür kannst du die Funktion
-    <code class="language-python">input()</code> verwenden:</p>
-    <div class="sourceCode" id="cb32"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>wohnort <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Wo wohnst du? &quot;</span>)</span>
+        <p><br></p>
+        <p><strong>Aufgabe 18</strong> <br> Nenne den Datentyp der
+        folgenden Werte. <br> a) <span class="snip">45</span> <br> b)
+        <span class="snip">20.00</span> <br> c) <span
+        class="snip">"Oktober"</span> <br> d) <span
+        class="snip">75.375</span> <br> e) <span
+        class="snip">"PC"</span> <br> f) <span class="snip">"Klasse
+        9a"</span></p>
+        <p><br></p>
+        <p><strong>Aufgabe 19</strong> <br> Schreibe Python-Code, um den
+        Datentyp der folgenden Werte mithilfe der <span
+        class="snip">type()</span>-Funktion herauszufinden und im
+        Terminal auszugeben: <br> a) <span class="snip">99</span> <br>
+        b) <span class="snip">30.6</span> <br> c) <span
+        class="snip">"Stuttgart"</span> <br> d) <span
+        class="snip">100.0</span> <br></p>
+        <h2 id="die-input-funktion">Die <span class="snip">
+        input()</span>-Funktion</h2>
+        <hr>
+        <iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/I9h1c-121Uk?si=p55OkcqgbHFJ8xBE">
+        </iframe>
+        <p><br></p>
+        <p>Manchmal möchtest du, dass der Benutzer deines Programms dir
+        Informationen gibt, wie z.B. seinen Namen, sein Alter oder
+        seinen Wohnort. Dafür kannst du die <span class="snip">
+        input()</span>-Funktion verwenden:</p>
+        <div class="sourceCode" id="cb32"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>wohnort <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Wo wohnst du? &quot;</span>)</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(wohnort)</span></code></pre></div>
-    <p>Wenn das Programm ausgeführt wird, erscheint Folgendes im
-    Terminal:</p>
-    <pre class="nohighlight"><code>Wo wohnst du?</code></pre>
-    <p>Der Benutzer kann dann eine Eingabe machen. Sobald der Benutzer
-    die Enter-Taste drückt, wird die Eingabe in der Variable wohnort
-    gespeichert und anschließend mit print() ausgegeben.</p>
-    <p><strong>Beispielablauf:</strong></p>
-    <pre class="nohighlight"><code>Wo wohnst du? Berlin
+        <p><br></p>
+        <p>Wenn das Programm ausgeführt wird, erscheint Folgendes im
+        Terminal:</p>
+        <pre class="nohighlight"><code>Wo wohnst du?</code></pre>
+        <p><br></p>
+        <p>Der Benutzer kann dann eine Eingabe machen. Sobald der
+        Benutzer die Enter-Taste drückt, wird die Eingabe in der
+        Variable wohnort gespeichert und anschließend mit <span
+        class="snip"> print()</span> ausgegeben.</p>
+        <p><br></p>
+        <p>Beispielablauf:</p>
+        <pre class="nohighlight"><code>Wo wohnst du? Berlin
 Berlin</code></pre>
-    <p><strong>Erklärung:</strong> Das Programm zeigt dem Benutzer die
-    Frage „Wo wohnst du?“ im Terminal an und wartet auf eine Eingabe.
-    Alles, was der Benutzer eingibt (egal ob Text oder Zahlen), wird als
-    String in der Variable <code>wohnort</code> gespeichert und danach
-    mit der <code>print()</code>-Funktion im Terminal ausgegeben.</p>
-    <h2 id="aufgaben-6">Aufgaben</h2>
-    <ol start="20" type="1">
-    <li>Was wird im Terminal ausgegeben, wenn der Benutzer „Anna“
-    eingibt?</li>
-    </ol>
-    <div class="sourceCode" id="cb35"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>()</span>
+        <p><br></p>
+        <p>Erklärung: Das Programm zeigt dem Benutzer die Frage <span
+        class="snip">Wo wohnst du?</span> im Terminal an und wartet auf
+        eine Eingabe. Alles, was der Benutzer eingibt (egal ob Text oder
+        Zahlen), wird als String in der Variable <span class="snip">
+        wohnort </span> gespeichert und danach mit der <span
+        class="snip"> print()</span>-Funktion im Terminal
+        ausgegeben.</p>
+        <p><br></p>
+        <p><strong>Aufgabe 20</strong> <br> Was wird im Terminal
+        ausgegeben, wenn der Benutzer <span class="snip"> Anna</span>
+        eingibt?</p>
+        <div class="sourceCode" id="cb35"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>()</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Hallo, &quot;</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">&quot;!&quot;</span>)</span></code></pre></div>
-    <ol start="21" type="1">
-    <li>Erkläre, was das Programm macht und was passiert, wenn der
-    Benutzer „Berlin“ eingibt.</li>
-    </ol>
-    <div class="sourceCode" id="cb36"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>stadt <span class="op">=</span> <span class="bu">input</span>()</span>
+        <p><br></p>
+        <p><strong>Aufgabe 21</strong> <br> Erkläre, was das Programm
+        macht und was passiert, wenn der Benutzer <span class="snip">
+        Berlin</span> eingibt.</p>
+        <div class="sourceCode" id="cb36"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>stadt <span class="op">=</span> <span class="bu">input</span>()</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Du wohnst in &quot;</span> <span class="op">+</span> stadt)</span></code></pre></div>
-    <ol start="22" type="1">
-    <li><p>Schreibe ein Programm, das den Benutzer nach einem Tier fragt
-    und die Eingabe direkt auf dem Bildschirm ausgibt. Verwende einen
-    passenden Text innerhalb von input() wie „Welches ist dein
-    Lieblingstier?“</p></li>
-    <li><p>Schreibe ein Programm, das den Benutzer nach seinem
-    Geburtsort fragt und die Eingabe direkt auf dem Bildschirm ausgibt.
-    Füge der Eingabeaufforderung den Text „Wo bist du geboren?“
-    hinzu.</p></li>
-    <li><p>Frage den Benutzer nach den Nachbarländern Deutschlands im
-    Norden, Westen, Süden und Osten. Verwende passende Texte wie
-    „Welches Land liegt im Norden von Deutschland?“ und gib anschließend
-    alle Antworten aus.</p></li>
-    </ol>
-    <div class="sourceCode" id="cb37"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>norden <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Welches Land liegt im Norden von Deutschland? &quot;</span>)</span>
+        <p><br></p>
+        <p><strong>Aufgabe 22</strong> <br> Schreibe ein Programm, das
+        den Benutzer nach einem Tier fragt und die Eingabe direkt im
+        Terminal ausgibt. Verwende einen passenden Text innerhalb von
+        <span class="snip"> input()</span>, wie <span
+        class="snip">"Welches ist dein Lieblingstier?"</span>.</p>
+        <p><br></p>
+        <p><strong>Aufgabe 23</strong> <br> Schreibe ein Programm, das
+        den Benutzer nach seinem Geburtsort fragt und die Eingabe direkt
+        im Terminal ausgibt. Verwende einen passenden Text innerhalb von
+        <span class="snip"> input()</span>, wie <span class="snip">"Wo
+        bist du geboren?"</span>.</p>
+        <p><br></p>
+        <p><strong>Aufgabe 24</strong> <br> Frage den Benutzer nach den
+        Nachbarländern Deutschlands im Norden, Westen, Süden und Osten.
+        Verwende passende Texte wie <span class="snip">"Welches Land
+        liegt im Norden von Deutschland?"</span> und gib anschließend
+        alle Antworten aus.</p>
+        <div class="sourceCode" id="cb37"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>norden <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Welches Land liegt im Norden von Deutschland? &quot;</span>)</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Schreibe hier den restlichen Code für die anderen Richtungen</span></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(norden)</span>
 <span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Füge hier die Ausgaben für die anderen Länder ein</span></span></code></pre></div>
-    <ol start="25" type="1">
-    <li><p>Frage den Benutzer nach einer Zahl und gib die Eingabe im
-    Terminal aus.</p></li>
-    <li><p>Schreibe ein Programm, das den Benutzer nach seinem Vor- und
-    Nachnamen, seinem Alter und seinem Lieblingsessen fragt. Das
-    Programm soll dann eine vollständige, personalisierte Ausgabe
-    erzeugen, die alle diese Informationen kombiniert.</p></li>
-    </ol>
-    <ul>
-    <li><p>Verwende die <code>input()</code>-Funktion für alle Eingaben
-    (Vorname, Nachname, Alter, Lieblingsessen).</p></li>
-    <li><p>Verwende die <code>print()</code>-Funktion mit dem
-    <code class="language-python">+</code> Operator, um alle
-    Informationen zu einem vollständigen Satz zu verknüpfen.</p></li>
-    <li><p>Achte darauf, dass das Programm korrekt mit Leerzeichen
-    arbeitet, um eine gut lesbare Ausgabe zu erzeugen.</p></li>
-    </ul>
-    <p><strong>Beispiel für die Ausgabe:</strong></p>
-    <pre class="nohighlight"><code>   Hallo Max Mustermann, du bist 25 Jahre alt und dein Lieblingsessen ist Pizza.</code></pre>
-    <hr />
-    <h3 id="datentypen-umwandeln">Datentypen umwandeln</h3>
-    <p>In Python müssen Daten manchmal von einem Typ in einen anderen
-    umgewandelt werden. Zum Beispiel möchtest du vielleicht eine Zahl in
-    einen Text (String) umwandeln oder einen Text, der eine Zahl
-    darstellt, in eine Ganzzahl konvertieren. Dafür stehen in Python
-    spezielle Funktionen zur Verfügung:</p>
-    <p><code>str()</code> wandelt eine Zahl in einen Text (String)
-    um.</p>
-    <div class="sourceCode" id="cb39"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>zahl <span class="op">=</span> <span class="dv">42</span></span>
+        <p><br></p>
+        <p><strong>Aufgabe 25</strong> <br> Frage den Benutzer nach
+        einer Zahl und gib die Eingabe im Terminal aus. Verwende dabei
+        einen passenden Text.</p>
+        <p><br></p>
+        <p><strong>Aufgabe 26</strong> <br> Schreibe ein Programm, das
+        den Benutzer nach seinem Vor- und Nachnamen, seinem Alter und
+        seinem Lieblingsessen fragt. Das Programm soll dann eine
+        vollständige, personalisierte Ausgabe erzeugen, die alle diese
+        Informationen kombiniert. <br> a) Verwende die <span
+        class="snip"> input()</span>-Funktion für alle Eingaben
+        (Vorname, Nachname, Alter, Lieblingsessen). <br> b) Verwende die
+        <span class="snip"> print()</span>-Funktion mit dem <span
+        class="snip">+</span> Operator, um alle Informationen zu einem
+        vollständigen Satz zu verknüpfen. <br> c) Achte darauf, dass das
+        Programm korrekt mit Leerzeichen arbeitet, um eine gut lesbare
+        Ausgabe zu erzeugen. <br> Beispiel für die Ausgabe:</p>
+        <pre class="nohighlight"><code>Hallo Max Mustermann, du bist 25 Jahre alt und dein Lieblingsessen ist Pizza.</code></pre>
+        <h2 id="datentypen-umwandeln">Datentypen umwandeln</h2>
+        <hr>
+        <p>In Python müssen Daten manchmal von einem Typ in einen
+        anderen umgewandelt werden. Zum Beispiel möchtest du vielleicht
+        eine Zahl in einen Text (String) umwandeln oder einen Text, der
+        eine Zahl darstellt, in eine Ganzzahl konvertieren.</p>
+        <p><br></p>
+        <p>Dafür stehen in Python spezielle Funktionen zur
+        Verfügung:</p>
+        <p><br></p>
+        <p>Die <span class="snip"> str()</span>-Funktion wandelt eine
+        Zahl in einen Text (String) um.</p>
+        <div class="sourceCode" id="cb39"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>zahl <span class="op">=</span> <span class="dv">42</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="bu">str</span>(zahl)</span></code></pre></div>
-    <p><code>int()</code> wandelt einen Text, der nur aus einer Zahl
-    besteht, in eine Ganzzahl um. <strong>Achtung:</strong> Der Text
-    muss vollständig eine Zahl sein, sonst tritt ein Fehler auf.</p>
-    <div class="sourceCode" id="cb40"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;123&quot;</span></span>
+        <p><br></p>
+        <p>Die <span class="snip">int()</span>-Funktion wandelt einen
+        Text, der nur aus einer Zahl besteht, in eine Ganzzahl um.
+        <b>Achtung:</b> Der Text muss vollständig eine Zahl sein, sonst
+        tritt ein Fehler auf.</p>
+        <div class="sourceCode" id="cb40"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;123&quot;</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>zahl <span class="op">=</span> <span class="bu">int</span>(text)</span></code></pre></div>
-    <p><code class="language-python">float()</code> wandelt einen Text
-    oder eine Ganzzahl in eine Gleitkommazahl (float) um. Dies ist
-    nützlich, wenn du mit Dezimalzahlen arbeiten möchtest.</p>
-    <div class="sourceCode" id="cb41"><pre
-    class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;3.14&quot;</span></span>
+        <p><br></p>
+        <p>Die <span class="snip">float()</span>-Funktion wandelt einen
+        Text oder eine Ganzzahl in eine Gleitkommazahl (float) um. Dies
+        ist nützlich, wenn du mit Dezimalzahlen arbeiten möchtest.</p>
+        <div class="sourceCode" id="cb41"><pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">&quot;3.14&quot;</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>zahl <span class="op">=</span> <span class="bu">float</span>(text)</span></code></pre></div>
-    <h2 id="aufgaben-7">Aufgaben</h2>
-    <ol start="27" type="1">
-    <li>Überlege dir bei den folgenden Codezeilen, welche Ausgabe
-    erscheinen wird. Führe die Zeilen dann aus, um deine Vermutung zu
-    überprüfen:</li>
-    </ol>
-    <ul>
-    <li><code class="language-python">print(int(15.9))</code></li>
-    <li><code class="language-python">print(float(“20”))</code></li>
-    <li><code class="language-python">print(str(55.5))</code></li>
-    <li><code class="language-python">print(int(0.999))</code></li>
-    <li><code class="language-python">print(float(99))</code></li>
-    </ul>
-    <div style="height:10px">
+        <p><br></p>
+        <p><strong>Aufgabe 27</strong> <br> Überlege dir bei den
+        folgenden Codezeilen, welche Ausgabe erscheinen wird. Führe die
+        Zeilen dann aus, um deine Vermutung zu überprüfen: <br> a) <span
+        class="snip">print(int(15.9))</span> <br> b) <span
+        class="snip">print(float(“20”))</span> <br> c) <span
+        class="snip">print(str(55.5))</span> <br> d) <span
+        class="snip">print(int(0.999))</span> <br> e) <span
+        class="snip">print(float(99))</span> <br></p>
+        <p><br></p>
+        <p><strong>Aufgabe 28</strong> <br> Schreibe ein
+        Python-Programm, das folgende Werte in den angegebenen Datentyp
+        umwandelt und anschließend die Ergebnisse ausgibt:</p>
+        <table>
+        <thead>
+        <tr>
+        <th>Wert</th>
+        <th>umzuwandeln in Datentyp</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td><span class="snip">"90"</span></td>
+        <td>Ganzzahl</td>
+        </tr>
+        <tr>
+        <td><span class="snip">100 </span></td>
+        <td>Gleitkommazahl</td>
+        </tr>
+        <tr>
+        <td><span class="snip">30.9 </span></td>
+        <td>Ganzzahl</td>
+        </tr>
+        <tr>
+        <td><span class="snip">60.33 </span></td>
+        <td>Zeichenkette</td>
+        </tr>
+        <tr>
+        <td><span class="snip">"0.25"</span></td>
+        <td>Gleitkommazahl</td>
+        </tr>
+        <tr>
+        <td><span class="snip">2 </span></td>
+        <td>Zeichenkette</td>
+        </tr>
+        </tbody>
+        </table>
+        <p><br></p>
+        <hr />
 
-    </div>
-    <ol start="28" type="1">
-    <li>Schreibe ein Python-Programm, das folgende Werte in den
-    angegebenen Datentyp umwandelt und anschließend die Ergebnisse
-    ausgibt:</li>
-    </ol>
-    <table>
-    <thead>
-    <tr>
-    <th>Wert</th>
-    <th>umzuwandeln in Datentyp</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td>"90"</td>
-    <td>Ganzzahl</td>
-    </tr>
-    <tr>
-    <td>100</td>
-    <td>Gleitkommazahl</td>
-    </tr>
-    <tr>
-    <td>30.9</td>
-    <td>Ganzzahl</td>
-    </tr>
-    <tr>
-    <td>60.33</td>
-    <td>Zeichenkette</td>
-    </tr>
-    <tr>
-    <td>"0.25"</td>
-    <td>Gleitkommazahl</td>
-    </tr>
-    <tr>
-    <td>2</td>
-    <td>Zeichenkette</td>
-    </tr>
-    </tbody>
-    </table>
-    <hr />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>
+            document.querySelectorAll("pre:not(.nohighlight) code, code:not(.nohighlight)").forEach((block) => {
+                hljs.highlightElement(block);
+            });
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-    <script>
-        document.querySelectorAll('pre:not(.nohighlight) code, code:not(.nohighlight)').forEach((block) => {
-            hljs.highlightElement(block);
-        });
-    </script>
-</body>
-
+            // Disable right-click context menu document.addEventListener('contextmenu', event => event.preventDefault());
+        </script>
+    </body>
 </html>
