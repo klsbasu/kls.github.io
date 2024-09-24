@@ -155,36 +155,43 @@
                 list-style-type: disc !important; /* Force disc marker for all list items */
             }
 
-            table {
-                border-spacing: 0;
-                border-collapse: collapse;
-                width: auto;
-            }
+/* Add this style to wrap the table and allow horizontal scrolling */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
 
-            table th,
-            table td {
-                padding: 6px 8px;
-                vertical-align: top;
-                white-space: nowrap;
-            }
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: auto; /* Ensure the table takes up the full width of its container */
+    max-width: 100%; /* Prevent the table from exceeding the container's width */
+    overflow-x: auto;
+    table-layout: fixed; /* Helps with responsiveness */
+}
 
-            table th {
-                background: #ddd;
-                font-weight: 900;
-                text-align: left;
-                white-space: nowrap;
-            }
+table th,
+table td {
+    padding: 6px 8px;
+    vertical-align: top;
+    white-space: nowrap;
+    word-wrap: break-word; /* Break long words to prevent overflow */
+}
 
-            table tbody tr:nth-child(odd) {
-                background: white;
-            }
+table th {
+    background: #ddd;
+    font-weight: 900;
+    text-align: left;
+}
 
-            table,
-            th,
-            td {
-                border: 1px solid black;
-                border-collapse: collapse;
-            }
+table tbody tr:nth-child(odd) {
+    background: white;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
         </style>
     </head>
 
@@ -359,6 +366,7 @@ Ich verstehe nur Bahnhof!</code></pre>
         ebenfalls eine Division ausgeführt, jedoch gibt er nur den Rest
         der Division zurück.</p>
         <p><br></p>
+        <div class="table-container">
         <table>
         <colgroup>
         <col style="width: 36%" />
@@ -426,6 +434,7 @@ Ich verstehe nur Bahnhof!</code></pre>
         </tr>
         </tbody>
         </table>
+        </div>
         <p><br></p>
         <p><strong>Aufgabe 6</strong> <br> Führe die folgenden Befehle
         einzeln aus. Welche Ausgaben erscheinen im Terminal? <br> a)
@@ -616,10 +625,11 @@ Hallo Welt</code></pre>
         class="snip">print()</span>-Funktion, um beide Variablen im
         Terminal auszugeben.</p>
         <p><br></p>
-        <p><strong>Aufgabe 16</strong> <br> Weise den folgenden
-        Variablen die entsprechenden Werte zu und gib sie mit der <span
+        <strong>Aufgabe 16</strong> <br> Weise den folgenden Variablen
+        die entsprechenden Werte zu und gib sie mit der <span
         class="snip">print()</span>-Funktion aus. Achte darauf, ob der
-        Wert in Anführungszeichen gesetzt werden muss oder nicht:</p>
+        Wert in Anführungszeichen gesetzt werden muss oder nicht:
+        <div class="table-container">
         <table>
         <colgroup>
         <col style="width: 38%" />
@@ -654,6 +664,7 @@ Hallo Welt</code></pre>
         </tr>
         </tbody>
         </table>
+        </div>
         <p><br></p>
         <p><strong>Aufgabe 17</strong> <br> Welche der folgenden
         Variablennamen sind in Python erlaubt? <br> a) <span
@@ -844,9 +855,10 @@ Berlin</code></pre>
         class="snip">print(int(0.999))</span> <br> e) <span
         class="snip">print(float(99))</span> <br></p>
         <p><br></p>
-        <p><strong>Aufgabe 28</strong> <br> Schreibe ein
-        Python-Programm, das folgende Werte in den angegebenen Datentyp
-        umwandelt und anschließend die Ergebnisse ausgibt:</p>
+        <strong>Aufgabe 28</strong> <br> Schreibe ein Python-Programm,
+        das folgende Werte in den angegebenen Datentyp umwandelt und
+        anschließend die Ergebnisse ausgibt:
+        <div class="table-container">
         <table>
         <thead>
         <tr>
@@ -881,6 +893,7 @@ Berlin</code></pre>
         </tr>
         </tbody>
         </table>
+        </div>
         <p><br></p>
         <hr />
 
