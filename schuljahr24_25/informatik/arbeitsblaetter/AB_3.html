@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AB 3</title>
+
+    <!--  <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/stackoverflow-light.min.css" />
+    <style>
+        body,
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        pre,
+        code,
+        ul,
+        table {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .copyable {
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .copy-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        
+        .copy-btn:hover {
+            background-color: #45a049;
+        }
+
+        @font-face {
+            font-family: "Josefin Sans";
+            font-style: normal;
+            font-weight: 400;
+            src: url(https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjQbMZhKg.ttf) format("truetype");
+        }
+
+        @font-face {
+            font-family: "Josefin Sans";
+            font-style: normal;
+            font-weight: 700;
+            src: url(https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_N_XbMZhKg.ttf) format("truetype");
+        }
+
+        html {
+            height: 100%;
+            background-color: #eee;
+        }
+
+        body {
+            box-sizing: border-box;
+            min-height: 100%;
+            margin: auto;
+            padding-left: 2em;
+            padding-right: 2em;
+            padding-top: 2em;
+            padding-bottom: 2em;
+            max-width: 800px;
+            font-family: "Times New Roman", Times, serif;
+            /* font-family: 'Josefin Sans', sans-serif; */
+            font-size: 0.9em;
+            background-color: white;
+            border: double 3px #ddd;
+            border-top: none;
+            border-bottom: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-top: 0;
+            margin-bottom: 2px;
+        }
+
+        h3 {
+            font-size: 1.2em;
+        }
+
+        h4 {
+            font-size: 1em;
+        }
+
+        strong {
+            color: purple;
+            margin-bottom: 2px;
+        }
+
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: blue;
+        }
+
+        a:hover {
+            color: blue;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: #0000ff;
+        }
+
+        body h2 {
+            margin-top: 14px;
+        }
+
+        body h3 {
+            margin-top: 14px;
+        }
+
+        body p {
+            margin-top: 0px !important;
+            margin-bottom: 0px !important;
+            width: 100vh !;
+        }
+
+        pre,
+        code {
+            background-color: #f6f6f6 !important;
+            font-size: 14px !important;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-weight: 550;
+            /*   color: white !important; */
+            padding-left: 30px !important;
+            /* Increase padding for more indentation */
+            margin-left: 0px !important;
+            margin-top: 2px;
+            padding: 2px !important;
+            border-radius: 0px !important;
+            font-family: "Consolas", "Courier New", monospace;
+            width: 100% !important;
+            overflow: hidden;
+            line-height: 1em !important;
+        }
+
+        pre.nohighlight {
+            /* border: 1px solid #ddd; */
+            line-height: 1.3em !important;
+            overflow-x: auto !important;
+            white-space: pre !important;
+        }
+
+        pre.nohighlight code {
+            padding-left: 0 !important;
+        }
+
+        .snip {
+            font-family: Menlo, monospace;
+            font-size: 0.75em;
+        }
+
+        ul {
+            padding-left: 13px !important;
+            /* Slight increase for better readability */
+            list-style-type: disc !important;
+        }
+
+        ul ul {
+            list-style-type: disc !important;
+            /* Ensure nested lists also use disc markers */
+        }
+
+        ul li::marker {
+            list-style-type: disc !important;
+            /* Force disc marker for all list items */
+        }
+
+        /* Add this style to wrap the table and allow horizontal scrolling */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+            width: auto;
+            /* Ensure the table takes up the full width of its container */
+            max-width: 100%;
+            /* Prevent the table from exceeding the container's width */
+            overflow-x: auto;
+            table-layout: fixed;
+            /* Helps with responsiveness */
+        }
+
+        table th,
+        table td {
+            padding: 6px 8px;
+            vertical-align: top;
+            white-space: nowrap;
+            word-wrap: break-word;
+            /* Break long words to prevent overflow */
+        }
+
+        table th {
+            background: #ddd;
+            font-weight: 900;
+            text-align: left;
+        }
+
+        table tbody tr:nth-child(odd) {
+            background: white;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body class="markdown-body">
+    <h1 id="ab-3-programmierung-mit-python"><strong>AB 3 Programmierung
+    mit Python</strong></h1>
+    <hr />
+    <h2 id="bedingte-anweisungen-und-verzweigungen">Bedingte Anweisungen
+    und Verzweigungen</h2>
+    <hr />
+    <p>Schau dir dieses
+    <a href="https://app.meinunterricht.de/dokument-schueleransicht/7ccb56d3511b5ca1b85829af957ec306" target="_blank">Video</a>
+    an. Es hilft dir, ins Thema einzusteigen.</p>
+    <h2 id="if-anweisung"><span class="snip">if</span>-Anweisung</h2>
+    <hr />
+    <p>In vielen Situationen reicht es nicht aus, dass ein Programm
+    einfach nur Daten verarbeitet oder ausgibt. Manchmal soll es
+    Entscheidungen treffen, je nachdem, was eingegeben oder berechnet
+    wurde.</p>
+    <p><br></p>
+    <p><b>Beispiel:</b> <br> Lisa hat ihren Computer so programmiert,
+    dass er sie erkennt und begrüßt, wenn sie sich als Lisa vorstellt.
+    Alle anderen Personen gehen leer aus. Wie funktioniert das? Bei
+    <span class="snip">if</span> prüft der Computer die Bedingung, ob
+    der Wert der Variable <span class="snip">name</span> gleich <span
+    class="snip">"Lisa"</span> ist. Nur wenn das der Fall ist, führt er
+    den eingerückten Code darunter aus und schreibt die Begrüßung
+    hin.</p>
+    <div class="sourceCode" id="cb1"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Wie ist dein Name? &quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> name <span class="op">==</span> <span class="st">&quot;Lisa&quot;</span>: </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hallo, Lisa!&quot;</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Schön, dass du da bist.&quot;</span>)</span></code></pre></div>
+    <p><br></p>
+    <p>Python nutzt <b>Einrückungen</b> (Leerzeichen am Anfang einer
+    Zeile), um den Gültigkeitsbereich im Code zu definieren. Andere
+    Programmiersprachen verwenden oft geschweifte Klammern <span
+    class="snip">{}</span> für diesen Zweck.</p>
+    <p><br></p>
+    <p><b style="color:#B22222;"><span class="snip">if</span>-Anweisung
+    ohne Einrückung führt zu einem Fehler: </b></p>
+    <div class="sourceCode" id="cb2"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Wie ist dein Name? &quot;</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> name <span class="op">==</span> <span class="st">&quot;Lisa&quot;</span>: </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Hallo, Lisa!&quot;</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Schön, dass du da bist.&quot;</span>)</span></code></pre></div>
+    <p><br></p>
+    <p>Probiere das Beispiel aus. Schreibe dein eigenes
+    Begrüßungsprogramm. Denke daran, dass für den Vergleich nach <span
+    class="snip">if</span> unbedingt das doppelte Gleichheitszeichen
+    <span class="snip">==</span> erforderlich ist, um den richtigen
+    Vergleich durchzuführen.</p>
+    <p><br></p>
+    <p><b>Beispiel</b> <br> Neben Lisa verwendet auch ihr Bruder Fred
+    den Computer. Das Programm soll also nicht nur Lisa, sondern auch
+    Fred begrüßen. Damit sieht das Programm so aus:</p>
+    <div class="sourceCode" id="cb3"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Wie ist dein Name? &quot;</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> name <span class="op">==</span> <span class="st">&quot;Lisa&quot;</span>:</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hallo Lisa!&quot;</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Schön, dass du da bist.&quot;</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> name <span class="op">==</span> <span class="st">&quot;Fred&quot;</span>:</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hallo Fred,&quot;</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Willkommen zurück!&quot;</span>)</span></code></pre></div>
+    <p><br></p>
+    <p>Erklärung: Zuerst fragt der Computer mit <span
+    class="snip">input</span> nach dem Namen und speichert die Antwort
+    in der Variable <span class="snip">name</span>. Dann prüft er, ob
+    der Name <span class="snip">"Lisa"</span> ist. Wenn das nicht der
+    Fall ist, überspringt der Computer alles, was unter <span
+    class="snip">if name == "Lisa":</span> eingerückt steht. Als
+    Nächstes prüft der Computer, ob der eingegebene Name <span
+    class="snip">"Fred"</span> ist. Wenn ja, begrüßt er Fred. Ansonsten
+    überspringt er wieder alles, was eingerückt ist.</p>
+    <p><br></p>
+    <div style="border: solid 1px black; padding: 6px 6px 0 6px;;">
+    <p><b style="color: #B22222">Behalte die folgenden Konzepte und
+    Befehle im Hinterkopf, um die Aufgaben erfolgreich zu lösen:</b></p>
+    <p><br></p>
+    <p><b><span class="snip">if Bedingung:</span></b> <br> Nach <span
+    class="snip">if</span> gibst du in der Bedingung an, was der
+    Computer prüfen soll. Zum Beispiel prüft <span class="snip">if x
+    &lt; 5</span>, ob der Wert von <span class="snip">x</span> kleiner
+    ist als <span class="snip">5</span>. <span class="snip">if y &gt;=
+    7</span> prüft, ob der Wert von <span class="snip">y</span> größer
+    oder gleich <span class="snip">7</span> ist. Nach der Bedingung
+    steht immer ein Doppelpunkt. Darunter steht eingerückt, was der
+    Computer tun soll, wenn die Bedingung erfüllt ist. Wenn die
+    Bedingung nicht erfüllt ist, dann überspringt der Computer alle
+    eingerückten Zeilen.</p>
+    <p><br></p>
+    <p><b><span class="snip">if Variable == Wert </span></b> <br> Wenn
+    du in einem Vergleich prüfen möchtest, ob eine Variable einen
+    bestimmten Wert hat, musst du ein doppeltes Gleichheitszeichen
+    verwenden. Wenn der Wert ein Text ist, dann muss der Text in
+    Anführungszeichen stehen. Wenn der Wert eine Zahl ist, dürfen keine
+    Anführungszeichen stehen.</p>
+    <p><br> <b><span class="snip">if Variable != Wert</span></b> <br>
+    Wenn du prüfen möchtest, ob der Wert einer Variable von einem
+    bestimmten Wert verschieden ist, dann verwendest du statt <span
+    class="snip">==</span> die zwei Zeichen <span
+    class="snip">!=</span>. Sie stehen für “ungleich”.</p>
+    <p><br></p>
+    <p>Zusammengefasst unterstützt Python die folgenden logischen
+    Bedingungen:</p>
+    <ul>
+    <li>Gleich: <span class="snip"> == </span></li>
+    <li>Ungleich</b>: <span class="snip"> != </span></li>
+    <li>Kleiner als: <span class="snip"> &lt; </span></li>
+    <li>Kleiner oder gleich: <span class="snip"> &lt;= </span></li>
+    <li>Größer als: <span class="snip"> &gt; </span></li>
+    <li>Größer oder gleich: <span class="snip"> &gt;= </span></li>
+    </ul>
+    </div>
+    <p><br></p>
+    <p><strong>Aufgabe 1</strong> <br> Schreibe ein Programm, das den
+    Benutzer zuerst fragt, wie es ihm geht. Wenn der Benutzer <span
+    class="snip">"gut"</span> eingibt, antwortet das Programm mit <span
+    class="snip">"Das freut mich"</span>. Wenn der Benutzer <span
+    class="snip">"schlecht" </span> eingibt, dann antwortet das Programm
+    mit <span class="snip">"Das tut mir leid"</span>.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 2</strong> <br> Schreibe ein Programm, das den
+    Benutzer nach der Temperatur in Grad Celsius fragt. Liegt die
+    Temperatur über 30 Grad, soll das Programm <span class="snip">"Es
+    ist heiß"</span> ausgegeben. <br> Achtung: Verwende <span
+    class="snip">int()</span> oder <span class="snip">float()</span>, um
+    die Benutzereingabe in eine Zahl umzuwandeln.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 3</strong> <br> Schreibe ein Programm, das den
+    Benutzer nach einem Passwort fragt und überprüft, ob das eingegebene
+    Passwort <span class="snip">"python123"</span> ist. Wenn das
+    Passwort korrekt ist, soll <span class="snip">"Zugang
+    erlaubt"</span> ausgegeben werden.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 4</strong> <br> Schreibe ein Programm, das eine
+    Variable <span class="snip">note</span> definiert und ihr einen Wert
+    zwischen <span class="snip">1</span> und <span class="snip">6</span>
+    zuweist. Überprüfe den Wert der Variablen und gib <span
+    class="snip">"Sehr gut"</span> aus, wenn <span
+    class="snip">note</span> den Wert <span class="snip">1</span>
+    hat.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 5</strong> <br> Erkläre, warum der folgende Code
+    nicht richtig funktioniert:</p>
+    <div class="sourceCode" id="cb4"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>preis <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> preis <span class="op">&gt;</span> <span class="st">&quot;20&quot;</span>:</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Zu teuer.&quot;</span>)</span></code></pre></div>
+    <p><br></p>
+    <h2 id="if-else-anweisungen"><span class="snip">if</span>-<span
+    class="snip">else</span>-Anweisungen</h2>
+    <hr />
+    <p>Die <span class="snip">if</span>-Anweisung führt Befehle nur aus,
+    wenn die Bedingung erfüllt ist. Mit <span class="snip">else</span>
+    legst du fest, welche Anweisungen der Computer ausführen soll, wenn
+    die Bedingung <b>nicht</b> erfüllt ist. So kannst du zwei
+    unterschiedliche Abläufe im Programm festlegen – je nachdem, ob die
+    Bedingung wahr oder falsch ist.</p>
+    <p><br></p>
+    <p><b>Beispiel</b> <br> Der folgende Code ähnelt dem vorgezeigten
+    Beispiel im Abschnitt <span class="snip">if</span>-Anweisung.
+    Anstatt mit if <span class="snip">name != "Lisa":</span> zu prüfen,
+    ob der Name nicht Lisa ist, sagen wir dem Computer mit <span
+    class="snip">else</span> direkt, was er tun soll, wenn die Bedingung
+    <span class="snip">name == "Lisa"</span> nicht erfüllt ist.</p>
+    <div class="sourceCode" id="cb5"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Wie ist dein Name? &quot;</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> name <span class="op">==</span> <span class="st">&quot;Lisa&quot;</span>:</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hallo Lisa!&quot;</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Schön, dass du da bist.&quot;</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Dich kenne ich nicht.&quot;</span>)</span></code></pre></div>
+    <p><br></p>
+    <p>Bei einer <span class="snip">if</span>-<span
+    class="snip">else</span>-Anweisung wählt der Computer zwischen zwei
+    Alternativen. Wenn die Bedingung hinter <span class="snip">if</span>
+    erfüllt ist, führt er die Befehle der <span
+    class="snip">if</span>-Anweisung aus. Andernfalls die der <span
+    class="snip">else</span>-Anweisung.</p>
+    <p><br></p>
+    <p><b>Noch ein Beispiel:</b> <br></p>
+    <div class="sourceCode" id="cb6"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">&quot;Gib eine Zahl ein: &quot;</span>))</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(x, <span class="st">&quot;ist positiv&quot;</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(x, <span class="st">&quot;ist nicht positiv&quot;</span>)</span></code></pre></div>
+    <p><br> Erklärung: In diesem Programm wird der Benutzer
+    aufgefordert, eine Zahl einzugeben, die in der Variable <span
+    class="snip">x</span> mithilfe der <span
+    class="snip">float()</span>-Funktion als Dezimalzahl gespeichert
+    wird. Das Programm prüft mit der <span
+    class="snip">if</span>-Anweisung, ob die Zahl größer als <span
+    class="snip">0</span> ist. Wenn das der Fall ist, wird im Terminal
+    ausgegeben, dass die Zahl positiv ist. Wenn die Bedingung nicht
+    erfüllt wird (also die Zahl kleiner oder gleich <span
+    class="snip">0</span> ist), greift die <span
+    class="snip">else</span>-Anweisung, und das Programm gibt aus, dass
+    die Zahl nicht positiv ist.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 6</strong> <br> Schreibe ein Programm, das den
+    Benutzer nach seinem Alter fragt. Wenn das eingegebene Alter 18
+    Jahre oder älter ist, soll <span class="snip">"Du bist
+    volljährig"</span> ausgegeben werden. Andernfalls soll <span
+    class="snip">"Du bist noch nicht volljährig"</span> ausgegeben
+    werden.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 7</strong> <br> Schreibe ein Programm, das den
+    Benutzer nach der Hauptstadt von Deutschland fragt. Wenn der
+    Benutzer die richtige Antwort gibt, soll das Programm <span
+    class="snip">"Gut gemacht"</span> ausgeben. Andernfalls soll <span
+    class="snip">"Das ist nicht korrekt"</span> ausgegeben werden.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 8</strong> <br> Der folgende Code funktioniert
+    nicht wie erwartet, wenn das Budget kleiner als der Preis ist.
+    Erkläre das Problem: <br></p>
+    <div class="sourceCode" id="cb7"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>budget <span class="op">=</span> <span class="dv">10000</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>preis <span class="op">=</span> <span class="dv">15000</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> preis <span class="op">&gt;=</span> budget:</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Du kannst dir das Auto leisten.&quot;</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Das Auto ist zu teuer.&quot;</span>)</span></code></pre></div>
+    <p><br></p>
+    <h2 id="die-if-elif-else-kette">Die <span
+    class="snip">if</span>-<span class="snip">elif</span>-<span
+    class="snip">else</span>-Kette</h2>
+    <hr />
+    <p>In vielen Situationen reicht es nicht aus, nur zwischen zwei
+    Möglichkeiten zu entscheiden. Oft gibt es mehrere Bedingungen, die
+    ein Programm berücksichtigen muss. Hier kommt die <span
+    class="snip">if</span>-<span class="snip">elif</span>-<span
+    class="snip">else</span>-Struktur ins Spiel. Sie ermöglicht es dem
+    Computer, verschiedene Bedingungen der Reihe nach zu prüfen. Sobald
+    eine Bedingung erfüllt ist, wird der zugehörige Code ausgeführt, und
+    alle weiteren Bedingungen werden ignoriert.</p>
+    <p><br></p>
+    <b>Beispiel:</b><br> In einem Freizeitpark sind die Eintrittspreise
+    je nach Alter unterschiedlich:
+    <ul style="margin-top:2px;">
+    <li>
+    Unter <span class="snip">4</span> Jahren: Eintritt frei
+    </li>
+    <li>
+    Zwischen <span class="snip">4</span> und <span
+    class="snip">17</span> Jahren: <span class="snip">25€</span>
+    </li>
+    <li>
+    Ab <span class="snip">18</span> Jahren: <span
+    class="snip">40€</span>
+    </li>
+    </ul>
+    <p>Der folgende Code prüft, welche Altersgruppe zutrifft, und gibt
+    den entsprechenden Eintrittspreis aus:</p>
+    <div class="sourceCode" id="cb8"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>alter <span class="op">=</span> <span class="dv">12</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> alter <span class="op">&lt;</span> <span class="dv">4</span>:</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Der Eintritt ist kostenlos.&quot;</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> alter <span class="op">&lt;</span> <span class="dv">18</span>:</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Der Eintritt kostet 25€.&quot;</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Der Eintritt kostet 40€.&quot;</span>)</span></code></pre></div>
+    <p><br></p>
+    <p>Erklärung: Python prüft zuerst, ob die Person jünger als <span
+    class="snip">4</span> Jahre ist. Falls nicht, wird die nächste
+    Bedingung (unter <span class="snip">18</span> Jahren) geprüft. Wenn
+    auch diese Bedingung nicht zutrifft, wird der Code im <span
+    class="snip">else</span>-Block ausgeführt.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 9</strong> <br> Schreibe ein Programm, das eine
+    Variable <span class="snip">temperatur</span> definiert und ihr
+    einen beliebigen Wert zuweist. Überprüfe den Wert der Variable: Wenn
+    die <span class="snip">temperatur</span> über 30 Grad liegt, soll
+    <span class="snip">"Es ist sehr heiß"</span> ausgegeben werden, bei
+    einer Temperatur unter 10 Grad soll <span class="snip">"Es ist sehr
+    kalt"</span> erscheinen, und in allen anderen Fällen soll <span
+    class="snip">"Es ist angenehm"</span> ausgegeben werden.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 10</strong> <br> Schreibe ein Programm, das den
+    Benutzer nach der Ampelfarbe fragt. Wenn die eingegebene Farbe <span
+    class="snip">"rot"</span> ist, soll <span class="snip">"Stop"</span>
+    ausgegeben werden, bei <span class="snip">"gelb"</span> soll <span
+    class="snip">"Achtung"</span> erscheinen und bei <span
+    class="snip">"grün"</span> soll <span class="snip">"Los"</span>
+    ausgegeben werden.</p>
+    <p><br></p>
+    <hr />
+    <p><br></p>
+    <strong>Zusatzaufgabe 1</strong> <br> Definiere die Variable <span
+    class="snip">age</span> und lege einen Wert für diese Variable fest.
+    Schreibe eine <span class="snip">if</span>-<span
+    class="snip">elif</span>-<span class="snip">else</span>-Kette, die
+    wie folgt die Altersstufe einer Person bestimmt:
+    <ul style="margin-top: 2px; margin-bottom: 2px;  ">
+    <li>
+    Wenn die Person jünger als 2 Jahre ist, gib die Meldung aus, dass es
+    sich um ein <b>Baby</b> handelt.
+    </li>
+    <li>
+    Wenn die Person mindestens 2 Jahre alt, aber jünger als 4 Jahre ist,
+    gib die Meldung aus, dass es sich um ein <b>Kleinkind</b> handelt.
+    </li>
+    <li>
+    Wenn die Person mindestens 4 Jahre alt, aber jünger als 13 Jahre
+    ist, gib die Meldung aus, dass es sich um ein <b>Kind</b> handelt.
+    </li>
+    <li>
+    Wenn die Person mindestens 13 Jahre alt, aber jünger als 20 Jahre
+    ist, gib die Meldung aus, dass es sich um einen <b>Teenager</b>
+    handelt.
+    </li>
+    <li>
+    Wenn die Person mindestens 20 Jahre alt, aber jünger als 65 Jahre
+    ist, gib die Meldung aus, dass es sich um einen <b>Erwachsenen</b>
+    handelt.
+    </li>
+    <li>
+    Wenn die Person 65 Jahre oder älter ist, gib die Meldung aus, dass
+    es sich um einen <b>Rentner</b> handelt.
+    </li>
+    </ul>
+    <p>Teste dein Programm, indem du verschiedene Werte für die Variable
+    <span class="snip">age</span> festlegst, und überprüfe, ob die
+    richtige Meldung ausgegeben wird.</p>
+    <p><br></p>
+    <p><strong>Zusatzaufgabe 2</strong> <br> Ein Onlineshop verkauft
+    T-Shirts, Pullover und Jacken. <br> Ein T-Shirt kostet 15.99 €, ein
+    Pullover 24.99 € und eine Jacke 39.99 €. <br> Du schreibst ein
+    Programm, das die Kosten einer Bestellung berechnet. <br><br>
+    <b>Beispielablauf:</b></p>
+    <pre class="nohighlight"><code>Wie viele T-Shirts möchtest du bestellen? 3
+Wie viele Pullover möchtest du bestellen? 2
+Wie viele Jacken möchtest du bestellen? 1
+Kaufpreis ohne Versand: 137.94  EUR
+Versandkosten: 0 EUR
+Gesamtpreis: 137.94 EUR</code></pre>
+    <p><br></p>
+    <p>Du musst dabei <span class="snip">if</span>-<span
+    class="snip">elif</span>-<span class="snip">else</span>-Anweisungen
+    verwenden, um die Versandkosten korrekt zu berechnen. <br><br></p>
+    <p><span style="color:#B22222;">Gehe die Aufgabe Schritt für Schritt
+    an und schreibe deinen Code Zeile für Zeile. Nach jeder Teilaufgabe
+    solltest du den Code ausführen, um sicherzustellen, dass alles
+    funktioniert. So erkennst du frühzeitig Fehler und kannst sie
+    leichter beheben. Bleib geduldig und überprüfe genau, welche
+    Variablen und Bedingungen du verwenden musst.</span></p>
+    <p><br></p>
+    <p><b>Artikel und Anzahl erfassen</b><br> <b>a)</b> Definiere
+    folgende Variablen für die Preise: <br> <span
+    class="snip">preis_tshirt = 15.99</span> <br> <span
+    class="snip">preis_pullover = 24.99</span> <br> <span
+    class="snip">preis_jacke = 39.99</span> <br><br></p>
+    <p><b>b)</b> Frage den Benutzer, wie viele T-Shirts, Pullover und
+    Jacken er bestellen möchte. Verwende die <span
+    class="snip">input()</span>-Funktion und speichere die Anzahl in
+    Variablen: <br> <span class="snip">anzahl_tshirts = int(input("Wie
+    viele T-Shirts möchtest du bestellen? "))</span> <br> <span
+    class="snip">anzahl_pullover = int(input("Wie viele Pullover
+    möchtest du bestellen? "))</span> <br> <span
+    class="snip">anzahl_jacken = int(input("Wie viele Jacken möchtest du
+    bestellen? "))</span> <br><br></p>
+    <p><b>c)</b> Berechne den Gesamtpreis der bestellten Artikel.
+    Definiere eine neue Variable für den Kaufpreis: <br> <span
+    class="snip">kaufpreis = (anzahl_tshirts * preis_tshirt) +
+    (anzahl_pullover * preis_pullover) + (anzahl_jacken *
+    preis_jacke)</span> <br><br></p>
+    <p><b>d)</b> Gib den Kaufpreis ohne Versandkosten aus: <br> <span
+    class="snip">print("Kaufpreis ohne Versand:", kaufpreis,
+    "EUR")</span> <br><br></p>
+    <b>Versandkosten berechnen</b> <br> <b>e)</b> Definiere eine neue
+    Variable für die Versandkosten und setze sie zuerst auf Null: <br>
+    <span class="snip">versandkosten = 0</span> <br> Verwende <span
+    class="snip">if</span>-<span class="snip">elif</span>-<span
+    class="snip">else</span>-Anweisungen, um die Versandkosten zu
+    bestimmen.
+    <ul style="margin-top:2px;">
+    <li>
+    Wenn <span class="snip">kaufpreis &lt; 50</span>, setze <span
+    class="snip">versandkosten = 13.95</span>
+    </li>
+    <li>
+    Wenn <span class="snip">50 &lt;= kaufpreis &lt; 100</span>, setze
+    <span class="snip">versandkosten = 4.95</span>
+    </li>
+    <li>
+    Wenn <span class="snip">kaufpreis &gt;= 100</span>, setze <span
+    class="snip">versandkosten = 0</span>
+    </li>
+    </ul>
+    <p><b>f)</b> Gib die Versandkosten aus: <br> <span
+    class="snip">print("Versandkosten:", versandkosten, "EUR")</span>
+    <br><br></p>
+    <p><b>Gesamtkosten berechnen und ausgeben</b> <br> <b>g)</b>
+    Berechne den Gesamtpreis (Kaufpreis + Versandkosten) und speichere
+    ihn in einer neuen Variable <span class="snip">gesamtpreis</span>:
+    <br> <span class="snip">gesamtpreis = kaufpreis +
+    versandkosten</span> <br><br></p>
+    <p><b>h)</b> Gib den Gesamtpreis aus: <br> <span
+    class="snip">print("Gesamtpreis:", gesamtpreis, "EUR")</span>
+    <br><br></p>
+    <b>Programm testen</b> <br> <b>i)</b> Teste dein Programm mit
+    folgenden Beispielen:
+    </li>
+    <ul style="margin-top:2px;">
+    <li>
+    Der Kaufpreis liegt unter 50 € (z.B. 2 T-Shirts).
+    </li>
+    <li>
+    Der Kaufpreis liegt zwischen 50 € und 100 € (z.B. 1 T-Shirt und 2
+    Jacken).
+    </li>
+    <li>
+    Der Kaufpreis liegt über 100 € (z.B. 3 Jacken).
+    </li>
+    </ul>
+    <p><strong>Zusatzaufgabe 3</strong> <br> Schau dir das folgende
+    Beispiel eines Text Adventure Spiels an. Kopiere den Code in die
+    Datei script.py, führe den Code aus, und sieh dir an, wie das Spiel
+    funktioniert. Probiere verschiedene Entscheidungen aus, um zu sehen,
+    wie sich die Geschichte verändert.</p>
+    <div id="codeSection" class="copyable">
+    <button class="copy-btn" onclick="copyCode()">
+    Copy
+    </button>
+    <div class="sourceCode" id="cb10"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Willkommen zu deinem Text Adventure!&quot;</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Du wachst in einem dunklen Raum auf. Was willst du tun?&quot;</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;1: Nach links gehen und die Tür öffnen.&quot;</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;2: Nach rechts gehen und die Treppe runtergehen.&quot;</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>wahl1 <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Wähle 1 oder 2: &quot;</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> wahl1 <span class="op">==</span> <span class="st">&quot;1&quot;</span>:</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Du öffnest die Tür und siehst ein Monster!&quot;</span>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;1: Kämpfen.&quot;</span>)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;2: Weglaufen.&quot;</span>)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    wahl2 <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Wähle 1 oder 2: &quot;</span>)</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> wahl2 <span class="op">==</span> <span class="st">&quot;1&quot;</span>:</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;Du kämpfst und besiegst das Monster. Du hast gewonnen!&quot;</span>)</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;Du läufst weg und überlebst, aber findest keinen Schatz.&quot;</span>)</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> wahl1 <span class="op">==</span> <span class="st">&quot;2&quot;</span>:</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Du gehst die Treppe hinunter und findest eine Schatztruhe.&quot;</span>)</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;1: Die Truhe öffnen.&quot;</span>)</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;2: Die Truhe nicht öffnen.&quot;</span>)</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>    wahl3 <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Wähle 1 oder 2: &quot;</span>)</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> wahl3 <span class="op">==</span> <span class="st">&quot;1&quot;</span>:</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;Du öffnest die Truhe und findest Schätze. Du hast gewonnen!&quot;</span>)</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;Du öffnest die Truhe nicht. Du wirst nie wissen, was drin war.&quot;</span>)</span></code></pre></div>
+    </div>
+    <div style="height:2px;">
+
+    </div>
+    <p>Nachdem du das Beispielspiel ausprobiert hast, <b>erstelle nun
+    dein eigenes Text Adventure</b>. Nutze <span class="snip">if</span>,
+    <span class="snip">elif</span>, und <span class="snip">else</span>,
+    um dem Spieler verschiedene Optionen zu geben und die Geschichte
+    weiterzuentwickeln.</p>
+    <p><br></p>
+    <h2 id="fachbegriffe">Fachbegriffe</h2>
+    <hr />
+    <p>Eine <b>bedingte Anweisung</b> ist ein Teil des Programms, der
+    nur ausgeführt wird, wenn eine bestimmte Bedingung erfüllt ist. Sie
+    hat folgende Form:</p>
+    <p><br></p>
+    <div
+    style="font-family: Menlo; font-size:smaller;background-color: #f6f6f6">
+    <p>wenn <i>Bedingung</i> dann <br>   <i>Anweisung(en)</i> <br> ende
+    <br></p>
+    </div>
+    <p><br></p>
+    <b>Beispiel:</b>
+    <div
+    style="font-family: Menlo; font-size:smaller;background-color: #f6f6f6">
+    <p>wenn <i>es regnet</i> dann <br>   <i>nehme einen Regenschirm</i>
+    <br> ende <br></p>
+    </div>
+    <p><br></p>
+    <p>Eine <b>Verzweigung</b> entscheidet, welcher von zwei oder mehr
+    Programmteilen abhängig von der Bedingung ausgeführt wird. Sie hat
+    folgende Form:</p>
+    <p><br></p>
+    <div
+    style="font-family: Menlo; font-size:smaller;background-color: #f6f6f6">
+    <p>wenn <i>Bedingung</i> dann <br>   <i>Anweisung(en)</i> <br>
+    ansonsten <br>   <i>Anweisung(en)</i> <br> ende</p>
+    </div>
+    <p><br></p>
+    <b>Beispiel:</b>
+    <div
+    style="font-family: Menlo; font-size:smaller;background-color: #f6f6f6">
+    <p>wenn <i>es regnet</i> dann <br>   <i>nehme einen Regenschirm</i>
+    <br> ansonsten <br>   <i>geh ohne Regenschirm</i> <br> ende</p>
+    </div>
+    <p><br></p>
+    <p>In Python ist es möglich, bedingte Anweisungen und Verzweigungen
+    mit <span class="snip">if</span>, <span class="snip">elif</span> und
+    <span class="snip">else</span> zu erstellen</p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>
+        document.querySelectorAll("pre:not(.nohighlight) code, code:not(.nohighlight)").forEach((block) => {
+            hljs.highlightElement(block);
+        });
+
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        document.onkeydown = (e) => {
+            if (e.key == 123) {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'I') {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'C') {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'J') {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.key == 'U') {
+                e.preventDefault();
+            }
+        };
+    </script>
+    <script>
+        function copyCode() {
+            // Get the text inside the <pre> or <code> element, excluding the button
+            const codeSection = document.querySelector('.copyable pre').textContent;
+            navigator.clipboard.writeText(codeSection).then(function() {
+                alert('Code kopiert!');
+            }).catch(function(err) {
+                console.error('Kopieren fehlgeschlagen: ', err);
+            });
+        }
+    </script>
+    
+      
+</body>
+
+</html>
