@@ -271,15 +271,38 @@ und auch über 20!</code></pre>
     die Konzepte aus den vorherigen Arbeitsblättern gut
     beherrschst.</b></p>
     <p><br></p>
-    <p><strong>Aufgabe 1</strong> <br> Schreibe ein Programm für eine
-    Bank. Eine Variable soll dabei den Kontostand eines Kunden
-    enthalten. <br> Frage den Kunden daraufhin, wie viel Geld er abheben
-    will. <br> a) Passe den Kontostand an, wenn der Betrag verfügbar ist
-    und gib das neue Guthaben aus. <br> b) Teile dem Kunden mit, dass
-    sein Konto leer sein wird, wenn der Abhebebetrag genau dem
-    Kontostand entspricht. <br> c) Gib eine Fehlermeldung aus, wenn der
-    Abhebebetrag größer als der Kontostand ist. Gib das Guthaben in
-    diesem Fall unverändert aus.</p>
+    <strong>Aufgabe 1</strong> <br> Schreibe ein Programm für eine Bank.
+    Eine Variable soll dabei den Kontostand eines Kunden enthalten. <br>
+    Frage den Kunden daraufhin, wie viel Geld er abheben will. <br> a)
+    Passe den Kontostand an, wenn der Betrag verfügbar ist und gib das
+    neue Guthaben aus. <br> b) Teile dem Kunden mit, dass sein Konto
+    leer sein wird, wenn der Abhebebetrag genau dem Kontostand
+    entspricht. <br> c) Gib eine Fehlermeldung aus, falls der
+    Abhebebetrag den Kontostand übersteigt. Gib das Guthaben in diesem
+    Fall unverändert aus. <br><br> <b>Tipp:</b><br>
+    <ul style="margin-top:2px; line-height: 1.5">
+    <li>
+    Beginne damit, eine Variable <span class="snip">kontostand =
+    100</span> zu definieren, die den aktuellen Kontostand speichert.
+    </li>
+    <li>
+    Verwende die <span class="snip">input()</span> -Funktion, um den
+    Abhebebetrag vom Nutzer abzufragen und stelle sicher, dass dieser in
+    einen ganzzahligen Wert (<span class="snip">int</span>) umgewandelt
+    wird.
+    </li>
+    <li>
+    <p>Überprüfe den Abhebebetrag mit einer <span
+    class="snip">if</span>-Anweisung:</p>
+    <div class="sourceCode" id="cb3"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>kontostand <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>abhebebetrag <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Wie viel möchten Sie abheben? &quot;</span>))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> abhebebetrag <span class="op">&lt;=</span> kontostand:</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Dein Code</span></span></code></pre></div>
+    </li>
+    </ul>
     <p><br></p>
     <p><strong>Aufgabe 2</strong> <br> Schreibe ein Programm, das das
     Spiel Schere-Stein-Papier zwischen zwei Spielern simuliert. <br>
@@ -300,6 +323,28 @@ Stein gewinnt!</code></pre>
     <pre class="nohighlight"><code>Spieler 1: Wähle Schere, Stein oder Papier: Papier
 Spieler 2: Wähle Schere, Stein oder Papier: Papier
 Es ist ein Unentschieden!</code></pre>
+    <br> <b>Tipp:</b><br>
+    <ul style="margin-top:2px; line-height: 1.5">
+    <li>
+    <p>Erstelle zwei Variablen <span class="snip">spieler1</span> und
+    <span class="snip">spieler2</span>, die die Wahl jedes Spielers
+    speichern, z. B. mit:</p>
+    <div class="sourceCode" id="cb6"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>spieler1 <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Spieler 1: Wähle Schere, Stein oder Papier: &quot;</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>spieler2 <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Spieler 2: Wähle Schere, Stein oder Papier: &quot;</span>)</span></code></pre></div>
+    </li>
+    <li>
+    <p>Verwende Verschachtelung, um alle möglichen Fälle abzudecken. Zum
+    Beispiel:</p>
+    <div class="sourceCode" id="cb7"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> spieler1 <span class="op">==</span> spieler2:</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Es ist ein Unentschieden!&quot;</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> spieler1 <span class="op">==</span> <span class="st">&quot;Stein&quot;</span>:</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> spieler2 <span class="op">==</span> <span class="st">&quot;Schere&quot;</span>:</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">&quot;Stein gewinnt!&quot;</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Dein Code</span></span></code></pre></div>
+    </li>
+    </ul>
     <p><br></p>
     <strong>Aufgabe 3</strong> <br> Die Firma <i>It wasn't me</i> hat
     folgende Anweisung für ihre Mitarbeiter ausgegeben. Schreibe ein
@@ -307,6 +352,17 @@ Es ist ein Unentschieden!</code></pre>
     <div style="overflow: auto;">
     <p><img src="AB_4_aufgabe_3.png" width = 400px height= 500px ></p>
     </div>
+    <p><b> So kannst du mit deinem Code anfangen: </b></p>
+    <div class="sourceCode" id="cb8"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>antwort <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Funktioniert das System? &quot;</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> antwort <span class="op">==</span> <span class="st">&quot;ja&quot;</span>:</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Fummel nicht daran herum!&quot;</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> antwort <span class="op">==</span> <span class="st">&quot;nein&quot;</span>:</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    antwort <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Bist du Schuld? &quot;</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> antwort <span class="op">==</span> <span class="st">&quot;ja&quot;</span>:</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;Du idiot!&quot;</span>)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Der weitere Code</span></span></code></pre></div>
     <p><br></p>
     <strong>Zusatzaufgabe 1</strong> <br> Schreibe ein Programm, das
     überprüft, ob ein vorher festgelegtes Jahr ein Schaltjahr ist. Dabei
@@ -342,9 +398,11 @@ Es ist ein Unentschieden!</code></pre>
     </li>
     </ul>
     <p><b>Tipp:</b> <br> Verwende den <span class="snip">%</span>
-    (Modulo)-Operator, um zu überprüfen, ob eine Zahl durch eine andere
-    teilbar ist. <br> Zum Beispiel: <span class="snip">jahr % 4 ==
-    0</span>.</p>
+    Modulo-Operator (Division mit Rest), um zu überprüfen, ob eine Zahl
+    durch eine andere teilbar ist. Zum Beispiel:</p>
+    <div class="sourceCode" id="cb9"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> jahr <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Code für Schaltjahr oder kein Schaltjahr</span></span></code></pre></div>
     <hr />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
