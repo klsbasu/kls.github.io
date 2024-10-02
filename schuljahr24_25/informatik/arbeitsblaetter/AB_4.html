@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AB 4</title>
+
+    <!--  <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/stackoverflow-light.min.css" />
+    <style>
+        body,
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        pre,
+        code,
+        ul,
+        table {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @font-face {
+            font-family: "Josefin Sans";
+            font-style: normal;
+            font-weight: 400;
+            src: url(https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjQbMZhKg.ttf) format("truetype");
+        }
+
+        @font-face {
+            font-family: "Josefin Sans";
+            font-style: normal;
+            font-weight: 700;
+            src: url(https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_N_XbMZhKg.ttf) format("truetype");
+        }
+
+        html {
+            height: 100%;
+            background-color: #eee;
+        }
+
+        body {
+            box-sizing: border-box;
+            min-height: 100%;
+            margin: auto;
+            padding-left: 2em;
+            padding-right: 2em;
+            padding-top: 2em;
+            padding-bottom: 2em;
+            max-width: 800px;
+            font-family: "Times New Roman", Times, serif;
+            /* font-family: 'Josefin Sans', sans-serif; */
+            font-size: 0.9em;
+            background-color: white;
+            border: double 3px #ddd;
+            border-top: none;
+            border-bottom: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-top: 0;
+            margin-bottom: 2px;
+        }
+
+        h3 {
+            font-size: 1.2em;
+        }
+
+        h4 {
+            font-size: 1em;
+        }
+
+        strong {
+            color: purple;
+            margin-bottom: 2px;
+        }
+
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: blue;
+        }
+
+        a:hover {
+            color: blue;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: #0000ff;
+        }
+
+        body h2 {
+            margin-top: 14px;
+        }
+
+        body h3 {
+            margin-top: 14px;
+        }
+
+        body p {
+            margin-top: 0px !important;
+            margin-bottom: 0px !important;
+            width: 100vh !;
+        }
+
+        pre,
+        code {
+            background-color: #f6f6f6 !important;
+            font-size: 14px !important;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-weight: 550;
+            /*   color: white !important; */
+            padding-left: 30px !important;
+            /* Increase padding for more indentation */
+            margin-left: 0px !important;
+            margin-top: 2px;
+            padding: 2px !important;
+            border-radius: 0px !important;
+            font-family: "Consolas", "Courier New", monospace;
+            width: 100% !important;
+            overflow: hidden;
+            line-height: 1em !important;
+        }
+
+        pre.nohighlight {
+            /* border: 1px solid #ddd; */
+            line-height: 1.3em !important;
+            overflow-x: auto !important;
+            white-space: pre !important;
+        }
+
+        pre.nohighlight code {
+            padding-left: 0 !important;
+        }
+
+        .snip {
+            font-family: Menlo, monospace;
+            font-size: 0.75em;
+        }
+
+        ul {
+            padding-left: 13px !important;
+            /* Slight increase for better readability */
+            list-style-type: disc !important;
+        }
+
+        ul ul {
+            list-style-type: disc !important;
+            /* Ensure nested lists also use disc markers */
+        }
+
+        ul li::marker {
+            list-style-type: disc !important;
+            /* Force disc marker for all list items */
+        }
+
+        /* Add this style to wrap the table and allow horizontal scrolling */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+            width: auto;
+            /* Ensure the table takes up the full width of its container */
+            max-width: 100%;
+            /* Prevent the table from exceeding the container's width */
+            overflow-x: auto;
+            table-layout: fixed;
+            /* Helps with responsiveness */
+        }
+
+        table th,
+        table td {
+            padding: 6px 8px;
+            vertical-align: top;
+            white-space: nowrap;
+            word-wrap: break-word;
+            /* Break long words to prevent overflow */
+        }
+
+        table th {
+            background: #ddd;
+            font-weight: 900;
+            text-align: left;
+        }
+
+        table tbody tr:nth-child(odd) {
+            background: white;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body class="markdown-body">
+    <h1 id="ab-4-programmierung-mit-python"><strong>AB 4 Programmierung
+    mit Python</strong></h1>
+    <hr />
+    <h2 id="verschachtelte-if-anweisungen">Verschachtelte <span
+    class="snip">if</span>-Anweisungen</h2>
+    <hr />
+    <p>Du kannst <span class="snip">if</span>-Anweisungen innerhalb von
+    <span class="snip">if</span>-Anweisungen haben, dies nennen wir
+    <b>verschachtelte if-Anweisungen</b>.</p>
+    <p><br></p>
+    <p><b>Beispiel:</b></p>
+    <div class="sourceCode" id="cb1"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">41</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">10</span>:</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Über zehn,&quot;</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">20</span>:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;und auch über 20!&quot;</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;aber nicht über 20.&quot;</span>)</span></code></pre></div>
+    <p><br></p>
+    <p>Erklärung: Der Code prüft zuerst, ob <span class="snip">x</span>
+    größer als <span class="snip">10</span> ist. Wenn das der Fall ist,
+    wird <span class="snip">"Über zehn,"</span> ausgegeben. Danach wird
+    überprüft, ob <span class="snip">x</span> auch größer als <span
+    class="snip">20</span> ist. Falls ja, folgt: <span class="snip">"und
+    auch über 20!"</span>, andernfalls: <span class="snip">"aber nicht
+    über 20." </span></p>
+    <p><br></p>
+    <p>Da <span class="snip">x = 41</span>, sind beide Bedingungen wahr,
+    und es wird folgendes ausgegeben:</p>
+    <pre class="nohighlight"><code>Über zehn,
+und auch über 20!</code></pre>
+    <p><br></p>
+    <p><span style="color:#B22222; font-weight: 800;">Achte immer auf
+    die Einrückung!</span></p>
+    <h2 id="ablaufdiagramme">Ablaufdiagramme</h2>
+    <hr />
+    <p>Ein Ablaufdiagramm hilft dabei, den Ablauf deines Programms
+    visuell zu planen und darzustellen. Es ist besonders hilfreich bei
+    der Strukturierung von verschachtelten <span
+    class="snip">if</span>-Anweisungen.</p>
+    <p><br></p>
+    <p><b>Ablaufdiagramm des obigen Python-Codes</b></p>
+    <div style="overflow: auto;">
+    <p><img src="AB_4_ablaufdiagramm.png" alt="Ablaufdiagramm" width="310" height="320"></p>
+    </div>
+    <p><br></p>
+    <hr />
+    <p><b>Um die folgenden Aufgaben zu lösen, ist es wichtig, dass du
+    die Konzepte aus den vorherigen Arbeitsblättern gut
+    beherrschst.</b></p>
+    <p><br></p>
+    <p><strong>Aufgabe 1</strong> <br> Schreibe ein Programm für eine
+    Bank. Eine Variable soll dabei den Kontostand eines Kunden
+    enthalten. <br> Frage den Kunden daraufhin, wie viel Geld er abheben
+    will. <br> a) Passe den Kontostand an, wenn der Betrag verfügbar ist
+    und gib das neue Guthaben aus. <br> b) Teile dem Kunden mit, dass
+    sein Konto leer sein wird, wenn der Abhebebetrag genau dem
+    Kontostand entspricht. <br> c) Gib eine Fehlermeldung aus, wenn der
+    Abhebebetrag größer als der Kontostand ist. Gib das Guthaben in
+    diesem Fall unverändert aus.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 2</strong> <br> Schreibe ein Programm, das das
+    Spiel Schere-Stein-Papier zwischen zwei Spielern simuliert. <br>
+    Regeln: <br> • Stein schlägt Schere <br> • Schere schlägt Papier
+    <br> • Papier schlägt Stein <br> So kannst du vorgehen: <br> a)
+    Frage beide Spieler nach ihrer Wahl (Schere, Stein oder Papier) mit
+    der <span class="snip">input()</span>-Funktion. <br> b) Vergleiche
+    die Eingaben der Spieler mithilfe einer <span
+    class="snip">if</span>-<span class="snip">elif</span>-<span
+    class="snip">else</span>-Kette. <br> c) Gib aus, welcher Spieler
+    gewonnen hat oder ob es ein Unentschieden gibt. <br> <br>
+    Beispielablauf 1:</p>
+    <pre class="nohighlight"><code>Spieler 1: Wähle Schere, Stein oder Papier: Stein
+Spieler 2: Wähle Schere, Stein oder Papier: Schere
+Stein gewinnt!</code></pre>
+    <p><br></p>
+    <p>Beispielablauf 2:</p>
+    <pre class="nohighlight"><code>Spieler 1: Wähle Schere, Stein oder Papier: Papier
+Spieler 2: Wähle Schere, Stein oder Papier: Papier
+Es ist ein Unentschieden!</code></pre>
+    <p><br></p>
+    <strong>Aufgabe 3</strong> <br> Die Firma <i>It wasn't me</i> hat
+    folgende Anweisung für ihre Mitarbeiter ausgegeben. Schreibe ein
+    Programm anhand des Ablaufplans. <br>
+    <div style="overflow: auto;">
+    <p><img src="AB_4_aufgabe_3.png" width = 400px height= 500px ></p>
+    </div>
+    <p><br></p>
+    <strong>Zusatzaufgabe 1</strong> <br> Schreibe ein Programm, das
+    überprüft, ob ein vorher festgelegtes Jahr ein Schaltjahr ist. Dabei
+    sind folgende Regeln zu beachten:
+    </p>
+    <ul style="margin-top:2px;">
+    <li>
+    Nicht durch 4 teilbar → kein Schaltjahr
+    </li>
+    <li>
+    Durch 4 teilbar → Schaltjahr
+    </li>
+    <li>
+    Durch 100 teilbar → kein Schaltjahr
+    </li>
+    <li>
+    Durch 400 teilbar → Schaltjahr
+    </li>
+    </ul>
+    Beispiele:
+    <ul style="margin-top:2px;">
+    <li>
+    1900: kein Schaltjahr
+    </li>
+    <li>
+    2000: Schaltjahr
+    </li>
+    <li>
+    2004: Schaltjahr
+    </li>
+    <li>
+    2006: kein Schaltjahr
+    </li>
+    </ul>
+    <p><b>Tipp:</b> <br> Verwende den <span class="snip">%</span>
+    (Modulo)-Operator, um zu überprüfen, ob eine Zahl durch eine andere
+    teilbar ist. <br> Zum Beispiel: <span class="snip">jahr % 4 ==
+    0</span>.</p>
+    <hr />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>
+        document.querySelectorAll("pre:not(.nohighlight) code, code:not(.nohighlight)").forEach((block) => {
+            hljs.highlightElement(block);
+        });
+
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        document.onkeydown = (e) => {
+            if (e.key == 123) {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'I') {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'C') {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'J') {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.key == 'U') {
+                e.preventDefault();
+            }
+        };
+    </script>
+</body>
+
+</html>
