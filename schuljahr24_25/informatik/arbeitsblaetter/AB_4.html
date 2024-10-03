@@ -214,12 +214,15 @@
         td {
             border: 1px solid black;
         }
+        
     </style>
 </head>
 
 <body class="markdown-body">
     <h1 id="ab-4-programmierung-mit-python"><strong>AB 4 Programmierung
     mit Python</strong></h1>
+    <p><button id="translateBtn" onclick="goToEnglish()">Translate to
+    English</button></p>
     <hr />
     <h2 id="verschachtelte-if-anweisungen">Verschachtelte <span
     class="snip">if</span>-Anweisungen</h2>
@@ -262,8 +265,7 @@ und auch über 20!</code></pre>
     class="snip">if</span>-Anweisungen.</p>
     <p><br></p>
     <p><b>Ablaufdiagramm des obigen Python-Codes</b></p>
-    <div
-    style="max-height:320px; 200px;max-width:310px;overflow-x:auto;">
+    <div style="max-height:380px;max-width:310px;overflow-x:auto;">
     <pre class="mermaid">
     flowchart TD
         A[Start] --> B[<b>Bedingung:</b> x > 10] --Wahr--> C["print(#quot;Über zehn, #quot;)"] --> D[<b>Bedingung:</b> x>20] --Wahr--> E["print(#quot;und auch über 20!#quot;)"]-->J[End]  
@@ -449,7 +451,21 @@ Es ist ein Unentschieden!</code></pre>
       <script type="module">
         import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
         mermaid.initialize({ startOnLoad: true });
-      </script>    
+      </script>
+          <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'de',
+                    includedLanguages: 'en',
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                }, 'google_translate_element');
+            }
+        </script>   
+            <script>
+                function goToEnglish() {
+                    window.location.href = 'AB_4_en.html';
+                }
+            </script> 
 </body>
 
 </html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Worksheet 4</title>
+
+    <!--  <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/stackoverflow-light.min.css" />
+    <style>
+        body,
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        pre,
+        code,
+        ul,
+        table {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @font-face {
+            font-family: "Josefin Sans";
+            font-style: normal;
+            font-weight: 400;
+            src: url(https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjQbMZhKg.ttf) format("truetype");
+        }
+
+        @font-face {
+            font-family: "Josefin Sans";
+            font-style: normal;
+            font-weight: 700;
+            src: url(https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_N_XbMZhKg.ttf) format("truetype");
+        }
+
+        html {
+            height: 100%;
+            background-color: #eee;
+        }
+
+        body {
+            box-sizing: border-box;
+            min-height: 100%;
+            margin: auto;
+            padding-left: 2em;
+            padding-right: 2em;
+            padding-top: 2em;
+            padding-bottom: 2em;
+            max-width: 800px;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 0.9em;
+            background-color: white;
+            border: double 3px #ddd;
+            border-top: none;
+            border-bottom: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-top: 0;
+            margin-bottom: 2px;
+        }
+
+        h3 {
+            font-size: 1.2em;
+        }
+
+        h4 {
+            font-size: 1em;
+        }
+
+        strong {
+            color: purple;
+            margin-bottom: 2px;
+        }
+
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: blue;
+        }
+
+        a:hover {
+            color: blue;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: #0000ff;
+        }
+
+        body h2 {
+            margin-top: 14px;
+        }
+
+        body h3 {
+            margin-top: 14px;
+        }
+
+        body p {
+            margin-top: 0px !important;
+            margin-bottom: 0px !important;
+            width: 100vh !;
+        }
+
+        pre,
+        code {
+            background-color: #f6f6f6 !important;
+            font-size: 14px !important;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-weight: 550;
+            padding-left: 30px !important;
+            margin-left: 0px !important;
+            margin-top: 2px;
+            padding: 2px !important;
+            border-radius: 0px !important;
+            font-family: "Consolas", "Courier New", monospace;
+            width: 100% !important;
+            overflow: hidden;
+            line-height: 1em !important;
+        }
+
+        pre.nohighlight {
+            line-height: 1.3em !important;
+            overflow-x: auto !important;
+            white-space: pre !important;
+        }
+
+        pre.nohighlight code {
+            padding-left: 0 !important;
+        }
+
+        .snip {
+            font-family: Menlo, monospace;
+            font-size: 0.75em;
+        }
+
+        ul {
+            padding-left: 13px !important;
+            list-style-type: disc !important;
+        }
+
+        ul ul {
+            list-style-type: disc !important;
+        }
+
+        ul li::marker {
+            list-style-type: disc !important;
+        }
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+            width: auto;
+            max-width: 100%;
+            overflow-x: auto;
+            table-layout: fixed;
+        }
+
+        table th,
+        table td {
+            padding: 6px 8px;
+            vertical-align: top;
+            white-space: nowrap;
+            word-wrap: break-word;
+        }
+
+        table th {
+            background: #ddd;
+            font-weight: 900;
+            text-align: left;
+        }
+
+        table tbody tr:nth-child(odd) {
+            background: white;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body class="markdown-body">
+    <h1 id="worksheet-4-programming-with-python"><strong>Worksheet 4 Programming with Python</strong></h1>
+    <p><button id="translateBtn" onclick="goToGerman()">Ins Deutsche übersetzen</button></p>
+    <hr />
+    <h2 id="nested-if-statements">Nested <span class="snip">if</span> Statements</h2>
+    <hr />
+    <p>You can have <span class="snip">if</span> statements inside other <span class="snip">if</span> statements. This is called <b>nested if statements</b>.</p>
+    <p><br></p>
+    <p><b>Example:</b></p>
+    <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">41</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">10</span>:</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Over ten,&quot;</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">20</span>:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;and also over 20!&quot;</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;but not over 20.&quot;</span>)</span></code></pre></div>
+    <p><br></p>
+    <p>Explanation: The code first checks if <span class="snip">x</span> is greater than <span class="snip">10</span>. If so, it prints <span class="snip">"Over ten,"</span>. Then it checks if <span class="snip">x</span> is greater than <span class="snip">20</span>. If true, it prints: <span class="snip">"and also over 20!"</span>; otherwise: <span class="snip">"but not over 20."</span></p>
+    <p><br></p>
+    <p>Since <span class="snip">x = 41</span>, both conditions are true, so the following is printed:</p>
+    <pre class="nohighlight"><code>Over ten,
+and also over 20!</code></pre>
+    <p><br></p>
+    <p><span style="color:#B22222; font-weight: 800;">Always pay attention to indentation!</span></p>
+    <h2 id="flowcharts">Flowcharts</h2>
+    <hr />
+    <p>A flowchart helps you visually plan and structure your program, especially when dealing with nested <span class="snip">if</span> statements.</p>
+    <p><br></p>
+    <p><b>Flowchart of the above Python code</b></p>
+    <div style="max-height:380px;max-width:310px;overflow-x:auto;">
+    <pre class="mermaid">
+    flowchart TD
+        A[Start] --> B[<b>Condition:</b> x > 10] --True--> C["print(#quot;Over ten, #quot;)"] --> D[<b>Condition:</b> x>20] --True--> E["print(#quot;and also over 20!#quot;)"]-->J[End]  
+        B --False--> G[End]
+        D --False--> H["print(#quot;but not over 20.#quot;)"]-->I[End]
+      </pre>
+    </div>
+    <p><br></p>
+    <hr />
+    <p><b>To solve the following tasks, it is important that you master the concepts from the previous worksheets.</b></p>
+    <p><br></p>
+    <strong>Task 1</strong> <br> Write a program for a bank. A variable should contain a customer's account balance. <br> Ask the customer how much money they want to withdraw. <br> a) Adjust the balance if the amount is available and output the new balance. <br> b) Inform the customer that their account will be empty if the withdrawal amount exactly matches the balance. <br> c) Output an error message if the withdrawal amount exceeds the balance. In this case, the balance remains unchanged. <br><br> <b>Tip:</b><br>
+    <ul style="margin-top:2px; line-height: 1.5">
+    <li>
+    Start by defining a variable <span class="snip">balance = 100</span> that stores the current balance.
+    </li>
+    <li>
+    Use the <span class="snip">input()</span> function to ask the user for the withdrawal amount, ensuring it is converted to an integer value (<span class="snip">int</span>).
+    </li>
+    <li>
+    <p>Check the withdrawal amount using an <span class="snip">if</span> statement:</p>
+    <div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>balance <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>withdrawal <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;How much do you want to withdraw? &quot;</span>))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> withdrawal <span class="op">&lt;=</span> balance:</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code</span></span></code></pre></div>
+    </li>
+    </ul>
+    <p><br></p>
+    <p><strong>Task 2</strong> <br> Write a program that simulates the game Rock-Paper-Scissors between two players. <br> Rules: <br> • Rock beats Scissors <br> • Scissors beats Paper <br> • Paper beats Rock <br> Here’s how to proceed: <br> a) Ask both players for their choice (Rock, Paper, or Scissors) using the <span class="snip">input()</span> function. <br> b) Compare the players' choices using an <span class="snip">if</span>-<span class="snip">elif</span>-<span class="snip">else</span> chain. <br> c) Print who won or if it's a tie. <br> <br> Example Run 1:</p>
+    <pre class="nohighlight"><code>Player 1: Choose Rock, Paper, or Scissors: Rock
+Player 2: Choose Rock, Paper, or Scissors: Scissors
+Rock wins!</code></pre>
+    <p><br></p>
+    <p>Example Run 2:</p>
+    <pre class="nohighlight"><code>Player 1: Choose Rock, Paper, or Scissors: Paper
+Player 2: Choose Rock, Paper, or Scissors: Paper
+It's a tie!</code></pre>
+    <br> <b>Tip:</b><br>
+    <ul style="margin-top:2px; line-height: 1.5">
+    <li>
+    <p>Create two variables <span class="snip">player1</span> and <span class="snip">player2</span> to store each player's choice, e.g.:</p>
+    <div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>player1 <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Player 1: Choose Rock, Paper, or Scissors: &quot;</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>player2 <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Player 2: Choose Rock, Paper, or Scissors: &quot;</span>)</span></code></pre></div>
+    </li>
+    <li>
+    <p>Use nesting to cover all possible cases. For example:</p>
+    <div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> player1 <span class="op">==</span> player2:</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;It's a tie!&quot;</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> player1 <span class="op">==</span> <span class="st">&quot;Rock&quot;</span>:</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> player2 <span class="op">==</span> <span class="st">&quot;Scissors&quot;</span>:</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="st">&quot;Rock wins!&quot;</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code</span></span></code></pre></div>
+    </li>
+    </ul>
+    <p><br></p>
+    <strong>Task 3</strong> <br> The company <i>It wasn't me</i> has issued the following instructions for its employees. Write a program based on the flowchart. <br>
+    <div style="max-height:500px;max-width:400px;overflow-x:auto;">
+    <pre class="mermaid">
+        flowchart TD
+        A[Does the system work?]--Yes-->B[Don't mess with it!]-->C[Everything is fine]
+        A--No -->D[Are you to blame?]--No -->E[It's not your fault]
+        D--Yes-->F[You idiot!]-->G[Did anyone notice?]--Yes-->H[You have a problem]-->I[Can you blame someone else?]
+        I --No -->J[You have a serious problem]
+        I --Yes-->K[Don't worry, someone else has the problem]
+        G--No -->L[You'll never be found]    
+      </pre>
+    </div>
+    <p><br> <b>Here’s how to start your code: </b></p>
+    <div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>answer <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Does the system work? &quot;</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> answer <span class="op">==</span> <span class="st">&quot;Yes&quot;</span>:</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Don’t touch it!&quot;</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Everything is fine&quot;</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> answer <span class="op">==</span> <span class="st">&quot;No&quot;</span>:</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    answer <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Are you to blame? &quot;</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> answer <span class="op">==</span> <span class="st">&quot;Yes&quot;</span>:</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;You idiot!&quot;</span>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># The rest of the code</span></span></code></pre></div>
+    <p><br></p>
+    <strong>Bonus Task 1</strong> <br> Write a program that checks whether a pre-defined year is a leap year. Follow these rules:
+    </p>
+    <ul style="margin-top:2px;">
+    <li>
+    Not divisible by 4 → not a leap year
+    </li>
+    <li>
+    Divisible by 4 → leap year
+    </li>
+    <li>
+    Divisible by 100 → not a leap year
+    </li>
+    <li>
+    Divisible by 400 → leap year
+    </li>
+    </ul>
+    Examples:
+    <ul style="margin-top:2px;">
+    <li>
+    1900: not a leap year
+    </li>
+    <li>
+    2000: leap year
+    </li>
+    <li>
+    2004: leap year
+    </li>
+    <li>
+    2006: not a leap year
+    </li>
+    </ul>
+    <p><b>Tip:</b> <br> Use the <span class="snip">%</span> Modulo operator (division with remainder) to check whether a number is divisible by another. For example:</p>
+    <div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> year <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Code for leap year or not</span></span></code></pre></div>
+    <hr />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>
+        document.querySelectorAll("pre:not(.nohighlight) code, code:not(.nohighlight)").forEach((block) => {
+            hljs.highlightElement(block);
+        });
+
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        document.onkeydown = (e) => {
+            if (e.key == 123) {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'I') {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'C') {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'J') {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.key == 'U') {
+                e.preventDefault();
+            }
+        };
+    </script>
+      <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+      </script>
+          <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'de',
+                    includedLanguages: 'en',
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                }, 'google_translate_element');
+            }
+        </script>   
+            <script>
+                function goToGerman() {
+                    window.location.href = 'AB_4.html';
+                }
+            </script> 
+</body>
+
+</html>
