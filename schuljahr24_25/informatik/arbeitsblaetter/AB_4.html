@@ -262,8 +262,13 @@ und auch über 20!</code></pre>
     class="snip">if</span>-Anweisungen.</p>
     <p><br></p>
     <p><b>Ablaufdiagramm des obigen Python-Codes</b></p>
-    <div style="overflow: auto;">
-    <p><img src="AB_4_ablaufdiagramm.png" alt="Ablaufdiagramm" width="310" height="320"></p>
+    <div style="320: 200px;width:310px;">
+    <pre class="mermaid">
+    flowchart TD
+        A[Start] --> B[<b>Bedingung:</b> x > 10] --Wahr--> C["print(#quot;Über zehn, #quot;)"] --> D[<b>Bedingung:</b> x>20] --Wahr--> E["print(#quot;und auch über 20!#quot;)"]-->J[End]  
+        B --Falsch--> G[End]
+        D --Falsch--> H["print(#quot;aber nicht über 20.#quot;)"]-->I[End]
+      </pre>
     </div>
     <p><br></p>
     <hr />
@@ -349,10 +354,18 @@ Es ist ein Unentschieden!</code></pre>
     <strong>Aufgabe 3</strong> <br> Die Firma <i>It wasn't me</i> hat
     folgende Anweisung für ihre Mitarbeiter ausgegeben. Schreibe ein
     Programm anhand des Ablaufplans. <br>
-    <div style="overflow: auto;">
-    <p><img src="AB_4_aufgabe_3.png" width = 400px height= 500px ></p>
+    <div style="320: 500px;width:400px;">
+    <pre class="mermaid">
+    flowchart TD
+    A[Funktioniert das System?]--Ja-->B[Fummel nicht daran herum!]-->C[Alles ist gut]
+    A--Nein-->D[Bist du Schuld?]--Nein-->E[Dich trifft es nicht]
+    D--Ja-->F[Du idiot!]-->G[Hat es jemand gemerkt?]--Ja-->H[Du hast ein Problem]-->I[Kannst du einem Anderen die Schuld zuschieben?]
+    I --Nein-->J[Du hast wirklich ein großes Problem]
+    I --Ja-->K[Keine Sorge, jemand anderes hat das Problem]
+    G--Nein-->L[Man wird dich nie finden]
+      </pre>
     </div>
-    <p><b> So kannst du mit deinem Code anfangen: </b></p>
+    <p><br> <b> So kannst du mit deinem Code anfangen: </b></p>
     <div class="sourceCode" id="cb8"><pre
     class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>antwort <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Funktioniert das System? &quot;</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -432,6 +445,10 @@ Es ist ein Unentschieden!</code></pre>
             }
         };
     </script>
+      <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+      </script>    
 </body>
 
 </html>
