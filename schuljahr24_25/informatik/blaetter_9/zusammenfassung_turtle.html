@@ -3,25 +3,26 @@
 
 <head>
     <title>Zusammenfassung Turtle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: smaller;
+            font-size: 14px;
         }
 
         table,
         th,
         td {
             border: 1px solid black;
-            vertical-align: middle !important;
+            vertical-align: middle;
         }
 
         th,
         td {
             padding-left: 5px;
             text-align: left;
-            vertical-align: top;
         }
 
         pre {
@@ -53,6 +54,40 @@
         a:active {
             color: #0000FF;
         }
+
+        /* Make table responsive */
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        /* Adjust font sizes for smaller screens */
+        @media (max-width: 768px) {
+            table {
+                font-size: 12px;
+            }
+
+            th {
+                font-size: medium;
+            }
+
+            pre {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            table {
+                font-size: 10px;
+            }
+
+            th {
+                font-size: small;
+            }
+
+            pre {
+                font-size: 10px;
+            }
+        }
     </style>
 </head>
 
@@ -64,25 +99,26 @@
         <h2>Das Turtle-Modul &#128034;</h2>
     </div>
 
-    <table>
-        <tr>
-            <td>
-                <pre>from gturtle import *</pre>
-            </td>
-            <td>Importiert das Turtle-Modul, das die nötigen Funktionen und Klassen für das Zeichnen enthält.</td>
-        </tr>
-        <tr>
-            <td>
-                <pre>makeTurtle()</pre>
-            </td>
-            <td>Erzeugt ein neues Turtle-Objekt, das für das Zeichnen verwendet wird.</td>
-        </tr>
-        <tr>
-            <td>
-                <pre>hideTurtle()</pre>
-            </td>
-            <td>Versteckt die Turtle am Ende des Programms.</td>
-        </tr>
+    <div class="table-wrapper">
+        <table>
+            <tr>
+                <td>
+                    <pre>from gturtle import *</pre>
+                </td>
+                <td>Importiert das Turtle-Modul, das die nötigen Funktionen und Klassen für das Zeichnen enthält.</td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>makeTurtle()</pre>
+                </td>
+                <td>Erzeugt ein neues Turtle-Objekt, das für das Zeichnen verwendet wird.</td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>hideTurtle()</pre>
+                </td>
+                <td>Versteckt die Turtle am Ende des Programms.</td>
+            </tr>
         <tr>
             <td>
                 <pre>forward(100)</pre>
