@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Worksheet 6</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/stackoverflow-light.min.css" />
+    <style>
+        body,
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        pre,
+        code,
+        ul,
+        table {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @font-face {
+            font-family: "Josefin Sans";
+            font-style: normal;
+            font-weight: 400;
+            src: url(https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjQbMZhKg.ttf) format("truetype");
+        }
+
+        @font-face {
+            font-family: "Josefin Sans";
+            font-style: normal;
+            font-weight: 700;
+            src: url(https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_N_XbMZhKg.ttf) format("truetype");
+        }
+
+        html {
+            height: 100%;
+            background-color: #eee;
+        }
+
+        body {
+            box-sizing: border-box;
+            min-height: 100%;
+            margin: auto;
+            padding-left: 2em;
+            padding-right: 2em;
+            padding-top: 2em;
+            padding-bottom: 2em;
+            max-width: 800px;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 0.9em;
+            background-color: white;
+            border: double 3px #ddd;
+            border-top: none;
+            border-bottom: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-top: 0;
+            margin-bottom: 2px;
+        }
+
+        h3 {
+            font-size: 1.2em;
+        }
+
+        h4 {
+            font-size: 1em;
+        }
+
+        strong {
+            color: purple;
+            margin-bottom: 2px;
+        }
+
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: blue;
+        }
+
+        a:hover {
+            color: blue;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: #0000ff;
+        }
+
+        body h2 {
+            margin-top: 14px;
+        }
+
+        body h3 {
+            margin-top: 14px;
+        }
+
+        body p {
+            margin-top: 0px !important;
+            margin-bottom: 0px !important;
+            width: 100vh !;
+        }
+
+        pre,
+        code {
+            background-color: #f6f6f6 !important;
+            font-size: 14px !important;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-weight: 550;
+            padding-left: 30px !important;
+            margin-left: 0px !important;
+            margin-top: 2px;
+            padding: 2px !important;
+            border-radius: 0px !important;
+            font-family: "Consolas", "Courier New", monospace;
+            width: 100% !important;
+            overflow: hidden;
+            line-height: 1em !important;
+        }
+
+        pre.nohighlight {
+            line-height: 1.3em !important;
+            overflow-x: auto !important;
+            white-space: pre !important;
+        }
+
+        pre.nohighlight code {
+            padding-left: 0 !important;
+        }
+
+        .snip {
+            font-family: Menlo, monospace;
+            font-size: 0.75em;
+        }
+
+        ul {
+            padding-left: 13px !important;
+            list-style-type: disc !important;
+        }
+
+        ul ul {
+            list-style-type: disc !important;
+        }
+
+        ul li::marker {
+            list-style-type: disc !important;
+        }
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+            width: auto;
+            max-width: 100%;
+            overflow-x: auto;
+            table-layout: fixed;
+        }
+
+        table th,
+        table td {
+            padding: 6px 8px;
+            vertical-align: top;
+            white-space: nowrap;
+            word-wrap: break-word;
+        }
+
+        table th {
+            background: #ddd;
+            font-weight: 900;
+            text-align: left;
+        }
+
+        table tbody tr:nth-child(odd) {
+            background: white;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+        
+    </style>
+</head>
+
+<body class="markdown-body">
+    <h1 id="ab-6-programming-with-python"><strong>Worksheet 6 Programming with Python</strong></h1>
+    <button id="translateBtn" onclick="goToGerman()">
+    Ins Deutsche übersetzen
+    </button>
+    <hr />
+    <h2 id="lists-in-python">Lists in Python</h2>
+    <hr />
+    <p>A <b>list</b> is a collection of items that you can store in a variable.</p>
+    <p><br></p>
+    <p>A list can contain different data types, such as numbers, strings, or even other lists.</p>
+    <p><br></p>
+    <p>Lists are useful because they allow you to group multiple values in one structure and access them easily.</p>
+    <ul>
+    <li style="padding-bottom: 2px;">
+    Lists are created with <b>square brackets</b> <span class="snip">[]</span> and individual elements are separated by commas.
+    </li>
+    <li>
+    You can access elements using an <b>index</b>. The indices start at <span class="snip">0</span>, meaning the first element has index <span class="snip">0</span>, the second <span class="snip">1</span>, and so on.
+    </li>
+    </ul>
+    <p><b>Example 1:</b></p>
+    <div class="sourceCode" id="cb1"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">&quot;Apple&quot;</span>, <span class="st">&quot;Banana&quot;</span>, <span class="st">&quot;Cherry&quot;</span>]</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(fruits)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(fruits[<span class="dv">0</span>])  </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(fruits[<span class="dv">1</span>])  </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(fruits[<span class="dv">2</span>])</span></code></pre></div>
+    <p><br></p>
+    <p><b>Output 1:</b></p>
+    <pre class="nohighlight"><code>[&#39;Apple&#39;, &#39;Banana&#39;, &#39;Cherry&#39;]
+Apple
+Banana
+Cherry</code></pre>
+    <p><br></p>
+    <p>You can add or remove items in a list to adjust its content.</p>
+    <ul>
+    <li style="padding-bottom: 2px;">
+    Use the <span class="snip">append()</span> method to add a new item at the end of the list.
+    </li>
+    <li>
+    To remove a specific item, you can use the <span class="snip">remove()</span> method.
+    </li>
+    </ul>
+    <p><b>Example 2:</b></p>
+    <div class="sourceCode" id="cb3"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>shopping_list <span class="op">=</span> [<span class="st">&quot;Bread&quot;</span>, <span class="st">&quot;Milk&quot;</span>, <span class="st">&quot;Eggs&quot;</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(shopping_list) </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>shopping_list.append(<span class="st">&quot;Butter&quot;</span>) </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(shopping_list) </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>shopping_list.remove(<span class="st">&quot;Milk&quot;</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(shopping_list) </span></code></pre></div>
+    <p><br></p>
+    <p><b>Output 2:</b></p>
+    <pre class="nohighlight"><code>[&#39;Bread&#39;, &#39;Milk&#39;, &#39;Eggs&#39;]
+[&#39;Bread&#39;, &#39;Milk&#39;, &#39;Eggs&#39;, &#39;Butter&#39;]
+[&#39;Bread&#39;, &#39;Eggs&#39;, &#39;Butter&#39;]</code></pre>
+    <p><br></p>
+    <p>You can change items in a list, for example by doubling an element, or swapping items in different positions.</p>
+    <p><br></p>
+    <p><b>Example 3:</b></p>
+    <div class="sourceCode" id="cb5"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="dv">5</span>, <span class="st">&quot;Red&quot;</span>, <span class="dv">12</span>, <span class="st">&quot;Blue&quot;</span>]</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Double the third element</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>data[<span class="dv">2</span>] <span class="op">=</span> data[<span class="dv">2</span>] <span class="op">*</span> <span class="dv">2</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Swap the first and last elements</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>temp <span class="op">=</span> data[<span class="dv">0</span>]</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>data[<span class="dv">0</span>] <span class="op">=</span> data[<span class="dv">3</span>]</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>data[<span class="dv">3</span>] <span class="op">=</span> temp </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data)</span></code></pre></div>
+    <p><br></p>
+    <p><b>Output 3:</b></p>
+    <pre class="nohighlight"><code>[5, &#39;Red&#39;, 24, &#39;Blue&#39;]
+[&#39;Blue&#39;, &#39;Red&#39;, 24, 5]</code></pre>
+    <p><br></p>
+    <p><span style="color:crimson; font-weight:bolder;">Explanation:</span> To swap two elements, we first store the first element in an extra variable <span class="snip">temp</span>. Then we set the last element in the place of the first, and finally, place the saved element in the last position. If you simply try the following, the code will not work as expected:</p>
+    <div class="sourceCode" id="cb7"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data[<span class="dv">0</span>] <span class="op">=</span> data[<span class="dv">3</span>]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>data[<span class="dv">3</span>] <span class="op">=</span> data[<span class="dv">0</span>]</span></code></pre></div>
+    <p>In this case, the value at the first position will be directly overwritten before it can be placed at the last position. Therefore, an additional variable is necessary to temporarily store the original value.</p>
+    <p><br></p>
+    <p>(╭☞•́•̀)╭☞ Read the examples first before doing the tasks.</p>
+    <p><br></p>
+    <p><strong>Task 1</strong> <br> Create a list with the names of three of your favorite movies. Print the list and each individual element using <span class="snip">print()</span>.</p>
+    <p><br></p>
+    <p><strong>Task 2</strong> <br> Create a list with the numbers <span class="snip">1</span>, <span class="snip">2</span>, <span class="snip">3</span>, and <span class="snip">4</span>. Use the <span class="snip">append()</span> method to add the number <span class="snip">5</span>, and print the updated list. Then remove the number <span class="snip">2</span> using the <span class="snip">remove()</span> method and print the list again.</p>
+    <p><br></p>
+    <p><strong>Task 3</strong> <br> A list <span class="snip">household_items</span> contains the items <span class="snip">"Chair"</span>, <span class="snip">"Table"</span>, and <span class="snip">"Lamp"</span>. Add the items <span class="snip">"Wardrobe"</span> and <span class="snip">"Bed"</span> at the end of the list. Then remove <span class="snip">"Chair"</span> and <span class="snip">"Lamp"</span> from the list. Print the list after each change.</p>
+    <p><br></p>
+    <p><strong>Task 4</strong> <br> Create a list with the values <span class="snip">10</span>, <span class="snip">20</span>, <span class="snip">30</span>, <span class="snip">40</span>, <span class="snip">50</span>. Access the third element in the list and double it. Replace the doubled result in the list and print the list.</p>
+    <p><br></p>
+    <p><strong>Task 5</strong> <br> Create a list called <span class="snip">days_of_the_week</span> that contains the days of the week in the correct order. You can use abbreviations (e.g., <span class="snip">"Sun."</span> instead of <span class="snip">"Sunday"</span>). Swap the positions of the first and last elements and print the list.</p>
+    <p><br></p>
+    <h2 id="the-for-loop">The <span class="snip">for</span> Loop</h2>
+    <hr />
+    <p>A <span class="snip">for</span> loop is used to go through the elements of a list or string one by one and perform an action for each element.</p>
+    <p><br></p>
+    <p>The loop is repeated until all elements of the list or characters of the string have been processed.</p>
+    <p><br></p>
+    <p><b>Example 1:</b> <br> In this code, a list of fruits is created, and the <span class="snip">for</span> loop prints each fruit individually.</p>
+    <div class="sourceCode" id="cb8"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">&quot;Apple&quot;</span>, <span class="st">&quot;Banana&quot;</span>, <span class="st">&quot;Cherry&quot;</span>]</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> fruits:</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(x)</span></code></pre></div>
+    <p><br></p>
+    <p><b>Output 1:</b></p>
+    <pre class="nohighlight"><code>Apple
+Banana
+Cherry</code></pre>
+    <p><br></p>
+    <p><b>Example 2:</b> <br> In this code, each name in the list <span class="snip">names</span> is greeted.</p>
+    <div class="sourceCode" id="cb10"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">&quot;Anna&quot;</span>, <span class="st">&quot;Bret&quot;</span>, <span class="st">&quot;Clara&quot;</span>]</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name <span class="kw">in</span> names:</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hello, &quot;</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">&quot;!&quot;</span>)</span></code></pre></div>
+    <p><br></p>
+    <p><b>Output 2:</b></p>
+    <pre class="nohighlight"><code>Hello, Anna!
+Hello, Bret!
+Hello, Clara!</code></pre>
+    <p><br></p>
+    <p><b>Example 3:</b> <br> A <span class="snip">for</span> loop can also go through each position in a text. In this code, each character of the word <span class="snip">"Banana"</span> is printed individually.</p>
+    <div class="sourceCode" id="cb12"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="st">&quot;Banana&quot;</span>:</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(x)</span></code></pre></div>
+    <p><br></p>
+    <p><b>Output 3:</b></p>
+    <pre class="nohighlight"><code>B
+a
+n
+a
+n
+a</code></pre>
+    <p><br></p>
+    <p><strong>Task 6</strong><br />
+    Create a list called <span class="snip">colors</span> with the colors <span class="snip">"Red"</span>, <span class="snip">"Blue"</span>, and <span class="snip">"Green"</span>. Use a <span class="snip">for</span> loop to print each color in the list.</p>
+    <p><br></p>
+    <p><strong>Task 7</strong><br />
+    Write a <span class="snip">for</span> loop that outputs a message for each name in the list <span class="snip">friends</span> in the format <span class="snip">I'm glad to see you, [Name]!</span> Use the following list:</p>
+    <div class="sourceCode" id="cb14"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>friends <span class="op">=</span> [<span class="st">&quot;Max&quot;</span>, <span class="st">&quot;Sophie&quot;</span>, <span class="st">&quot;Lena&quot;</span>]</span></code></pre></div>
+    <p><br></p>
+    <p><strong>Task 8</strong><br />
+    Write a <span class="snip">for</span> loop that prints each character in the word <span class="snip">"Python"</span> individually.</p>
+    <p><br></p>
+    <p><strong>Task 9</strong><br />
+    Create a list called <span class="snip">numbers</span> with the values <span class="snip">1</span>, <span class="snip">2</span>, <span class="snip">3</span>, <span class="snip">4</span>, and <span class="snip">5</span>. Use a <span class="snip">for</span> loop to calculate double of each value in the list and print the result.<br> Note: Use <span class="snip">print(x * 2)</span> inside the <span class="snip">for</span> loop.</p>
+    <p><br></p>
+    <h2 id="the-range-function">The <span class="snip">range()</span> Function</h2>
+    <hr />
+    <p>To repeat a code a specific number of times, you can use the <span class="snip">range()</span> function.</p>
+    <p><br></p>
+    <p>The <span class="snip">range()</span> function generates a sequence of numbers that by default starts at <span class="snip">0</span>, increases in steps of <span class="snip">1</span>, and stops before the specified end number. However, you can specify a different start value, step size, or end number.</p>
+    <p><br></p>
+    <table style="border:none;">
+    <tr>
+    <td style="border:none; padding-bottom:0px;">
+    <b>Example 1:</b>
+    </td>
+    <td style="border:none; padding-bottom:0px;">
+    <b>Example 2:</b>
+    </td>
+    <td style="border:none; padding-bottom:0px;">
+    <b>Example 3:</b>
+    </td>
+    </tr>
+    <tr>
+    <td style="border:none; padding-top:0px;">
+    <div class="sourceCode" id="cb15"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(x)</span></code></pre></div>
+    </td>
+    <td style="border:none; padding-top:0px;">
+    <div class="sourceCode" id="cb16"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">7</span>):</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(x)</span></code></pre></div>
+    </td>
+    <td style="border:none; padding-top:0px;">
+    <div class="sourceCode" id="cb17"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">30</span>, <span class="dv">6</span>):</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(x)</span></code></pre></div>
+    </td>
+    </tr>
+    <tr>
+    <td style="border:none; padding-bottom:0px;">
+    <b>Output 1:</b>
+    </td>
+    <td style="border:none; padding-bottom:0px;">
+    <b>Output 2:</b>
+    </td>
+    <td style="border:none; padding-bottom:0px;">
+    <b>Output 3:</b>
+    </td>
+    </tr>
+    <tr>
+    <td style="border:none; padding-top:0px;">
+    <pre class="nohighlight"><code>0
+1
+2
+3
+4</code></pre>
+    </td>
+    <td style="border:none; padding-top:0px;">
+    <pre class="nohighlight"><code>2
+3
+4
+5
+6</code></pre>
+    </td>
+    <td style="border:none; padding-top:0px;">
+    <pre class="nohighlight"><code>2
+8
+14
+20
+26</code></pre>
+    </td>
+    </tr>
+    </table>
+    <p><br></p>
+    <p><b>Example 4:</b> <br> You can also use the <span class="snip">range()</span> function to execute an action multiple times without needing a specific item in the sequence. For this, you can simply use an underscore <span class="snip">_</span> as a placeholder:</p>
+    <div class="sourceCode" id="cb21"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hello!&quot;</span>)</span></code></pre></div>
+    <p><br></p>
+    <p><b>Output 4:</b> <br></p>
+    <pre class="nohighlight"><code>Hello!
+Hello!
+Hello!</code></pre>
+    <p><br></p>
+    <p><strong>Task 10</strong> <br> Use a <span class="snip">for</span> loop with <span class="snip">range()</span> to print the numbers from <span class="snip">0</span> to <span class="snip">9</span>, inclusive.</p>
+    <p><br></p>
+    <p><strong>Task 11</strong> <br> Write a <span class="snip">for</span> loop with <span class="snip">range()</span> that starts at <span class="snip">3</span> and ends at <span class="snip">8</span>. Print the numbers in this sequence.</p>
+    <p><br></p>
+    <p><strong>Task 12</strong> <br> Use a <span class="snip">for</span> loop with <span class="snip">range()</span> with a start value of <span class="snip">5</span>, an end value of <span class="snip">20</span>, and a step size of <span class="snip">3</span> to print the generated values.</p>
+    <p><br></p>
+    <p><strong>Task 13</strong> <br> Use a <span class="snip">for</span> loop with <span class="snip">range()</span> to print the even numbers from <span class="snip">0</span> to <span class="snip">10</span>.</p>
+    <p><br></p>
+    <hr />
+    <p><strong>Bonustask 1</strong><br />
+    Write a program that calculates the squares of the numbers <span class="snip">1</span>, <span class="snip">2</span>, <span class="snip">3</span>, <span class="snip">4</span>, <span class="snip">5</span> and prints each square.</p>
+    <p><br> <b>Hint:</b> You can calculate the square of a number <span class="snip">x</span> using <span class="snip">x * x</span> or <span class="snip">x ** 2</span>.</p>
+    <p><br></p>
+    <p><strong>Bonustask 2</strong><br />
+    Write a program that counts the numbers from <span class="snip">1</span> to <span class="snip">20</span> using <span class="snip">range()</span> and <span class="snip">if</span> statements, and only prints the odd numbers.</p>
+    <p><br> <b>Hint:</b> Use an <span class="snip">if</span> statement to check if the number is not divisible by <span class="snip">2</span>.</p>
+    <p><br></p>
+    <p><strong>Bonustask 3</strong><br />
+    Create a list <span class="snip">temperatures</span> with the values <span class="snip">15</span>, <span class="snip">22</span>, <span class="snip">19</span>, <span class="snip">30</span>, <span class="snip">18</span>, <span class="snip">21</span>. Write a <span class="snip">for</span> loop that goes through all temperatures in the list and only prints temperatures above <span class="snip">20</span>.</p>
+    <p><br> <b>Hint:</b> Use an <span class="snip">if</span> statement inside the loop to only print temperatures greater than <span class="snip">20</span>.</p>
+    <p><br></p>
+    <p><strong>Bonustask 4</strong><br />
+    Write a program that calculates the sum of the numbers from <span class="snip">1</span> to <span class="snip">10</span> and prints the result.</p>
+    <p><br></p>
+    <p><b>Hint:</b> First, define a variable <span class="snip">sum = 0</span> before the loop begins. Then, in each loop iteration, add the current number to the variable <span class="snip">sum</span>.</p>
+    <p><br></p>
+    <p><strong>Bonustask 5</strong><br />
+    Write a program that uses <span class="snip">range()</span> to print the multiplication table for the number <span class="snip">3</span>.</p>
+    <p><br> <b>Example Output:</b></p>
+    <pre class="nohighlight"><code>3 * 1 = 3  
+3 * 2 = 6  
+...  
+3 * 10 = 30  </code></pre>
+    <p><br> <b>Hint: </b><span class="snip">print("3 *", 1, "=",
+    3)</span> outputs <span class="snip">3 * 1 = 3</span>. Consider how you can adjust this <span class="snip">print()</span> command.</p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>
+        document.querySelectorAll("pre:not(.nohighlight) code, code:not(.nohighlight)").forEach((block) => {
+            hljs.highlightElement(block);
+        });
+
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        document.onkeydown = (e) => {
+            if (e.key == 123) {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'I') {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'C') {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'J') {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.key == 'U') {
+                e.preventDefault();
+            }
+        };
+    </script>
+      <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+      </script>
+      <script>
+                function goToGerman() {
+                    window.location.href = 'AB_6';
+                }
+    </script> 
+</body>
+
+</html>
