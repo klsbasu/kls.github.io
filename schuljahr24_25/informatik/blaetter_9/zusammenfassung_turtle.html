@@ -555,10 +555,10 @@ quadrat(100, "red")</pre>
                 Seitenlänge des Quadrats und <code>c</code> für die Stiftfarbe
             </td>
         </tr>
-        <th colspan="2" style="display: none;">
+        <th colspan="2">
             Zufallszahlen
         </th>
-        <tr style="display: none;">
+        <tr>
             <td>
                 <pre>from gturtle import *
 from random import randint
@@ -585,69 +585,30 @@ dot(50)</pre>
                 Position.
             </td>
         </tr>
-        <th colspan="2" style="display: none;">
-            <code>if-else</code>
-        </th>
-        <tr style="display: none;">
-            <td>
-                <pre>farbe = "grün"
-if farbe == "grün":
-   setPenColor("green")
-   dot(50)
-else:
-   dot(50)</pre>
-            </td>
-            <td>
-                Die <code>if-else</code>-Bedingung wird verwendet, um zu
-                entscheiden, ob ein grüner Punkt gezeichnet wird,
-                basierend auf dem Wert der Variablen farbe.
-                <br><br>
-                Wenn die Variable <code>farbe</code> den Wert <code>"grün"</code> hat, wird
-                die Stiftfarbe auf Grün gesetzt und ein grüner Punkt
-                gezeichnet. Wenn du den Wert von <code>farbe</code> zu etwas
-                anderem als <code>"grün"</code> änderst, wird der else-Teil des
-                Codes aktiviert, der einen schwarzen Punkt
-                zeichnet.
-            </td>
-        </tr>
-        <th colspan="2" style="display: none;">
-            <code>if-else-elif</code>
-        </th>
-        <tr style="display: none;">
-            <td>
-                <pre>farbe = "rot"
-if farbe == "grün":
-   setPenColor("green")
-   dot(50)
-elif farbe == "rot":
-   setPenColor("red")
-   dot(50)
-else:
-   dot(50)</pre>
-            </td>
-            <td>
-                In diesem Beispiel wird eine <code>if-elif-else</code>-Struktur
-                verwendet, um zu entscheiden, welcher Punkt
-                basierend auf dem Wert der Variablen farbe
-                gezeichnet wird.
-                <br><br>
-                Wenn die Variable <code>farbe</code> den Wert <code>"grün"</code> hat, wird
-                ein grüner Punkt gezeichnet. Der <code>elif</code>-Teil wird nur
-                ausgeführt, wenn die <code>if</code>-Bedingung falsch ist und die
-                Variable <code>farbe</code> den Wert <code>"rot"</code> hat – in diesem Fall
-                wird ein roter Punkt gezeichnet.
-                <br><br>
-                Wenn keine der Bedingungen zutrifft, wird der Code
-                im <code>else</code>-Block ausgeführt, und ein schwarzer Punkt
-                wird gezeichnet.
-            </td>
-        </tr>
-        <th colspan="2" style="display: none;">
+        <th colspan="2">
             <code>for</code>-Schleifen <br>
             <span style="font-weight: normal;font-size: smaller;">Sie sind allgemeiner anwendbar als die
                 repeat-Schleife, die du bereits kennst</span>
         </th>
-        <tr style="display: none;">
+        <tr>
+            <td>
+                <pre>for _ in range(4):
+    forward(100)
+    right(90)</pre>
+                <div style="text-align: center;"><img src="images_zusammenfassung/6.png" width="100px" height="100px">
+                </div>
+            </td>
+            <td>
+                Wenn du bestimmte Befehle wiederholen möchtest, kannst du auch eine <code>for</code>-Schleife nutzen.
+                <br><br>
+
+                Diese <code>for</code>-Schleife macht genau dasselbe wie die folgende <code>repeat</code>-Schleife:
+<pre>repeat 4:
+    forward(100)
+    right(90)</pre>
+            </td>
+        </tr>
+        <tr>
             <td>
                 <pre>for i in range(150):
     forward(i)
@@ -674,7 +635,7 @@ else:
                 Drehung entsteht eine Spirale.
             </td>
         </tr>
-        <tr style="display: none;">
+        <tr>
             <td>
                 <pre>for i in range(50, 150):
     forward(i)
@@ -689,7 +650,7 @@ else:
                 gezeichnet.
             </td>
         </tr>
-        <tr style="display: none;">
+        <tr>
             <td>
                 <pre>for i in range(50, 150, 8):
     forward(i)
@@ -704,10 +665,10 @@ else:
                 zu <code>146</code> an.
             </td>
         </tr>
-        <th colspan="2" style="display: none;">
+        <th colspan="2">
             Verschachtelte <code>for</code>-Schleifen <br>
         </th>
-        <tr style="display: none;">
+        <tr>
             <td>
                 <pre>for x in range(-200, 200, 20):
     for y in range (-200, 200, 20):
@@ -736,6 +697,65 @@ else:
                 Punkten auf dem Zeichenfeld.
             </td>
         </tr>
+<!--if-else und if-elif-elif
+        <th colspan="2">
+            <code>if-else</code>
+        </th>
+        <tr>
+            <td>
+                <pre>farbe = "grün"
+if farbe == "grün":
+   setPenColor("green")
+   dot(50)
+else:
+   dot(50)</pre>
+            </td>
+            <td>
+                Die <code>if-else</code>-Bedingung wird verwendet, um zu
+                entscheiden, ob ein grüner Punkt gezeichnet wird,
+                basierend auf dem Wert der Variablen farbe.
+                <br><br>
+                Wenn die Variable <code>farbe</code> den Wert <code>"grün"</code> hat, wird
+                die Stiftfarbe auf Grün gesetzt und ein grüner Punkt
+                gezeichnet. Wenn du den Wert von <code>farbe</code> zu etwas
+                anderem als <code>"grün"</code> änderst, wird der else-Teil des
+                Codes aktiviert, der einen schwarzen Punkt
+                zeichnet.
+            </td>
+        </tr>
+        <th colspan="2">
+            <code>if-elif-else</code>
+        </th>
+        <tr>
+            <td>
+                <pre>farbe = "rot"
+if farbe == "grün":
+   setPenColor("green")
+   dot(50)
+elif farbe == "rot":
+   setPenColor("red")
+   dot(50)
+else:
+   dot(50)</pre>
+            </td>
+            <td>
+                In diesem Beispiel wird eine <code>if-elif-else</code>-Struktur
+                verwendet, um zu entscheiden, welcher Punkt
+                basierend auf dem Wert der Variablen farbe
+                gezeichnet wird.
+                <br><br>
+                Wenn die Variable <code>farbe</code> den Wert <code>"grün"</code> hat, wird
+                ein grüner Punkt gezeichnet. Der <code>elif</code>-Teil wird nur
+                ausgeführt, wenn die <code>if</code>-Bedingung falsch ist und die
+                Variable <code>farbe</code> den Wert <code>"rot"</code> hat – in diesem Fall
+                wird ein roter Punkt gezeichnet.
+                <br><br>
+                Wenn keine der Bedingungen zutrifft, wird der Code
+                im <code>else</code>-Block ausgeführt, und ein schwarzer Punkt
+                wird gezeichnet.
+            </td>
+        </tr>
+-->
     </table>
 
 </body>
