@@ -587,82 +587,100 @@ dot(50)</pre>
         </tr>
         <th colspan="2">
             <code>for</code>-Schleifen <br>
-            <span style="font-weight: normal;font-size: smaller;">Sie sind allgemeiner anwendbar als die
-                repeat-Schleife, die du bereits kennst</span>
+            <span style="font-weight: normal; font-size: smaller;">Diese Schleifen sind flexibler als die
+                <code>repeat</code>-Schleife, die du bereits kennst.</span>
         </th>
         <tr>
-            <td>
-                <pre>for _ in range(4):
+            <tr>
+                <td style="border-bottom: dotted;">
+<pre>for _ in range(n):
+    Anweisung 1
+    Anweisung 2
+    ...</pre>
+                </td>
+                <td rowspan="2">
+                    Wenn du eine bestimmte Anzahl von Befehlen wiederholen möchtest, kannst du die <code>for</code>-Schleife nutzen.
+                    <br><br>
+                    Diese <code>for</code>-Schleife wiederholt sich viermal und macht dasselbe wie die <code>repeat</code>-Schleife:
+    <pre>repeat 4:
+        forward(100)
+        right(90)</pre>
+                    Der Code bewegt die Turtle so, dass ein Quadrat gezeichnet wird.
+                </td>
+            </tr>
+<td>
+<pre>for _ in range(4):
     forward(100)
     right(90)</pre>
-                <div style="text-align: center;"><img src="images_zusammenfassung/6.png" width="100px" height="100px">
-                </div>
+                <div style="text-align: center;"><img src="images_zusammenfassung/6.png" width="100px" height="100px"></div>
             </td>
-            <td>
-                Wenn du bestimmte Befehle wiederholen möchtest, kannst du auch eine <code>for</code>-Schleife nutzen.
+        </tr>
+        <tr>
+            <td style="border-bottom: dotted;">
+<pre>for i in range(n):
+    Anweisung 1
+    Anweisung 2
+    ...</pre>
+            </td>
+            <td rowspan="2">
+                Hier läuft die <code>for</code>-Schleife <code>150</code>-mal. 
                 <br><br>
-
-                Diese <code>for</code>-Schleife macht genau dasselbe wie die folgende <code>repeat</code>-Schleife:
-<pre>repeat 4:
-    forward(100)
-    right(90)</pre>
+                In jedem Durchlauf wird der Wert von <code>i</code> um <code>1</code> erhöht, beginnend bei <code>0</code> bis zu <code>149</code>.
+                Und zwar nimmt <code>i</code> die Werte <code>0</code>, <code>1</code>, <code>2</code> usw. bis <code>149</code> an.
+                <br><br>
+                Die Turtle bewegt sich um eine Strecke, die dem aktuellen Wert von <code>i</code> entspricht. Nach jeder Bewegung dreht sie sich um <code>90</code> Grad nach rechts. 
+                <br><br>
+                Durch die ständig größer werdenden Schritte und die regelmäßigen Drehungen entsteht eine Spirale.
             </td>
         </tr>
         <tr>
             <td>
-                <pre>for i in range(150):
+<pre>for i in range(150):
     forward(i)
     right(90)</pre>
-                <div style="text-align: center;"><img src="images_zusammenfassung/6.png" width="100px" height="100px">
-                </div>
+                <div style="text-align: center;"><img src="images_zusammenfassung/6.png" width="100px" height="100px"></div>
             </td>
-            <td>
-                Dies ist eine <code>for</code>-Schleife, die <code>150</code>-mal durchläuft.
-                <br><br>
-                Bei jedem Durchlauf wird der Wert von <code>i</code> um <code>1</code>
-                erhöht, beginnend mit <code>0</code> bis hin zu <code>149</code>.
-                <br><br>
-                Bei jedem Durchlauf der Schleife bewegt sich die
-                Turtle um eine Strecke, die dem aktuellen Wert von <code>i</code>
-                entspricht. Beim ersten Mal ist es <code>0</code>, dann <code>1</code>, dann
-                <code>2</code>, und so weiter, bis <code>149</code>.
-                <br><br>
-                Nach jeder Bewegung dreht sich die Turtle um <code>90</code>
-                Grad nach rechts.
-                <br><br>
-                Durch diese Kombination aus sich bei jedem Schritt
-                vergrößernder Bewegung und regelmäßiger
-                Drehung entsteht eine Spirale.
+        </tr>
+        <tr>
+            <td  style="border-bottom: dotted;">
+ <pre>for i in range(start, end):
+    Anweisung 1
+    Anweisung 2
+    ...</pre>
+            </td>
+            <td rowspan="2">
+                Dieser Code ähnelt dem vorherigen, aber der Anfangswert von <code>i</code> ist hier <code>50</code>. Das bedeutet, dass die Turtle beim ersten Durchlauf eine Strecke von <code>50</code> Einheiten zurücklegt.
+                <br>
+                Und zwar nimmt <code>i</code> die Werte <code>50</code>, <code>51</code>, <code>52</code> usw. bis <code>149</code> an.
             </td>
         </tr>
         <tr>
             <td>
-                <pre>for i in range(50, 150):
+ <pre>for i in range(50, 150):
     forward(i)
     right(90)</pre>
-                <div style="text-align: center;"><img src="images_zusammenfassung/7.png" width="100px" height="100px">
-                </div>
+                <div style="text-align: center;"><img src="images_zusammenfassung/7.png" width="100px" height="100px"></div>
             </td>
-            <td>
-                Dieser Code ist ähnlich wie der obige, aber der
-                Anfangswert von <code>i</code> ist hier <code>50</code> statt <code>0</code>. Also wird beim
-                ersten Durchlauf eine Strecke von <code>50</code> Einheiten
-                gezeichnet.
+        </tr>
+        <tr>
+            <td  style="border-bottom: dotted;">
+<pre>for i in range(start, end, step):
+    Anweisung 1
+    Anweisung 2
+    ...</pre>
+            </td>
+            <td rowspan="2">
+                Ähnlich zum vorherigen Code, aber hier wird <code>i</code> bei jedem Durchlauf um <code>8</code> erhöht, nicht um <code>1</code>. 
+                <br><br>
+                Daher nimmt <code>i</code> die Werte <code>50</code>, <code>58</code>, <code>66</code> usw., bis <code>146</code>, an. Diese Anpassung beeinflusst die Form und Dichte der gezeichneten Spirale.
             </td>
         </tr>
         <tr>
             <td>
-                <pre>for i in range(50, 150, 8):
+<pre>for i in range(50, 150, 8):
     forward(i)
     right(90)</pre>
-                <div style="text-align: center;"><img src="images_zusammenfassung/8.png" width="100px" height="100px">
-                </div>
-            </td>
-            <td>
-                Ähnlich wie der obige Code, aber in diesem Fall
-                erhöht sich <code>i</code> um <code>8</code> und nicht um <code>1</code>.
-                Daher nimmt <code>i</code> die Werte <code>50</code>, <code>58</code>, <code>66</code> und so weiter bis
-                zu <code>146</code> an.
+                <div style="text-align: center;"><img src="images_zusammenfassung/8.png" width="100px" height="100px"></div>
             </td>
         </tr>
         <th colspan="2">
@@ -670,33 +688,22 @@ dot(50)</pre>
         </th>
         <tr>
             <td>
-                <pre>for x in range(-200, 200, 20):
-    for y in range (-200, 200, 20):
+<pre>for x in range(-200, 200, 20):
+    for y in range(-200, 200, 20):
         setPos(x, y)
         dot(20)</pre>
-                <div style="text-align: center;"><img src="images_zusammenfassung/9.png" width="100px" height="100px">
-                </div>
+                <div style="text-align: center;"><img src="images_zusammenfassung/9.png" width="100px" height="100px"></div>
             </td>
             <td>
-                Zwei verschachtelte <code>for</code>-Schleifen werden verwendet,
-                um ein Koordinatengitter abzulaufen.
+                Hier werden zwei verschachtelte <code>for</code>-Schleifen verwendet, um ein Gitter zu durchlaufen.
                 <br><br>
-                Die Koordinaten reichen von <code>-200</code> bis <code>+200</code> in beiden
-                Achsen (<code>x</code> und <code>y</code>), wobei die Schleifen in Schritten
-                von 20 Einheiten durchlaufen werden.
+                Die Werte für <code>x</code> und <code>y</code> gehen von <code>-200</code> bis <code>+200</code> in Schritten von <code>20</code>. 
                 <br><br>
-                <code>setPos(x, y)</code> bewegt die Turtle zu der
-                Koordinatenposition im Gitter.
+                Mit <code>setPos(x, y)</code> wird die Turtle zu jeder Koordinatenposition bewegt, wo <code>dot(20)</code> dann einen Punkt mit einem Durchmesser von <code>20</code> Einheiten zeichnet.
                 <br><br>
-                Nachdem die Turtle die Position erreicht hat,
-                <code>dot(20)</code> zeichnet einen Punkt mit einem
-                Durchmesser von <code>20</code> Einheiten an der aktuellen
-                Position von der Turtle.
-                <br><br>
-                Das Endergebnis ist ein gleichmäßiges Raster aus
-                Punkten auf dem Zeichenfeld.
+                Am Ende ergibt sich ein gleichmäßiges Punkteraster auf dem Zeichenfeld.
             </td>
-        </tr>
+        </tr>        
 <!--if-else und if-elif-elif
         <th colspan="2">
             <code>if-else</code>
