@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>AA_8</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+         table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+         }
+         table, th, td {
+            border: 1px solid black;
+            vertical-align: middle;
+         }
+         th, td {
+            padding-left: 5px;
+            text-align: left;
+         }
+         pre {
+            padding: 2px;
+            margin-right: 10px;
+         }
+         th {
+            font-size: larger;
+            text-align: center;
+            background-color: antiquewhite;
+            padding: 5px;
+         }
+         a {
+            color: blue;
+            text-decoration: none;
+         }
+         a:visited {
+            color: blue;
+         }
+         a:hover {
+            color: blue;
+            text-decoration: underline;
+         }
+         a:active {
+            color: #0000FF;
+         }
+         .table-wrapper {
+            overflow-x: auto;
+         }
+         .centered-text {
+            text-align: center;
+         }
+         @media (max-width: 768px) {
+            table {
+               font-size: 12px;
+            }
+            th {
+               font-size: medium;
+            }
+            pre {
+               font-size: 12px;
+            }
+         }
+         @media (max-width: 480px) {
+            table {
+               font-size: 10px;
+            }
+            th {
+               font-size: small;
+            }
+            pre {
+               font-size: 10px;
+            }
+         }
+      </style>
+   </head>
+   <body>
+      <div class="centered-text">
+         <h1>Arbeitsauftrag 8</h1>
+         <h2>Programmierung mit <a href="https://webtigerjython.ethz.ch/" target="_blank">TigerJython</a></h2>
+         <h2>Das Turtle-Modul &#128034;</h2>
+      </div>
+      <br>
+      <div style="margin: 2%;">
+         <div>
+            <p><b>Aufgabe 1</b><br>
+                <b>a)</b> Zeichne einen 5-er Stern, indem du in einer <code>for</code>-Schleife die Befehle <code>forward(200)</code> und <code>right(144)</code> fünfmal wiederholst.
+               <br>
+               <img src="images_AA_8/1a.png" height="200px" width="200px" alt="5-pointed star drawing example">
+            <br>
+               <b>b)</b> Zeichne die folgende Figur, indem du in einer <code>for</code>-Schleife die Befehle <code>forward(200)</code> und <code>right(143)</code> mehrmals wiederholst.
+               Verwende eine <code>for</code>-Schleife innerhalb einer anderen <code>for</code>-Schleife.
+               <br>
+               <img src="images_AA_8/1b.png" height="200px" width="200px" alt="Nested for-loop figure example">
+            </p>
+            <br>
+            <p><b>Aufgabe 2</b><br>
+                Verwende verschachtelte <code>for</code>-Schleifen, um eine Figur zu zeichnen, die aus mehreren Sechsecken besteht und in einem kreisförmigen Muster angeordnet ist.
+               <br>
+               <img src="images_AA_8/2.png" height="200px" width="200px" alt="Hexagonal circular pattern example">
+            </p>
+            <br>
+            <p><b>Aufgabe 3</b><br>
+                Zeichne eine Figur aus dreieckigen Mustern, die in einer sechseckigen Anordnung platziert sind. Verwende verschachtelte <code>for</code>-Schleifen.
+               <br>
+               <img src="images_AA_8/3.png" height="200px" width="200px" alt="Hexagonal triangular pattern example">
+            </p>
+            <p><b>Aufgabe 4</b><br>
+                Die Turtle bewegt sich vorwärts, zeichnet einen Punkt, und kehrt dann zum Ausgangspunkt zurück. Bevor sie die nächste Strecke zeichnet, dreht sie sich um einen kleinen Winkel nach rechts. Zeichne eine solche Figur mit einer <code>for</code>-Schleife mit Startwert <code>20</code>, Endwert <code>300</code>, und Wertänderung <code>5</code>. Wenn du vor Beginn der <code>for</code>-Schleife den Befehl <code>hideTurtle()</code> wählst, erfolgt das Zeichnen schneller.
+               <br>
+               <img src="images_AA_8/4.png" height="200px" width="200px" alt="Spiral point drawing example">
+            </p>
+            <p><b>Aufgabe 5</b><br>
+                Zeichne eine Reihe von gefüllten Kreisen mit dem Befehl <code>dot(10)</code>. Positioniere die Kreise entlang einer Linie, indem du die <code>for</code>-Schleife und den Befehl <code>setPos(x, y)</code> verwendest, um die x-Koordinate in gleichmäßigen Abständen zu ändern.
+               <br>
+               <img src="images_AA_8/5.png" height="100px" width="600px" alt="Line of dots example">
+            </p>
+            <p><b>Aufgabe 6</b><br>
+                Zeichne eine Spirale aus Kreisbögen, deren Durchmesser sich mit jedem Schritt vergrößert. Verwende dafür eine <code>for</code>-Schleife und den Befehl <code>leftArc(d, 360)</code>, um die Kreisbögen zu zeichnen.
+               <br>
+               <img src="images_AA_8/6.png" height="200px" width="200px" alt="Spiral arc drawing example">
+            </p>
+         </div>
+      </div>
+   </body>
+</html>
