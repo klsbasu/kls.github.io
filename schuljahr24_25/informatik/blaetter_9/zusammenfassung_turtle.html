@@ -688,6 +688,30 @@ dot(50)</pre>
         </th>
         <tr>
             <td>
+<pre>for _ in range(5):
+    for _ in range(4):
+        forward(100)
+        right(60)
+    left(36)</pre>
+                <div style="text-align: center;"><img src="images_zusammenfassung/1.png" width="100px" height="100px"></div>
+            </td>
+            <td>
+                Diese verschachtelte <code>for</code>-Schleifen machen dasselbe wie die verschachtelte <code>repeat</code>-Schleifen:
+<pre>repeat 5:
+    repeat 4:
+        forward(100)
+        right(60)
+    left(36)</pre>
+    <br>
+    Diese Kombination aus dem Zeichnen eines
+    Quadrats und der anschließenden Drehung um <code>36</code>
+    Grad wird insgesamt fünfmal wiederholt, wodurch
+    ein Muster aus fünf Quadraten entsteht, die jeweils
+    um <code>36</code> Grad versetzt sind.
+            </td>            
+        </tr>
+        <tr>
+            <td>
 <pre>for x in range(-200, 200, 20):
     for y in range(-200, 200, 20):
         setPos(x, y)
