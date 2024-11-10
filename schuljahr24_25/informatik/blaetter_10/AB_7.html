@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AB 7</title>
+
+    <!--  <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/stackoverflow-light.min.css" />
+    <style>
+        body,
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        pre,
+        code,
+        ul,
+        table {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @font-face {
+            font-family: "Josefin Sans";
+            font-style: normal;
+            font-weight: 400;
+            src: url(https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjQbMZhKg.ttf) format("truetype");
+        }
+
+        @font-face {
+            font-family: "Josefin Sans";
+            font-style: normal;
+            font-weight: 700;
+            src: url(https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_N_XbMZhKg.ttf) format("truetype");
+        }
+
+        html {
+            height: 100%;
+            background-color: #eee;
+        }
+
+        body {
+            box-sizing: border-box;
+            min-height: 100%;
+            margin: auto;
+            padding-left: 2em;
+            padding-right: 2em;
+            padding-top: 2em;
+            padding-bottom: 2em;
+            max-width: 800px;
+            font-family: "Times New Roman", Times, serif;
+            /* font-family: 'Josefin Sans', sans-serif; */
+            font-size: 0.9em;
+            background-color: white;
+            border: double 3px #ddd;
+            border-top: none;
+            border-bottom: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-top: 0;
+            margin-bottom: 2px;
+        }
+
+        h3 {
+            font-size: 1.2em;
+        }
+
+        h4 {
+            font-size: 1em;
+        }
+
+        strong {
+            color: purple;
+            margin-bottom: 2px;
+        }
+
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: blue;
+        }
+
+        a:hover {
+            color: blue;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: #0000ff;
+        }
+
+        body h2 {
+            margin-top: 14px;
+        }
+
+        body h3 {
+            margin-top: 14px;
+        }
+
+        body p {
+            margin-top: 0px !important;
+            margin-bottom: 0px !important;
+            width: 100vh !;
+        }
+
+        pre,
+        code {
+            background-color: #f6f6f6 !important;
+            font-size: 14px !important;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-weight: 550;
+            /*   color: white !important; */
+            padding-left: 30px !important;
+            /* Increase padding for more indentation */
+            margin-left: 0px !important;
+            margin-top: 2px;
+            padding: 2px !important;
+            border-radius: 0px !important;
+            font-family: "Consolas", "Courier New", monospace;
+            width: 100% !important;
+            overflow: hidden;
+            line-height: 1em !important;
+        }
+
+        pre.nohighlight {
+            /* border: 1px solid #ddd; */
+            line-height: 1.3em !important;
+            overflow-x: auto !important;
+            white-space: pre !important;
+        }
+
+        pre.nohighlight code {
+            padding-left: 0 !important;
+        }
+
+        .snip {
+            font-family: Menlo, monospace;
+            font-size: 0.75em;
+        }
+
+        ul {
+            padding-left: 13px !important;
+            /* Slight increase for better readability */
+            list-style-type: disc !important;
+        }
+
+        ul ul {
+            list-style-type: disc !important;
+            /* Ensure nested lists also use disc markers */
+        }
+
+        ul li::marker {
+            list-style-type: disc !important;
+            /* Force disc marker for all list items */
+        }
+
+        /* Add this style to wrap the table and allow horizontal scrolling */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+            width: auto;
+            /* Ensure the table takes up the full width of its container */
+            max-width: 100%;
+            /* Prevent the table from exceeding the container's width */
+            overflow-x: auto;
+            table-layout: fixed;
+            /* Helps with responsiveness */
+        }
+
+        table th,
+        table td {
+            padding: 6px 8px;
+            vertical-align: top;
+            white-space: nowrap;
+            word-wrap: break-word;
+            /* Break long words to prevent overflow */
+        }
+
+        table th {
+            background: #ddd;
+            font-weight: 900;
+            text-align: left;
+        }
+
+        table tbody tr:nth-child(odd) {
+            background: white;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+        
+    </style>
+</head>
+
+<body class="markdown-body">
+    <h1 id="ab-7-programmierung-mit-python"><strong>AB 7 Programmierung
+    mit Python</strong></h1>
+    <button id="translateBtn" onclick="goToEnglish()">
+    Translate to English
+    </button>
+    <hr />
+    <h2 id="funktionen-in-python">Funktionen in Python</h2>
+    <hr />
+    <p>Eine <b>Funktion</b> ist ein Abschnitt von Code, der eine
+    bestimmte Aufgabe erfüllt und wiederverwendet werden kann.
+    Funktionen helfen dabei, den Code besser zu strukturieren und
+    lesbarer zu machen, indem sie bestimmte Aufgaben klar abgrenzen.</p>
+    <h3 id="funktionen-definieren-und-aufrufen">Funktionen definieren
+    und aufrufen</h3>
+    <p>Eine Funktion wird mit dem Schlüsselwort <span
+    class="snip">def</span> definiert, gefolgt von einem Namen und
+    runden Klammern <span class="snip">()</span>. Der Codeblock der
+    Funktion wird dann eingerückt.</p>
+    <p><br></p>
+    <p><b>Beispiel:</b> <br> Die Funktion <span
+    class="snip">begruessung</span> wird definiert und anschließend
+    aufgerufen.</p>
+    <div class="sourceCode" id="cb1"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> begruessung():</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hallo! Willkommen bei Python.&quot;</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>begruessung()</span></code></pre></div>
+    <p><br></p>
+    <p><b>Ausgabe:</b></p>
+    <pre class="nohighlight"><code>Hallo! Willkommen bei Python.</code></pre>
+    <p><br></p>
+    <p><strong>Aufgabe 1</strong><br />
+    Definiere eine Funktion <span class="snip">verabschiedung</span>,
+    die <span class="snip">"Tschüss! Bis bald!"</span> ausgibt, wenn sie
+    aufgerufen wird. Rufe die Funktion auf.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 2</strong><br />
+    Erstelle eine Funktion <span class="snip">motivations_spruch</span>,
+    die den Text <span class="snip">"Heute ist ein großartiger Tag zum
+    Programmieren!"</span> ausgibt. Rufe die Funktion dreimal auf.</p>
+    <h2 id="funktionen-mit-einem-parameter">Funktionen mit einem
+    Parameter</h2>
+    <hr />
+    <p>Mit <b>Parametern</b> können wir einer Funktion Werte übergeben,
+    die diese dann für ihre Aufgabe nutzt.</p>
+    <p><br></p>
+    <p><b>Beispiel:</b> <br> Die Funktion <span
+    class="snip">begruessung_person</span> nimmt einen Namen als
+    Parameter. Wenn wir <span
+    class="snip">begruessung_person("Jojo")</span> aufrufen, verwendet
+    die Funktion <span class="snip">"Jojo"</span> im Begrüßungstext und
+    gibt den Text <span class="snip">"Hallo, Jojo!"</span> aus.</p>
+    <div class="sourceCode" id="cb3"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> begruessung_person(name):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hallo &quot;</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">&quot;!&quot;</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>begruessung_person(<span class="st">&quot;Jojo&quot;</span>)</span></code></pre></div>
+    <p><br></p>
+    <p><b>Ausgabe:</b></p>
+    <pre class="nohighlight"><code>Hallo Jojo!</code></pre>
+    <p><br></p>
+    <p><strong>Aufgabe 3</strong><br />
+    Definiere eine Funktion <span class="snip">zeige_alter</span>, die
+    das Alter als Parameter entgegennimmt und den Text <span
+    class="snip">"Du bist [Alter] Jahre alt."</span> ausgibt.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 4</strong><br />
+    Erstelle eine Funktion <span class="snip">temperatur_meldung</span>,
+    die die aktuelle Temperatur als Parameter entgegennimmt und den Text
+    <span class="snip">"Es sind heute [Temperatur] Grad."</span>
+    ausgibt.</p>
+    <p><br></p>
+    <h2 id="funktionen-mit-mehreren-parametern">Funktionen mit mehreren
+    Parametern</h2>
+    <hr />
+    <p>Funktionen können auch mehrere Parameter haben, um komplexere
+    Berechnungen oder Aufgaben zu ermöglichen.</p>
+    <p><br></p>
+    <p><b>Beispiel 1:</b> <br> Diese Funktion <span
+    class="snip">addiere_zahlen</span> nimmt zwei Zahlen als Parameter
+    entgegen und gibt ihre Summe aus.</p>
+    <div class="sourceCode" id="cb5"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> addiere_zahlen(a, b):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Die Summe ist&quot;</span>, a <span class="op">+</span> b)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>addiere_zahlen(<span class="dv">3</span>, <span class="dv">4</span>)</span></code></pre></div>
+    <p><br></p>
+    <p><b>Ausgabe 1:</b></p>
+    <pre class="nohighlight"><code>Die Summe ist 7</code></pre>
+    <p><br></p>
+    <p><b>Beispiel 2:</b> <br> Diese Funktion nimmt den Namen einer
+    Person und das Alter entgegen und gibt eine personalisierte
+    Begrüßung aus.</p>
+    <div class="sourceCode" id="cb7"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> begruessung_mit_alter(name, alter):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hallo&quot;</span>, name <span class="op">+</span> <span class="st">&quot;, du bist&quot;</span>, alter, <span class="st">&quot;Jahre alt.&quot;</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>begruessung_mit_alter(<span class="st">&quot;Lisa&quot;</span>, <span class="dv">30</span>)</span></code></pre></div>
+    <p><br></p>
+    <p><b>Ausgabe 2:</b></p>
+    <pre class="nohighlight"><code>Hallo Lisa, du bist 30 Jahre alt.</code></pre>
+    <p><br></p>
+    <p><strong>Aufgabe 5</strong><br />
+    Erstelle eine Funktion <span class="snip">person_info</span>, die
+    den Namen und das Alter einer Person entgegennimmt und <span
+    class="snip">"Name: [Name], Alter: [Alter]"</span> ausgibt.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 6</strong><br />
+    Erstelle eine Funktion <span class="snip">reise_info</span>, die den
+    Abfahrtsort und das Reiseziel entgegennimmt und den Text <span
+    class="snip">"Die Reise geht von [Abfahrtsort] nach
+    [Reiseziel]."</span> ausgibt.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 7</strong><br />
+    Schreibe eine Funktion <span class="snip">reise_kosten</span>, die
+    die Anzahl der Kilometer und den Preis pro Kilometer entgegennimmt
+    und die Gesamtkosten der Reise berechnet und ausgibt.</p>
+    <p><br></p>
+    <h2 id="funktionen-mit-rückgabewert">Funktionen mit
+    Rückgabewert</h2>
+    <hr />
+    <p>Eine Funktion kann auch einen <b>Rückgabewert</b> haben, der das
+    Ergebnis einer Berechnung an das Hauptprogramm zurückgibt. Dafür
+    wird das Schlüsselwort <span class="snip">return</span>
+    verwendet.</p>
+    <p><br></p>
+    <p><b>Beispiel:</b> <br> Die Funktion <span
+    class="snip">verdopple</span> verdoppelt eine Zahl und gibt das
+    Ergebnis zurück.</p>
+    <div class="sourceCode" id="cb9"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> verdopple(x):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>ergebnis <span class="op">=</span> verdopple(<span class="dv">5</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ergebnis) </span></code></pre></div>
+    <p><br></p>
+    <p><b>Ausgabe:</b></p>
+    <pre class="nohighlight"><code>10</code></pre>
+    <p><br> <b style="color:crimson;">Merke:</b> Es reicht nicht,
+    einfach die Funktion mit <span class="snip">verdopple(5)</span>
+    aufzurufen. Die Funktion gibt einen Wert zurück. Um ihn auszugeben,
+    musst du den <span class="snip">print()</span>-Befehl verwenden.
+    Wenn du möchtest, dass die Funktion direkt die verdoppelte Zahl
+    ausgibt, musst du sie ohne <span class="snip">return</span>
+    definieren:</p>
+    <div class="sourceCode" id="cb11"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> verdopple(x):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(x <span class="op">*</span> <span class="dv">2</span>)</span></code></pre></div>
+    <p><br></p>
+    <p>In diesem Abschnitt geht es jedoch darum, Funktionen mit
+    Rückgabewerten zu definieren.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 8</strong><br />
+    Schreibe eine Funktion <span class="snip">quadrat</span>, die eine
+    Zahl als Parameter entgegennimmt und das Quadrat der Zahl
+    zurückgibt. <b>Teste deinen Code</b>, indem du das Ergebnis der
+    Funktion für eine Zahl deiner Wahl ausgibst.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 9</strong><br />
+    Erstelle eine Funktion <span class="snip">rechteck_flaeche</span>,
+    die die Länge und Breite eines Rechtecks als Parameter entgegennimmt
+    und die Fläche des Rechtecks berechnet und zurückgibt. <b>Teste
+    deinen Code</b>, mit verschiedenen Werten für Länge und Breite.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 10</strong><br />
+    Schreibe eine Funktion <span
+    class="snip">celsius_in_fahrenheit</span>, die eine Temperatur in
+    Celsius als Parameter entgegennimmt und diese in Fahrenheit
+    umrechnet und zurückgibt. <br><br> <b>Teste deinen Code wie
+    folgt:</b></p>
+    <div class="sourceCode" id="cb12"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>fahrenheit <span class="op">=</span> celsius_in_fahrenheit(<span class="dv">25</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Die Temperatur in Fahrenheit ist:&quot;</span>, fahrenheit)</span></code></pre></div>
+    <p><br> <b>Formel:</b> <span class="snip">Fahrenheit = (Celsius *
+    9/5) + 32</span></p>
+    <p><br></p>
+    <p><strong>Aufgabe 11</strong> <br> Schreibe eine Funktion <span
+    class="snip">berechne_bmi</span>, die Gewicht (in kg) und Größe (in
+    m) als Parameter entgegennimmt, den Body-Mass-Index (BMI) berechnet
+    und zurückgibt. <br><br> <b>Teste deinen Code wie folgt:</b></p>
+    <div class="sourceCode" id="cb13"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>bmi <span class="op">=</span> berechne_bmi(<span class="dv">70</span>, <span class="fl">1.75</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Dein BMI ist:&quot;</span>, bmi)</span></code></pre></div>
+    <p><br> <b>Formel:</b> <span class="snip"> BMI = Gewicht / (Größe *
+    Größe) </span></p>
+    <hr />
+    <p><strong>Zusatzaufgabe 1</strong> <br> Schreibe eine Funktion
+    namens <span class="snip">summe()</span>, die eine Zahl <span
+    class="snip">n</span> als Eingabe nimmt und die Summe aller ganzen
+    Zahlen von <span class="snip">1</span> bis <span
+    class="snip">n</span> berechnet und zurückgibt. Beispiel: <span
+    class="snip">summe(5)</span> sollte <span class="snip">15</span>
+    ausgeben. <br><br> <b>Tipp:</b> Verwende eine Variable für die
+    Summe, z.B. <span class="snip">gesamt = 0</span>, und eine <span
+    class="snip">for</span>-Schleife, um von <span class="snip">1</span>
+    bis <span class="snip">n</span> zu iterieren; addiere jede Zahl zu
+    <span class="snip">gesamt</span> und gib <span
+    class="snip">gesamt</span> am Ende zurück.</p>
+    <p><br></p>
+    <p><strong>Zusatzaufgabe 2</strong> <br> Definiere eine Funktion
+    namens <span class="snip">tier_sound</span>, die einen einzelnen
+    Tiernamen (z.B., <span class="snip">"Hund"</span>) entgegennimmt und
+    den passenden Laut für dieses Tier zurückgibt. Gib <span
+    class="snip">"Wuff!"</span> für <span class="snip">"Hund"</span>,
+    <span class="snip">"Miau!"</span> für <span
+    class="snip">"Katze"</span> und <span class="snip">"Muh!"</span> für
+    <span class="snip">"Kuh"</span> zurück. Wenn das Tier nicht bekannt
+    ist, gib <span class="snip">"Unbekanntes Tier"</span> zurück.</p>
+    <p><br></p>
+    <p><b>Tipp:</b> Verwende eine <span
+    class="snip">if-elif-else</span>-Struktur, um den passenden Laut je
+    nach Tier auszuwählen.</p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>
+        document.querySelectorAll("pre:not(.nohighlight) code, code:not(.nohighlight)").forEach((block) => {
+            hljs.highlightElement(block);
+        });
+
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        document.onkeydown = (e) => {
+            if (e.key == 123) {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'I') {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'C') {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'J') {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.key == 'U') {
+                e.preventDefault();
+            }
+        };
+    </script>
+      <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+      </script>
+      <script>
+                function goToEnglish() {
+                    window.location.href = 'AB_7_en.html';
+                }
+    </script> 
+</body>
+
+</html>
