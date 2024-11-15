@@ -727,65 +727,188 @@ dot(50)</pre>
                 Am Ende ergibt sich ein gleichmäßiges Punkteraster auf dem Zeichenfeld.
             </td>
         </tr>        
-<!--if-else und if-elif-elif
         <th colspan="2">
-            <code>if-else</code>
+            Bedingungen mit <code>if-else</code> <br>
+            <div style="font-size: smaller;font-weight: lighter; text-align: center; padding: 5px;">
+            Die <code>if-else-</code>Struktur ermöglicht es dir, Entscheidungen in deinem Programm zu treffen. 
+            Das bedeutet, dass dein Code je nach Bedingung unterschiedliche Anweisungen ausführt. 
+            </div>
         </th>
         <tr>
             <td>
-                <pre>farbe = "grün"
-if farbe == "grün":
-   setPenColor("green")
-   dot(50)
-else:
-   dot(50)</pre>
+                <pre>setPenWidth(5)
+
+for i in range(5):
+    if i < 3:
+        setPenColor("red")
+    else:
+        setPenColor("green")
+
+    forward(40)
+    right(90)
+    forward(40)
+    left(90)</pre>
+    <div style="text-align: center;"><img src="images_zusammenfassung/11.png" width="100px" height="100px"></div>
             </td>
             <td>
-                Die <code>if-else</code>-Bedingung wird verwendet, um zu
-                entscheiden, ob ein grüner Punkt gezeichnet wird,
-                basierend auf dem Wert der Variablen farbe.
+                In diesem Code wird die <code>if-else</code>-Struktur verwendet, um die Stiftfarbe basierend auf dem Wert der Variablen <code>i</code> festzulegen.
                 <br><br>
-                Wenn die Variable <code>farbe</code> den Wert <code>"grün"</code> hat, wird
-                die Stiftfarbe auf Grün gesetzt und ein grüner Punkt
-                gezeichnet. Wenn du den Wert von <code>farbe</code> zu etwas
-                anderem als <code>"grün"</code> änderst, wird der else-Teil des
-                Codes aktiviert, der einen schwarzen Punkt
-                zeichnet.
+                &#8226; Wenn <code>i &lt; 3</code> ist, wird die Stiftfarbe auf Rot gesetzt.
+                <br>
+                &#8226; Andernfalls wird die Stiftfarbe auf Grün gesetzt.
+                <br><br>
+                Die Anweisungen nach <code>if</code> werden nur dann ausgeführt, wenn die Bedingung wahr ist, sonst werden die Anweisungen nach <code>else</code> ausgeführt.
+                <br><br>
+                Im <code>if</code>-Ausdruck werden üblicherweise folgende Vergleichsoperatoren verwendet:
+                <br><br>
+                <table style="border-collapse: collapse; width: 50%; text-align: left;">
+                    <tr>
+                        <td><code>&lt;</code></td>
+                        <td>kleiner</td>
+                    </tr>
+                    <tr>
+                        <td><code>&gt;</code></td>
+                        <td>größer</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;=</code></td>
+                        <td>kleiner oder gleich</td>
+                    </tr>
+                    <tr>
+                        <td><code>&gt;=</code></td>
+                        <td>größer oder gleich</td>
+                    </tr>
+                    <tr>
+                        <td><code>==</code></td>
+                        <td>gleich</td>
+                    </tr>
+                    <tr>
+                        <td><code>!=</code></td>
+                        <td>ungleich</td>
+                    </tr>
+            </table>  
+            <br>
+                Die Turtle zeichnet Linien in der festgelegten Farbe und erstellt eine Treppe durch die wiederholten Bewegungen innerhalb der Schleife.
+                <br><br>              
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <pre>setPenWidth(5)
+
+for i in range(5):
+    if i % 2 == 0:
+        setPenColor("red")
+    else:
+        setPenColor("green")
+
+    forward(40)
+    right(90)
+    forward(40)
+    left(90)</pre>
+    <div style="text-align: center;"><img src="images_zusammenfassung/12.png" width="100px" height="100px"></div>
+            </td>
+            <td>
+                Hier überprüft die <code>if-else</code>-Bedingung, ob die Variable <code>i</code> gerade oder ungerade ist.
+                <br><br>
+                &#8226; Wenn <code>i</code> eine gerade Zahl ist (<code>i % 2 == 0</code>), wird die Stiftfarbe auf Rot gesetzt.
+                <br>
+                &#8226; Wenn <code>i</code> eine ungerade Zahl ist, wird die Stiftfarbe auf Grün gesetzt.
+                <br><br>
+                Dadurch zeichnet die Turtle abwechselnd rote und grüne Linien.
             </td>
         </tr>
         <th colspan="2">
-            <code>if-elif-else</code>
+            Mehrere Bedingungen mit <code>if-elif-else</code>
+            <div style="font-size: smaller;font-weight: lighter; text-align: center; padding: 5px;">
+                Mit der <code>if-elif-else-</code>Struktur kannst du mehrere Bedingungen prüfen.
+            </div>
         </th>
         <tr>
             <td>
-                <pre>farbe = "rot"
-if farbe == "grün":
-   setPenColor("green")
-   dot(50)
-elif farbe == "rot":
-   setPenColor("red")
-   dot(50)
-else:
-   dot(50)</pre>
+                <pre>def dreieck(farbe):
+    setFillColor(farbe)
+    startPath()
+    for i in range(3):
+        forward(100)
+        right(120)
+    right(60)
+    fillPath()
+
+for k in range(6):
+    if k == 0:
+        dreieck("red")
+    elif k == 1:
+        dreieck("yellow")
+    elif k == 2:
+        dreieck("blue")
+    elif k == 3:
+        dreieck("green")
+    else:
+        dreieck("orange")</pre>
+        <div style="text-align: center;"><img src="images_zusammenfassung/13.png" width="100px" height="100px"></div>
             </td>
             <td>
-                In diesem Beispiel wird eine <code>if-elif-else</code>-Struktur
-                verwendet, um zu entscheiden, welcher Punkt
-                basierend auf dem Wert der Variablen farbe
-                gezeichnet wird.
+                In diesem Beispiel wird die <code>if-elif-else</code>-Struktur genutzt, um basierend auf dem Wert der Variablen <code>k</code> die Farbe für das Dreieck festzulegen.
                 <br><br>
-                Wenn die Variable <code>farbe</code> den Wert <code>"grün"</code> hat, wird
-                ein grüner Punkt gezeichnet. Der <code>elif</code>-Teil wird nur
-                ausgeführt, wenn die <code>if</code>-Bedingung falsch ist und die
-                Variable <code>farbe</code> den Wert <code>"rot"</code> hat – in diesem Fall
-                wird ein roter Punkt gezeichnet.
+                &#8226; Wenn <code>k == 0</code>, wird ein rotes Dreieck gezeichnet.
+                <br>
+                &#8226; Wenn <code>k == 1</code>, wird ein gelbes Dreieck gezeichnet.
+                <br>
+                &#8226; Wenn <code>k == 2</code>, wird ein blaues Dreieck gezeichnet.
+                <br>
+                &#8226; Wenn <code>k == 3</code>, wird ein grünes Dreieck gezeichnet.
+                <br>
+                &#8226; Andernfalls (für alle anderen Werte von <code>k</code>) wird ein oranges Dreieck gezeichnet.
                 <br><br>
-                Wenn keine der Bedingungen zutrifft, wird der Code
-                im <code>else</code>-Block ausgeführt, und ein schwarzer Punkt
-                wird gezeichnet.
+                Die Funktion <code>dreieck(farbe)</code> zeichnet ein gefülltes Dreieck in der angegebenen Farbe.
             </td>
         </tr>
--->
+        <tr>
+            <td>
+                <pre>speed(-1)
+  
+setPenColor("red")
+
+for s in range(4, 220, 8):
+    if s == 140:
+        setPenColor("green")
+    forward(s)
+    right(90)</pre>
+    <div style="text-align: center;"><img src="images_zusammenfassung/14.png" width="100px" height="100px"></div>
+            </td>
+            <td>
+                In diesem Code wird innerhalb der Schleife die Bedingung <code>if s == 140</code> geprüft.
+                <br><br>
+                &#8226; Wenn <code>s</code> den Wert 140 erreicht, wird die Stiftfarbe auf Grün geändert.
+                <br>
+                &#8226; Bis dahin bleibt die Stiftfarbe Rot.
+                <br><br>
+                Die Turtle zeichnet Linien mit zunehmender Länge und dreht sich jedes Mal um 90 Grad nach rechts, wodurch ein spiralförmiges Muster entsteht.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <pre>for x in range(-200, 200, 20):
+    for y in range (-200, 200, 20):
+       setPos(x, y)
+       if (x > 0 and y > 0) or (x < 0 and y < 0):
+            setPenColor("red")
+       else:
+            setPenColor("green")     
+       dot(15)</pre>
+    <div style="text-align: center;"><img src="images_zusammenfassung/15.png" width="100px" height="100px"></div>
+            </td>
+            <td>
+                In diesem Beispiel wird die Farbe der Punkte basierend auf ihrer Position bestimmt.
+                <br><br>
+                &#8226; Wenn sowohl <code>x</code> als auch <code>y</code> positiv sind (1. Quadrant) oder beide negativ sind (3. Quadrant), wird die Stiftfarbe auf Rot gesetzt.
+                <br>
+                &#8226; In allen anderen Fällen (2. und 4. Quadrant) wird die Stiftfarbe auf Grün gesetzt.
+                <br><br>
+                Die Turtle bewegt sich in einem Raster über die Zeichenfläche und zeichnet an jeder Position einen farbigen Punkt, wodurch ein Muster entsteht, das die Quadranten hervorhebt.
+            </td>
+        </tr>
     </table>
 
 </body>
