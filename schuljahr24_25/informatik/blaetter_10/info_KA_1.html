@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Info zur KA 1</title>
+
+    <!--  <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/stackoverflow-light.min.css" />
+    <style>
+        body,
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        pre,
+        code,
+        ul,
+        table {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @font-face {
+            font-family: "Josefin Sans";
+            font-style: normal;
+            font-weight: 400;
+            src: url(https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjQbMZhKg.ttf) format("truetype");
+        }
+
+        @font-face {
+            font-family: "Josefin Sans";
+            font-style: normal;
+            font-weight: 700;
+            src: url(https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_N_XbMZhKg.ttf) format("truetype");
+        }
+
+        html {
+            height: 100%;
+            background-color: #eee;
+        }
+
+        body {
+            box-sizing: border-box;
+            min-height: 100%;
+            margin: auto;
+            padding-left: 2em;
+            padding-right: 2em;
+            padding-top: 2em;
+            padding-bottom: 2em;
+            max-width: 800px;
+            font-family: "Times New Roman", Times, serif;
+            /* font-family: 'Josefin Sans', sans-serif; */
+            font-size: 0.9em;
+            background-color: white;
+            border: double 3px #ddd;
+            border-top: none;
+            border-bottom: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-top: 0;
+            margin-bottom: 2px;
+        }
+
+        h3 {
+            font-size: 1.2em;
+        }
+
+        h4 {
+            font-size: 1em;
+        }
+
+        strong {
+            color: purple;
+            margin-bottom: 2px;
+        }
+
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: blue;
+        }
+
+        a:hover {
+            color: blue;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: #0000ff;
+        }
+
+        body h2 {
+            margin-top: 14px;
+        }
+
+        body h3 {
+            margin-top: 14px;
+        }
+
+        body p {
+            margin-top: 0px !important;
+            margin-bottom: 0px !important;
+            width: 100vh !;
+        }
+
+        pre,
+        code {
+            background-color: #f6f6f6 !important;
+            font-size: 14px !important;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-weight: 550;
+            /*   color: white !important; */
+            padding-left: 30px !important;
+            /* Increase padding for more indentation */
+            margin-left: 0px !important;
+            margin-top: 2px;
+            padding: 2px !important;
+            border-radius: 0px !important;
+            font-family: "Consolas", "Courier New", monospace;
+            width: 100% !important;
+            overflow: hidden;
+            line-height: 1em !important;
+        }
+
+        pre.nohighlight {
+            /* border: 1px solid #ddd; */
+            line-height: 1.3em !important;
+            overflow-x: auto !important;
+            white-space: pre !important;
+        }
+
+        pre.nohighlight code {
+            padding-left: 0 !important;
+        }
+
+        .snip {
+            font-family: Menlo, monospace;
+            font-size: 0.75em;
+        }
+
+        ul {
+            padding-left: 13px !important;
+            /* Slight increase for better readability */
+            list-style-type: disc !important;
+        }
+
+        ul ul {
+            list-style-type: disc !important;
+            /* Ensure nested lists also use disc markers */
+        }
+
+        ul li::marker {
+            list-style-type: disc !important;
+            /* Force disc marker for all list items */
+        }
+
+        /* Add this style to wrap the table and allow horizontal scrolling */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+            width: auto;
+            /* Ensure the table takes up the full width of its container */
+            max-width: 100%;
+            /* Prevent the table from exceeding the container's width */
+            overflow-x: auto;
+            table-layout: fixed;
+            /* Helps with responsiveness */
+        }
+
+        table th,
+        table td {
+            padding: 6px 8px;
+            vertical-align: top;
+            white-space: nowrap;
+            word-wrap: break-word;
+            /* Break long words to prevent overflow */
+        }
+
+        table th {
+            background: #ddd;
+            font-weight: 900;
+            text-align: left;
+        }
+
+        table tbody tr:nth-child(odd) {
+            background: white;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+        
+    </style>
+</head>
+
+<body class="markdown-body">
+    <h1 id="info-zum-test-zur-programmierung-mit-python"><strong>Info
+    zur KA 1 zur Programmierung mit Python</strong></h1>
+    <hr />
+    <h2 id="beachte-folgendes">Beachte Folgendes</h2>
+    <hr />
+    <p><b>Wo sind die Aufgaben?</b></p>
+    <p>Die Aufgaben erhältst du in schriftlicher Form.</p>
+    <p><br></p>
+    <p><b>Wo schreibe ich meine Lösungen?</b></p>
+    <p>Anstelle von VS Code wirst du deinen Python-Code in
+    <a href="https://webtigerpython.ethz.ch/" target="_blank">WebTigerJython</a>
+    schreiben und dort ausführen.</p>
+    <p><br></p>
+    <p><b>Wo soll ich meine Lösungen speichern?</b></p>
+    <p>Erstelle in deinem Ordner <i>inf_10_nachname</i> eine neue
+    Textdatei mit dem Namen <i>KA_1_nachname.txt</i>. In dieser Datei
+    wirst du deine Lösungen speichern.</p>
+    <p><br></p>
+    <p><b>Wie gebe ich meine Lösungen ab?</b></p>
+    <p>Ich werde dir einen USB-Stick geben. Kopiere die Datei
+    <i>KA_1_nachname.txt</i> auf diesen Stick. Die Abgabe über Teams
+    oder per Chat ist nicht erlaubt.</p>
+    <p><br></p>
+    <p><b>Welche Webseiten und Programme darf ich nutzen?</b><br />
+    Du darfst nur Microsoft Edge und einen Texteditor verwenden. <br> In
+    Microsoft Edge darfst du nur die folgenden zwei Webseiten öffnen:
+    <a href="https://webtigerpython.ethz.ch/" target="_blank">WebTigerJython</a>
+    und diese Webseite des Tests. <br> Im Texteditor darf nur die Datei
+    <i>KA_1_nachname.txt</i> geöffnet sein.</p>
+    <p><br></p>
+    <p><b>Darf ich Spickzettel nutzen?</b><br />
+    Nein, du darfst keinen eigenen Spickzettel benutzen, und du darfst
+    nicht auf deine Lösungen zu den Arbeitsblättern schauen. Unten
+    findest du jedoch meinen Spickzettel.</p>
+    <p><br></p>
+    <p><b>Was soll ich machen, wenn ich früher fertig bin?</b><br />
+    Melde dich, und ich werde dir sagen, ob du gehen darfst.</p>
+    <p><br></p>
+    <h2 id="spickzettel">Spickzettel</h2>
+    <span style="font-weight: bolder;color: crimson;">(Nicht fertig, es fehlen die Themen Listen, for-Schleifen und Funktionen.)</span>
+    <hr />
+    <h3 id="variablen-und-datentypen">Variablen und Datentypen</h3>
+    <p>Variablen speichern Daten. <br> Typen wie <span
+    class="snip">int</span> (Ganzzahlen), <span
+    class="snip">float</span> (Dezimalzahlen), <span
+    class="snip">str</span> (Text) definieren den Datentyp.</p>
+    <p><br></p>
+    <p><b>Beispiel:</b></p>
+    <div class="sourceCode" id="cb1"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>preis <span class="op">=</span> <span class="fl">19.99</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">&quot;Lisa&quot;</span></span></code></pre></div>
+    <h3 id="eingabe-und-ausgabe">Eingabe und Ausgabe</h3>
+    <p><span class="snip">input()</span> wird genutzt, um
+    Benutzereingaben zu erfassen.</p>
+    <p><span class="snip">print()</span> gibt Daten im Terminal aus.</p>
+    <p><br></p>
+    <p><b>Beispiel:</b></p>
+    <div class="sourceCode" id="cb2"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Wie heißt du? &quot;</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Hallo,&quot;</span>, name)</span></code></pre></div>
+    <h3
+    id="überschreiben-von-variablenwerten-und-berechnung-mit-variablen">Überschreiben
+    von Variablenwerten und Berechnung mit Variablen</h3>
+    <p>Eine Variable kann jederzeit mit einem neuen Wert überschrieben
+    werden. Außerdem können Berechnungen mit Variablen durchgeführt
+    werden, um neue Ergebnisse zu erzeugen.</p>
+    <p><br></p>
+    <p><b>Beispiel:</b></p>
+    <div class="sourceCode" id="cb3"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ursprünglicher Wert der Variable</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Überschreiben der Variable</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Berechnung mit der Variable</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>ergebnis <span class="op">=</span> x <span class="op">*</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">5</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ergebnis) <span class="co"># Ausgabe: 45</span></span></code></pre></div>
+    <h3 id="umwandlung-von-benutzereingaben">Umwandlung von
+    Benutzereingaben</h3>
+    <p>Um eine Eingabe in einen anderen Datentyp zu konvertieren, kannst
+    du Funktionen wie <span class="snip">int()</span>, <span
+    class="snip">float()</span> oder <span class="snip">str()</span>
+    verwenden.</p>
+    <p><br></p>
+    <p><b>Beispiel für eine ganze Zahl:</b></p>
+    <div class="sourceCode" id="cb4"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>alter <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Wie alt bist du? &quot;</span>))  <span class="co"># Umwandlung von String zu Integer</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;In fünf Jahren wirst du&quot;</span>, alter <span class="op">+</span> <span class="dv">5</span>, <span class="st">&quot;Jahre alt sein.&quot;</span>)</span></code></pre></div>
+    <p><br></p>
+    <p><b>Beispiel für eine Dezimalzahl:</b></p>
+    <div class="sourceCode" id="cb5"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>gewicht <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">&quot;Wie viel wiegst du in kg? &quot;</span>)) <span class="co"># Umwandlung von String zu Float</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Dein Gewicht in Gramm ist&quot;</span>, gewicht <span class="op">*</span> <span class="dv">1000</span>)</span></code></pre></div>
+    <h3 id="arithmetische-operatoren">Arithmetische Operatoren</h3>
+    <p>Python unterstützt folgende arithmetische Operatoren:</p>
+    <ul style="margin-top:2px;">
+    <li>
+    Addition: <span class="snip">+</span>
+    </li>
+    <li>
+    Subtraktion: <span class="snip">-</span>
+    </li>
+    <li>
+    Multiplikation: <span class="snip">*</span>
+    </li>
+    <li>
+    Division <span class="snip">/</span>
+    </li>
+    <li>
+    Ganzzahlige Division: <span class="snip">//</span>
+    </li>
+    <li>
+    Modulo: <span class="snip">%</span>
+    </li>
+    <li>
+    Exponentiation: <span class="snip">**</span>
+    </li>
+    </ul>
+    <p><b>Beispiel:</b></p>
+    <div class="sourceCode" id="cb6"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>summe <span class="op">=</span> <span class="dv">5</span> <span class="op">+</span> <span class="dv">3</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>produkt <span class="op">=</span> <span class="dv">4</span> <span class="op">*</span> <span class="dv">2</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>ganzzahlige_Division <span class="op">=</span> <span class="dv">7</span> <span class="op">//</span> <span class="dv">3</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>rest <span class="op">=</span> <span class="dv">7</span> <span class="op">%</span> <span class="dv">3</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>exponent <span class="op">=</span> <span class="dv">2</span> <span class="op">**</span> <span class="dv">3</span></span></code></pre></div>
+    <h3 id="logische-bedingungen">Logische Bedingungen</h3>
+    <p>Python unterstützt folgende logische Bedingungen zum Vergleichen
+    von Werten:</p>
+    <ul style="margin-top:2px;">
+    <li>
+    Gleichheit: <span class="snip">==</span>
+    </li>
+    <li>
+    Ungleichheit: <span class="snip">!=</span>
+    </li>
+    <li>
+    Größer als: <span class="snip">&gt;</span>
+    </li>
+    <li>
+    Kleiner als: <span class="snip">&lt;</span>
+    </li>
+    <li>
+    Größer oder gleich: <span class="snip">&gt;=</span>
+    </li>
+    <li>
+    Kleiner oder gleich: <span class="snip">&lt;=</span>
+    </li>
+    </ul>
+    <h3 id="bedingte-anweisungen">Bedingte Anweisungen</h3>
+    <p>Bedingte Anweisungen mit <span class="snip">if</span> prüfen, ob
+    eine Bedingung wahr ist.<br />
+    <span class="snip">elif</span> erlaubt zusätzliche
+    Bedingungen.<br />
+    <span class="snip">else</span> wird ausgeführt, wenn keine Bedingung
+    wahr ist.</p>
+    <p><br></p>
+    <p><b>Beispiel:</b></p>
+    <div class="sourceCode" id="cb7"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">5</span>:</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;x ist größer als 5&quot;</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> x <span class="op">==</span> <span class="dv">5</span>:</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;x ist genau 5&quot;</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;x ist kleiner als 5&quot;</span>)</span></code></pre></div>
+    <h3 id="verschachtelte-bedingungen">Verschachtelte Bedingungen</h3>
+    <p>Bedingungen können innerhalb anderer Bedingungen verschachtelt
+    werden.</p>
+    <p><br></p>
+    <p><b>Beispiel:</b></p>
+    <div class="sourceCode" id="cb8"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">10</span>:</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">30</span>:</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;x ist zwischen 10 und 30&quot;</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;x ist 30 oder größer&quot;</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;x ist kleiner als 10&quot;</span>)</span></code></pre></div>
+    <hr />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>
+        document.querySelectorAll("pre:not(.nohighlight) code, code:not(.nohighlight)").forEach((block) => {
+            hljs.highlightElement(block);
+        });
+
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        document.onkeydown = (e) => {
+            if (e.key == 123) {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'I') {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'C') {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'J') {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.key == 'U') {
+                e.preventDefault();
+            }
+        };
+    </script>
+      <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+      </script>
+      <script>
+                function goToEnglish() {
+                    window.location.href = 'AB_4_en';
+                }
+    </script> 
+</body>
+
+</html>
