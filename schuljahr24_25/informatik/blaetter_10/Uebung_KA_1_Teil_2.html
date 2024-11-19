@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Übung KA 1 Teil 2</title>
+
+    <!--  <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/stackoverflow-light.min.css" />
+    <style>
+
+        @font-face {
+            font-family: "Josefin Sans";
+            font-style: normal;
+            font-weight: 400;
+            src: url(https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_DjQbMZhKg.ttf) format("truetype");
+        }
+
+        @font-face {
+            font-family: "Josefin Sans";
+            font-style: normal;
+            font-weight: 700;
+            src: url(https://fonts.gstatic.com/s/josefinsans/v25/Qw3PZQNVED7rKGKxtqIqX5E-AVSJrOCfjY46_N_XbMZhKg.ttf) format("truetype");
+        }
+
+        html {
+            height: 100%;
+            background-color: #eee;
+        }
+
+        body {
+            box-sizing: border-box;
+            min-height: 100%;
+            margin: auto;
+            padding-left: 2em;
+            padding-right: 2em;
+            padding-top: 2em;
+            padding-bottom: 2em;
+            max-width: 800px;
+            font-family: "Times New Roman", Times, serif;
+            /* font-family: 'Josefin Sans', sans-serif; */
+            font-size: 0.9em;
+            background-color: white;
+            border: double 3px #ddd;
+            border-top: none;
+            border-bottom: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-top: 0;
+            margin-bottom: 2px;
+        }
+
+        h3 {
+            font-size: 1.2em;
+        }
+
+        h4 {
+            font-size: 1em;
+        }
+
+        strong {
+            color: purple;
+            margin-bottom: 2px;
+        }
+
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: blue;
+        }
+
+        a:hover {
+            color: blue;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: #0000ff;
+        }
+
+        body h2 {
+            margin-top: 14px;
+        }
+
+        body h3 {
+            margin-top: 14px;
+        }
+
+        body p {
+            margin-top: 0px !important;
+            margin-bottom: 0px !important;
+            width: 100vh !;
+        }
+
+        pre,
+        code {
+            background-color: #f6f6f6 !important;
+            font-size: 14px !important;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-weight: 550;
+            /*   color: white !important; */
+            padding-left: 30px !important;
+            /* Increase padding for more indentation */
+            margin-left: 0px !important;
+            margin-top: 2px;
+            padding: 2px !important;
+            border-radius: 0px !important;
+            font-family: "Consolas", "Courier New", monospace;
+            width: 100% !important;
+            overflow: hidden;
+            line-height: 1em !important;
+        }
+
+        pre.nohighlight {
+            /* border: 1px solid #ddd; */
+            line-height: 1.3em !important;
+            overflow-x: auto !important;
+            white-space: pre !important;
+        }
+
+        pre.nohighlight code {
+            padding-left: 0 !important;
+        }
+
+        .snip {
+            font-family: Menlo, monospace;
+            font-size: 0.75em;
+        }
+
+        ul {
+            padding-left: 13px !important;
+            /* Slight increase for better readability */
+            list-style-type: disc !important;
+        }
+
+        ul ul {
+            list-style-type: disc !important;
+            /* Ensure nested lists also use disc markers */
+        }
+
+        ul li::marker {
+            list-style-type: disc !important;
+            /* Force disc marker for all list items */
+        }
+
+        /* Add this style to wrap the table and allow horizontal scrolling */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+            width: auto;
+            /* Ensure the table takes up the full width of its container */
+            max-width: 100%;
+            /* Prevent the table from exceeding the container's width */
+            overflow-x: auto;
+            table-layout: fixed;
+            /* Helps with responsiveness */
+        }
+
+        table th,
+        table td {
+            padding: 6px 8px;
+            vertical-align: top;
+            white-space: nowrap;
+            word-wrap: break-word;
+            /* Break long words to prevent overflow */
+        }
+
+        table th {
+            background: #ddd;
+            font-weight: 900;
+            text-align: left;
+        }
+
+        table tbody tr:nth-child(odd) {
+            background: white;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+        
+    </style>
+</head>
+
+<body class="markdown-body">
+    <h1 id="übungen-zu-ka-1-teil-2"><strong>Übungen zu KA 1, Teil
+    2</strong></h1>
+    <hr />
+    <p><strong>Aufgabe 1</strong><br />
+    Schreibe ein Programm, das die Bevölkerungszahl und die Anzahl der
+    kranken Personen zu Beginn einer Grippewelle einliest und die Anzahl
+    der gesunden Personen berechnet.<br />
+    <br> <b>Eingabe:</b><br />
+    Bevölkerungszahl: 1000<br />
+    Kranke Personen: 150<br />
+    <br> <b>Ausgabe:</b><br />
+    Die Anzahl der gesunden Personen beträgt 850.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 2</strong><br />
+    Schreibe ein Programm, das die Nachricht „Läuft bei mir!“ zwanzigmal
+    ausgibt.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 3</strong><br />
+    Schreibe ein Programm, das den Namen, Preis und die Menge eines
+    Artikels einliest und die Daten anschließend ausgibt.<br />
+    <br> <b>Eingabe:</b><br />
+    Artikelname: Apfel<br />
+    Preis: 1.20<br />
+    Menge: 10<br />
+    <br> <b>Ausgabe:</b><br />
+    Artikel: Apfel, Preis: 1.20 €, Menge: 10</p>
+    <p><br></p>
+    <p><strong>Aufgabe 4</strong><br />
+    Schreibe ein Programm, das zwei Mannschaftsnamen und die jeweilige
+    Anzahl der Tore einliest und den Spielstand ausgibt.<br />
+    <br> <b>Eingabe:</b><br />
+    Team 1: Bayern<br />
+    Team 2: Dortmund<br />
+    Tore 1: 3<br />
+    Tore 2: 2<br />
+    <br> <b>Ausgabe:</b><br />
+    Bayern 3 : 2 Dortmund</p>
+    <p><br></p>
+    <p><strong>Aufgabe 5</strong><br />
+    Schreibe ein Programm, das den Endpreis eines Artikels inklusive
+    Mehrwertsteuer berechnet. Die Mehrwertsteuer beträgt 19 %.</p>
+    <p><br> <b>Eingabe:</b><br />
+    Preis (ohne Mehrwertsteuer): 100.00</p>
+    <p><br> <b>Ausgabe:</b><br />
+    Der Endpreis beträgt 119.00 €.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 6</strong><br />
+    Berechne die Note einer Klassenarbeit mithilfe der Formel: <br><br>
+    <math xmlns="http://www.w3.org/1998/Math/MathML"> <mi>Note</mi>
+    <mo>=</mo> <mn>6</mn> <mo>-</mo> <mn>5</mn> <mo>⋅</mo> <mfrac>
+    <mrow> <mi>erreichte Punkte</mi> </mrow> <mrow> <mi>maximale
+    Punkte</mi> </mrow> </mfrac> </math></p>
+    <p><br> <b>Eingabe:</b><br />
+    Erreichte Punkte: 80<br />
+    Maximale Punkte: 100<br />
+    <br> <b>Ausgabe:</b><br />
+    Die Note ist 2.0.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 7</strong><br />
+    Schreibe ein Programm, das die Gesamtkosten für eine gegebene
+    Verkaufsmenge eines Produkts berechnet. Lies Fixkosten, variable
+    Kosten und die Verkaufsmenge ein.</p>
+    <p><br> <b>Eingabe:</b><br />
+    Fixkosten: 2000<br />
+    Variable Kosten: 5<br />
+    Verkaufsmenge: 500</p>
+    <p><br> <b>Ausgabe:</b><br />
+    Die Gesamtkosten betragen 4500.</p>
+    <p><br> <b>Formel:</b><br />
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mi>Gesamtkosten</mi> <mo>=</mo> <mi>Fixkosten</mi> <mo>+</mo>
+    <mi>Variable Kosten</mi> <mo>⋅</mo> <mi>Verkaufsmenge</mi>
+    </math></p>
+    <p><br></p>
+    <p><strong>Aufgabe 8</strong><br />
+    Schreibe ein Programm, das den durchschnittlichen
+    Kraftstoffverbrauch eines Autos in Litern pro 100 Kilometer
+    berechnet. Lies dazu die getankte Menge an Litern und die gefahrene
+    Strecke in Kilometern ein.</p>
+    <p><br> <b>Eingabe:</b><br />
+    Getankte Liter: 50<br />
+    Gefahrene Kilometer: 600</p>
+    <p><br> <b>Ausgabe:</b><br />
+    Der durchschnittliche Verbrauch beträgt 8.33 Liter pro 100
+    Kilometer.</p>
+    <p><br> <b>Formel:</b><br />
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mi>Durchschnittsverbrauch</mi> <mo>=</mo> <mfrac> <mrow>
+    <mi>Getankte Liter</mi> <mo>⋅</mo> <mn>100</mn> </mrow> <mrow>
+    <mi>Gefahrene Kilometer</mi> </mrow> </mfrac> </math></p>
+    <p><br></p>
+    <p><strong>Aufgabe 9</strong><br />
+    Ein Restaurant bietet Speisen zum Mitnehmen (7 % Mehrwertsteuer) und
+    zum Verzehr vor Ort (19 % Mehrwertsteuer) an. Schreibe ein Programm,
+    das den Bruttopreis für einen gegebenen Nettopreis berechnet.</p>
+    <p><br> <b>Eingabe:</b><br />
+    Nettopreis: 10.00 €<br />
+    Zum Mitnehmen? (j/n): j</p>
+    <p><br> <b>Ausgabe:</b><br />
+    Bruttopreis: 10.70 €</p>
+    <p><br> <b>Eingabe:</b><br />
+    Nettopreis: 10.00 €<br />
+    Zum Mitnehmen? (j/n): n</p>
+    <p><br> <b>Ausgabe:</b><br />
+    Bruttopreis: 11.90 €</p>
+    <p><br> <b>Formel:</b><br />
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mi>Bruttopreis</mi> <mo>=</mo> <mi>Nettopreis</mi> <mo>⋅</mo>
+    <mo>(</mo> <mn>1</mn> <mo>+</mo> <mfrac> <mi>Steuersatz</mi>
+    <mn>100</mn> </mfrac> <mo>)</mo> </math></p>
+    <p><br></p>
+    <p><strong>Aufgabe 10</strong><br />
+    Ein Weitsprungwettbewerb umfasst drei Sprünge pro Teilnehmer.
+    Schreibe ein Programm, das den besten Sprung ermittelt.</p>
+    <p><br> <b>Eingabe:</b><br />
+    Sprung 1: 6.5 m<br />
+    Sprung 2: 6.8 m<br />
+    Sprung 3: 6.3 m</p>
+    <p><br> <b>Ausgabe:</b><br />
+    Der beste Sprung war 6.8 m.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 11</strong><br />
+    Schreibe ein Zahlenratespiel, bei dem der Benutzer eine festgelegte
+    Zahl zwischen 1 und 20 erraten muss. Der Benutzer hat eine feste
+    Anzahl von Versuchen. Das Programm soll die Zahl in den Code
+    schreiben und nach jedem Versuch anzeigen, ob die eingegebene Zahl
+    zu hoch, zu niedrig oder korrekt ist.</p>
+    <p><br> <b>Beispielablauf:</b></p>
+    <pre class="nohighlight"><code>Gib eine Zahl zwischen 1 und 20 ein (Versuch 1 von 3): 10
+Die Zahl ist zu niedrig.
+
+Gib eine Zahl zwischen 1 und 20 ein (Versuch 2 von 3): 18
+Die Zahl ist zu hoch.
+
+Gib eine Zahl zwischen 1 und 20 ein (Versuch 3 von 3): 15
+Herzlichen Glückwunsch! Du hast die Zahl 15 erraten.</code></pre>
+    <p><br></p>
+    <p><strong>Aufgabe 12</strong><br />
+    Schreibe ein Programm, das die Werte einer Normalparabel berechnet
+    und ausgibt. Die Normalparabel hat die Gleichung: y=x^2. <br>
+    Berechne die Werte für x im Bereich von -10 bis 10 in Schritten von
+    0.5.</p>
+    <p><br> <b>Hinweis:</b><br />
+    • Verwende eine Schleife, um die Werte für x und y zu
+    berechnen.<br />
+    • Gib die Ergebnisse in folgender Form aus:</p>
+    <p><br> <b>Beispielausgabe:</b><br />
+    Für x = -10.0, y = 100.0<br />
+    Für x = -9.5, y = 90.25<br />
+    …<br />
+    Für x = 10.0, y = 100.0</p>
+    <p><br></p>
+    <p><strong>Aufgabe 13</strong><br />
+    Schreibe ein Programm, das die Abnahme der Population einer Tierart
+    berechnet und die Entwicklung für jedes Jahr anzeigt. Die Population
+    nimmt jedes Jahr um eine festgelegte Anzahl von Individuen ab.</p>
+    <p><br> Lies folgende Werte ein:<br />
+    • Startjahr: Das Jahr, in dem die Berechnung beginnt.<br />
+    • Startpopulation: Die anfängliche Anzahl der Individuen.<br />
+    • Jährliche Abnahme: Die Anzahl der Individuen, die jedes Jahr
+    verloren gehen.<br />
+    • Endjahr: Das Jahr, bis zu dem die Berechnung erfolgen soll.</p>
+    <p><br> Berechne die Population für jedes Jahr vom Startjahr bis zum
+    Endjahr.</p>
+    <p><br> Gib die Population für jedes Jahr aus.</p>
+    <p><br> <b>Eingabe:</b><br />
+    Startjahr: 2020<br />
+    Startpopulation: 1000<br />
+    Jährliche Abnahme: 30<br />
+    Endjahr: 2030</p>
+    <p><br> <b>Ausgabe:</b><br />
+    Im Jahr 2020 beträgt die Population 1000.<br />
+    Im Jahr 2021 beträgt die Population 970.<br />
+    Im Jahr 2022 beträgt die Population 940.<br />
+    Im Jahr 2023 beträgt die Population 910.<br />
+    Im Jahr 2024 beträgt die Population 880.<br />
+    Im Jahr 2025 beträgt die Population 850.<br />
+    Im Jahr 2026 beträgt die Population 820.<br />
+    Im Jahr 2027 beträgt die Population 790.<br />
+    Im Jahr 2028 beträgt die Population 760.<br />
+    Im Jahr 2029 beträgt die Population 730.<br />
+    Im Jahr 2030 beträgt die Population 700.</p>
+    <p><br> <b>Formel:</b><br />
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mi>Population</mi> <mo>=</mo> <mi>Startpopulation</mi> <mo>-</mo>
+    <mo>(</mo> <mi>Jährliche Abnahme</mi> <mo>⋅</mo> <mi>n</mi>
+    <mo>)</mo> </math></p>
+    <p>Dabei ist n die Anzahl der Jahre seit dem Startjahr.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 14</strong><br />
+    Schreibe ein Programm, das berechnet, wie viel ein Kreditnehmer
+    monatlich zurückzahlen muss, wenn keine Zinsen anfallen.</p>
+    <p><br> <b>Eingabe:</b><br />
+    • Kreditsumme: 1200 €<br />
+    • Laufzeit: 12 Monate</p>
+    <p><br> <b>Formel:</b><br />
+    <math xmlns="http://www.w3.org/1998/Math/MathML"> <mi>Monatliche
+    Zahlung</mi> <mo>=</mo> <mfrac> <mrow> <mi>Kreditsumme</mi> </mrow>
+    <mrow> <mi>Laufzeit</mi> </mrow> </mfrac> </math></p>
+    <p><br> <b>Ausgabe:</b><br />
+    Die monatliche Zahlung beträgt 100 €.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 15</strong><br />
+    Schreibe ein Programm, das für eine gegebene Ganzzahl n folgendes
+    ausgibt:</p>
+    <p>1, wenn n positiv ist, <br> -1, wenn n negativ ist, <br> 0, wenn
+    n gleich null ist. <br></p>
+    <p>Nutze eine if-elif-else-Struktur.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 16</strong><br />
+    Schreibe ein Programm, das bei drei eingegebenen ganzen Zahlen
+    ermittelt, wie viele von ihnen gleich sind.</p>
+    <p><br> <b>Eingabe:</b><br />
+    Zahl 1: 4 <br> Zahl 2: 4 <br> Zahl 3: 4 <br></p>
+    <p><br> <b>Ausgabe:</b><br />
+    Alle drei Zahlen sind gleich: 3</p>
+    <p><br> <b>Eingabe:</b><br />
+    Zahl 1: 5 <br> Zahl 2: 5 <br> Zahl 3: 6 <br></p>
+    <p><br> <b>Ausgabe:</b><br />
+    Genau zwei Zahlen sind gleich: 2</p>
+    <p><br> <b>Eingabe:</b><br />
+    Zahl 1: 1 <br> Zahl 2: 2 <br> Zahl 3: 3 <br></p>
+    <p><br> <b>Ausgabe:</b><br />
+    Alle Zahlen sind unterschiedlich: 0</p>
+    <p><br></p>
+    <p><strong>Aufgabe 17</strong><br />
+    Schreibe ein Programm, das bei einer dreistelligen Zahl die Summe
+    ihrer Ziffern berechnet.</p>
+    <p><br> <b>Hinweise:</b><br />
+    - Lies eine dreistellige Zahl ein, z. B. 123.<br />
+    - Zerlege die Zahl in ihre Ziffern:<br />
+      - Hunderterstelle: <span class="snip">123 // 100</span><br />
+      - Zehnerstelle: <span class="snip">(123 % 100) // 10</span><br />
+      - Einerstelle: <span class="snip">123 % 10</span><br />
+    - Berechne die Summe der Ziffern.</p>
+    <p><br> <b>Eingabe:</b><br />
+    123</p>
+    <p><br> <b>Ausgabe:</b><br />
+    Die Summe der Ziffern beträgt 6.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 18</strong><br />
+    Ein Cupcake kostet A Dollar und B Cent. Berechne, wie viele Dollar
+    und Cent man für N Cupcakes zahlen muss.</p>
+    <p><br> <b>Hinweise:</b><br />
+    - Lies drei Werte ein:<br />
+      - A (Dollar)<br />
+      - B (Cent)<br />
+      - N (Anzahl der Cupcakes)<br />
+    - Berechne die Gesamtkosten in Cent: <span class="snip">(A * 100 +
+    B) * N</span>.<br />
+    - Wandle die Gesamtkosten in Dollar und Cent um.</p>
+    <p><br> <b>Eingabe:</b><br />
+    A: 2<br />
+    B: 50<br />
+    N: 4</p>
+    <p><br> <b>Ausgabe:</b><br />
+    Die Gesamtkosten betragen 10 Dollar und 0 Cent.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 19</strong><br />
+    Schreibe ein Programm, das bei zwei gegebenen ganzen Zahlen A und B
+    (A ≤ B) alle Zahlen von A bis B einschließlich ausgibt.</p>
+    <p><br> <b>Eingabe:</b><br />
+    A: 3<br />
+    B: 7</p>
+    <p><br> <b>Ausgabe:</b><br />
+    3, 4, 5, 6, 7</p>
+    <p><br></p>
+    <p><strong>Aufgabe 20</strong><br />
+    Schreibe ein Programm, das bei zwei gegebenen ganzen Zahlen A und B
+    alle Zahlen von A bis B ausgibt. Falls A &lt; B, gib die Zahlen in
+    aufsteigender Reihenfolge aus, ansonsten in absteigender
+    Reihenfolge.</p>
+    <p><br> <b>Eingabe:</b><br />
+    A: 7<br />
+    B: 3</p>
+    <p><br> <b>Ausgabe:</b><br />
+    7, 6, 5, 4, 3</p>
+    <p><br></p>
+    <p><strong>Aufgabe 21</strong><br />
+    Schreibe eine Funktion namens <span class="snip">power</span> , die
+    zwei Argumente entgegennimmt: eine positive reelle Zahl <span
+    class="snip">a</span> und eine ganze Zahl <span
+    class="snip">n</span>. Die Funktion soll den Wert von a^n berechnen
+    und diesen zurückgeben.</p>
+    <p><br> Die Funktion wird wie folgt aufgerufen:</p>
+    <div class="sourceCode" id="cb2"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ergebnis <span class="op">=</span> power(<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ergebnis)</span></code></pre></div>
+    <p><br> <b>Ausgabe:</b> 8</p>
+    <p><br></p>
+    <p><strong>Aufgabe 22</strong><br />
+    Schreibe ein Programm, das auf Wunsch des Nutzers eine
+    Multiplikationsreihe ausgibt. Der Nutzer gibt an, welche Reihe (z.
+    B. die 9-er Reihe) und wie weit die Reihe gehen soll.</p>
+    <p><br> <b>Eingabe:</b><br />
+    Reihe: 9<br />
+    Länge: 5</p>
+    <p><br> <b>Ausgabe:</b><br />
+    9, 18, 27, 36, 45</p>
+    <p><br></p>
+    <p><strong>Aufgabe 23</strong><br />
+    Schreibe ein Programm, das einen „Weihnachtsbaum“ der Höhe n
+    ausgibt.</p>
+    <p><br> <b>Eingabe:</b><br />
+    Höhe: 4</p>
+    <p><br> <b>Ausgabe:</b></p>
+    <pre class="nohighlight"><code>*
+**
+***
+****</code></pre>
+    <p><br></p>
+    <p><strong>Aufgabe 24</strong><br />
+    Schreibe ein Programm, das mithilfe einer Schleife n Zeilen mit 10
+    Sternen ausgibt.</p>
+    <p><br> <b>Eingabe:</b><br />
+    n: 3</p>
+    <p><br> <b>Ausgabe:</b></p>
+    <pre class="nohighlight"><code>**********
+**********
+**********</code></pre>
+    <p><br></p>
+    <p><strong>Aufgabe 25</strong><br />
+    Schreibe eine Funktion namens <span class="snip">mittelwert</span>,
+    die eine Liste von Zahlen als Argument entgegennimmt, den Mittelwert
+    der Zahlen berechnet und diesen zurückgibt.</p>
+    <p><br> Die Funktion wird wie folgt aufgerufen:</p>
+    <div class="sourceCode" id="cb5"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ergebnis <span class="op">=</span> mittelwert([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>])</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ergebnis)</span></code></pre></div>
+    <p><br> <b>Ausgabe:</b><br />
+    Der Mittelwert beträgt 25.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 26</strong><br />
+    Schreibe eine Funktion namens <span class="snip"> summe</span>, die
+    zwei Zahlen als Argumente entgegennimmt und die Summe dieser beiden
+    Zahlen zurückgibt.</p>
+    <p><br> Die Funktion wird wie folgt aufgerufen:</p>
+    <div class="sourceCode" id="cb6"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ergebnis <span class="op">=</span> summe(<span class="dv">7</span>, <span class="dv">5</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ergebnis)</span></code></pre></div>
+    <p><br> <b>Ausgabe:</b><br />
+    12</p>
+    <p><br></p>
+    <p><strong>Aufgabe 27</strong><br />
+    Schreibe eine Funktion namens <span class="snip">in_sekunden</span>,
+    die eine Zahl (Stunden) entgegennimmt und sie in Sekunden umrechnet.
+    Die Funktion soll die Anzahl der Sekunden zurückgeben.</p>
+    <p><br> Die Funktion wird wie folgt aufgerufen:</p>
+    <div class="sourceCode" id="cb7"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ergebnis <span class="op">=</span> in_sekunden(<span class="dv">2</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ergebnis)</span></code></pre></div>
+    <p><br> <b>Ausgabe:</b><br />
+    7200 Sekunden</p>
+    <p><br></p>
+    <p><strong>Aufgabe 28</strong><br />
+    Schreibe eine Funktion namens <span
+    class="snip">dreiecks_flaeche</span>, die die Basis und die Höhe
+    eines Dreiecks als Argumente entgegennimmt und die Fläche des
+    Dreiecks zurückgibt.</p>
+    <p><br> <b>Hinweis:</b><br />
+    Die Formel für die Fläche eines Dreiecks lautet:<br />
+    Fläche = 1/2 * Basis * Höhe</p>
+    <p><br> Die Funktion wird wie folgt aufgerufen:</p>
+    <div class="sourceCode" id="cb8"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>ergebnis <span class="op">=</span> dreiecks_flaeche(<span class="dv">5</span>, <span class="dv">10</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ergebnis)</span></code></pre></div>
+    <p><br> <b>Ausgabe:</b><br />
+    Die Fläche beträgt 25.</p>
+    <p><br></p>
+    <p><strong>Aufgabe 29</strong><br />
+    Schreibe eine Funktion namens <span class="snip">ist_teilbar</span>,
+    die überprüft, ob eine Zahl durch eine andere Zahl teilbar ist, und
+    entweder Ja oder Nein zurückgibt.</p>
+    <p><br> Die Funktion wird wie folgt aufgerufen:</p>
+    <div class="sourceCode" id="cb9"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ergebnis <span class="op">=</span> ist_teilbar(<span class="dv">10</span>, <span class="dv">5</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ergebnis)</span></code></pre></div>
+    <p><br> <b>Ausgabe:</b><br />
+    Ja</p>
+    <p><br></p>
+    <p><strong>Aufgabe 30</strong><br />
+    Piraten vermeiden bestimmte Zahlen, da sie diese für Unglückszahlen
+    halten! Schreibe ein Programm, das eine Zahl <b>num</b>
+    überprüft:</p>
+    <p><br> - Wenn <b>num</b> durch 9 teilbar ist, gib „Verschwinde!“
+    aus.<br />
+    - Wenn <b>num</b> durch 13 teilbar ist, gib „Blasphemie!“ aus.<br />
+    - Wenn <b>num</b> durch 9 und 13 teilbar ist, gib „Ab ins Wasser mit
+    dir!“ aus.</p>
+    <p><br> <b>Eingabe:</b><br />
+    num: 27</p>
+    <p><br> <b>Ausgabe:</b><br />
+    Verschwinde!</p>
+    <p><br></p>
+    <p><strong>Aufgabe 31</strong><br />
+    Schreibe eine Funktion namens <span
+    class="snip">remove_first</span>, die das erste Element einer Liste
+    entfernt.</p>
+    <p><br> <b>Hinweis:</b><br />
+    - Die Funktion wird immer mit einer Liste aufgerufen.<br />
+    - Die Liste kann leer sein.</p>
+    <p><br> Die Funktion wird wie folgt aufgerufen:</p>
+    <div class="sourceCode" id="cb10"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>ergebnis <span class="op">=</span> remove_first([<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>])</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ergebnis)</span></code></pre></div>
+    <p><br> <b>Ausgabe:</b><br />
+    Neue Liste: [6, 7]</p>
+    <p><br></p>
+    <p><strong>Aufgabe 32</strong><br />
+    Schreibe eine Funktion namens <span class="snip">remove_last</span>,
+    die das letzte Element einer Liste entfernt.</p>
+    <p><br> <b>Hinweis:</b><br />
+    - Die Funktion wird immer mit einer Liste aufgerufen.<br />
+    - Die Liste kann leer sein.</p>
+    <p><br> Die Funktion wird wie folgt aufgerufen:</p>
+    <div class="sourceCode" id="cb11"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>ergebnis <span class="op">=</span> remove_last([<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>])</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ergebnis)</span></code></pre></div>
+    <p><br> <b>Ausgabe:</b><br />
+    Neue Liste: [5, 6]</p>
+    <p><br></p>
+    <p><strong>Aufgabe 33</strong><br />
+    Schreibe eine Funktion namens <span class="snip">add_one</span>, die
+    zu jedem Element einer Liste 1 addiert.</p>
+    <p><br> <b>Hinweis:</b><br />
+    - Alle Elemente der Liste sind ganze Zahlen.<br />
+    - Die Funktion wird immer mit einer Liste aufgerufen, die auch leer
+    sein kann.</p>
+    <p><br> Die Funktion wird wie folgt aufgerufen:</p>
+    <div class="sourceCode" id="cb12"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>ergebnis <span class="op">=</span> add_one([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ergebnis)</span></code></pre></div>
+    <p><br> <b>Ausgabe:</b><br />
+    Neue Liste: [2, 3, 4]</p>
+    <p><br></p>
+    <p><strong>Aufgabe 34</strong><br />
+    Schreibe eine Funktion namens <span class="snip">double</span>, die
+    jedes Element einer Liste verdoppelt.</p>
+    <p><br> <b>Hinweis:</b><br />
+    - Alle Elemente der Liste sind ganze Zahlen.<br />
+    - Die Funktion wird immer mit einer Liste aufgerufen, die auch leer
+    sein kann.</p>
+    <p><br> Die Funktion wird wie folgt aufgerufen:</p>
+    <div class="sourceCode" id="cb13"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>ergebnis <span class="op">=</span> double([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ergebnis)</span></code></pre></div>
+    <p><br> <b>Ausgabe:</b><br />
+    Neue Liste: [2, 4, 6]</p>
+    <p><br></p>
+    <p><strong>Aufgabe 35</strong><br />
+    Schreibe ein Programm, das den Nutzer nach seinem Namen fragt und
+    diesen zweimal in aufeinanderfolgenden Zeilen ausgibt.</p>
+    <p><br> <b>Eingabe:</b><br />
+    Name: Max</p>
+    <p><br> <b>Ausgabe:</b><br />
+    Max<br />
+    Max</p>
+    <p><br></p>
+    <p><strong>Aufgabe 36</strong></p>
+    <p>Schreibe ein Programm, das folgendes macht:<br />
+    - Fragt den Benutzer nach seinem Namen.<br />
+    - Wenn der Name nicht „Jerry“ ist:<br />
+      - Fragt das Programm nach der Anzahl der Portionen.<br />
+      - Berechnet die Gesamtkosten, basierend auf einem Preis von 5,90 €
+    pro Portion.<br />
+    - Gibt die Gesamtkosten aus.<br />
+    - Wenn der Name „Jerry“ ist, soll das Programm nichts weiter
+    tun.</p>
+    <p><br> <b>Eingabe:</b><br />
+    Name: Anna<br />
+    Anzahl der Portionen: 3</p>
+    <p><br> <b>Ausgabe:</b><br />
+    Gesamtkosten: 17,70 €</p>
+    <p><br></p>
+    <p><strong>Aufgabe 37</strong></p>
+    <p>Schreibe ein Programm, das basierend auf der Wettervorhersage für
+    morgen wettergerechte Kleidung empfiehlt.</p>
+    <p><br> <b>Hinweis:</b><br />
+    - Die Empfehlung soll sich wie folgt ändern:<br />
+      - Wenn die Temperatur über 20 °C liegt, wird leichte Kleidung
+    empfohlen.<br />
+      - Wenn die Temperatur über 10 °C, aber bis 20 °C liegt, wird
+    normale Kleidung empfohlen.<br />
+      - Wenn die Temperatur über 5 °C, aber bis 10 °C liegt, wird warme
+    Kleidung empfohlen.<br />
+      - Wenn die Temperatur 5 °C oder darunter liegt, wird sehr warme
+    Kleidung empfohlen.<br />
+    - Zusätzlich wird Regenkleidung empfohlen, wenn es regnet.</p>
+    <p><br> <b>Eingabe:</b><br />
+    Temperatur in Grad Celsius: 15<br />
+    Regen: Ja</p>
+    <p><br> <b>Ausgabe:</b><br />
+    Empfohlene Kleidung: Regenjacke und warme Kleidung</p>
+    <p><br></p>
+    <p><strong>Aufgabe 38</strong><br />
+    Schreibe ein Programm, das eine Zahl einliest. Ist die Zahl durch 3
+    teilbar, gibt das Programm „Fizz“ aus. Ist die Zahl durch 5 teilbar,
+    gibt es „Buzz“ aus. Ist die Zahl durch 3 und 5 teilbar, gibt es
+    „FizzBuzz“ aus.</p>
+    <p><br> <b>Eingabe:</b><br />
+    Zahl: 15</p>
+    <p><br> <b>Ausgabe:</b><br />
+    FizzBuzz</p>
+    <p><br></p>
+    <p><strong>Aufgabe 39</strong><br />
+    Schreibe eine Funktion namens <span
+    class="snip">print_many_times</span>, die zwei Argumente
+    entgegennimmt: einen Text (String) und eine Zahl (Integer).</p>
+    <p><br> Die Funktion wird wie folgt aufgerufen:</p>
+    <div class="sourceCode" id="cb14"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>print_many_times(<span class="st">&quot;Hallo&quot;</span>, <span class="dv">3</span>)</span></code></pre></div>
+    <p><br> <b>Ausgabe:</b><br />
+    Hallo <br> Hallo <br> Hallo <br></p>
+    <p><br></p>
+    <p><strong>Aufgabe 40</strong></p>
+    <p>Berechne das Produkt der ungeraden Zahlen von 1 bis 19.</p>
+    <p><br> <b>Hinweis:</b><br />
+    - Beginne mit einer Variablen <span class="snip">myproduct</span>,
+    die den Wert 1 enthält.<br />
+    - Verwende <span class="snip">range(1, 20, 2)</span>, um jede zweite
+    Zahl zu erhalten.</p>
+    <p><br> <b>Vorgabe:</b></p>
+    <div class="sourceCode" id="cb15"><pre
+    class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>myproduct <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Ergänze hier den Code, um das Produkt zu berechnen</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Produkt:&quot;</span>, myproduct)</span></code></pre></div>
+    <p><br> <b>Ausgabe:</b><br />
+    Produkt: 654729075</p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>
+        document.querySelectorAll("pre:not(.nohighlight) code, code:not(.nohighlight)").forEach((block) => {
+            hljs.highlightElement(block);
+        });
+
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        document.onkeydown = (e) => {
+            if (e.key == 123) {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'I') {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'C') {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'J') {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.key == 'U') {
+                e.preventDefault();
+            }
+        };
+    </script>
+      <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+      </script>
+      <script>
+                function goToEnglish() {
+                    window.location.href = 'AB_4_en';
+                }
+    </script> 
+</body>
+
+</html>
