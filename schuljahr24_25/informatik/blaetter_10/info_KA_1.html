@@ -405,17 +405,22 @@
     <p>Eine Liste speichert mehrere Werte in einer Struktur und wird mit
     eckigen Klammern <span class="snip">[]</span> definiert.</p>
     <p>Elemente in einer Liste können mit einem Index angesprochen
-    werden, beginnend bei <span class="snip">0</span>.</p>
+    werden, beginnend bei <span class="snip">0</span>. Der Index <span
+    class="snip">-1</span> greift auf das letzte Element der Liste
+    zu.</p>
     <p><br></p>
     <p><b>Beispiel:</b></p>
     <div class="sourceCode" id="cb9"><pre
     class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>fruechte <span class="op">=</span> [<span class="st">&quot;Apfel&quot;</span>, <span class="st">&quot;Banane&quot;</span>, <span class="st">&quot;Kirsche&quot;</span>]</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(fruechte)          <span class="co"># Ausgabe: [&#39;Apfel&#39;, &#39;Banane&#39;, &#39;Kirsche&#39;]</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(fruechte[<span class="dv">0</span>])       <span class="co"># Ausgabe: Apfel</span></span></code></pre></div>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(fruechte[<span class="dv">0</span>])       <span class="co"># Ausgabe: Apfel</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(fruechte[<span class="op">-</span><span class="dv">1</span>])      <span class="co"># Ausgabe: Kirsche</span></span></code></pre></div>
     <p><br></p>
     <p><b>Methoden:</b> <br> <span class="snip"> append(x)</span>: Fügt
     ein Element am Ende hinzu. <br> <span class="snip">remove(x)</span>:
-    Entfernt ein bestimmtes Element.</p>
+    Entfernt ein bestimmtes Element.<br> <span
+    class="snip">len()</span>: Gibt die Anzahl der Elemente in der Liste
+    zurück.</p>
     <p><br></p>
     <p><b>Beispiel:</b></p>
     <div class="sourceCode" id="cb10"><pre
