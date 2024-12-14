@@ -4,12 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projektarbeit Pygame Zero</title>
+  <title>Teil 1 Projekt Pygame Zero</title>
   <link rel="stylesheet" href="https://stackedit.io/style.css" />
 </head>
 
 <body class="stackedit">
-  <div class="stackedit__html"><h1 id="projektarbeit">Projektarbeit</h1>
+  <div class="stackedit__html"><h1 id="projekt">Teil 1 Projekt Pygame Zero</h1>
 <p>Das Ziel dieses Projekts ist, dass jeder ein eigenes Spiel programmiert.</p>
 <p>Es ist wichtig, dass du zuerst das Grundgerüst erstellst. Danach kannst du später deine eigenen Soundeffekte oder Bilder ins Spiel einbauen.</p>
 <p><em>The devil is in the details.</em> Überspringe die Aufgaben nicht und versuche, den Code langsam zu verstehen. Wenn der Code zu lang und kompliziert wird, werde sogar ich Probleme haben, ihn zu verstehen.</p>
@@ -78,7 +78,7 @@ pgzrun<span class="token punctuation">.</span>go<span class="token punctuation">
 </ol>
 <h2 id="eine-spielfigur-zeichnen-und-positionieren">Eine Spielfigur zeichnen und positionieren</h2>
 <ol>
-<li>Lade das Bild <img src="datei_projektarbeit/venusaur.png" alt="W3Schools" width="45" height="42"> herunter.</li>
+<li>Lade das Bild <img src="datei_projekt/venusaur.png" alt="W3Schools" width="45" height="42"> herunter.</li>
 <li>Speichere es im Ordner <code>images</code>.<br>
 <strong>Hinweis:</strong> Der Dateiname muss exakt mit dem im Code verwendeten Namen übereinstimmen.</li>
 </ol>
@@ -200,7 +200,7 @@ pgzrun<span class="token punctuation">.</span>go<span class="token punctuation">
 </li>
 </ol>
 <h2 id="futter-hinzufügen">Futter hinzufügen</h2>
-<p>Lade das Bild <img src="datei_projektarbeit/apple.png" alt="W3Schools" width="23" height="23">
+<p>Lade das Bild <img src="datei_projekt/apple.png" alt="W3Schools" width="23" height="23">
 herunter. Speichere es im Ordner <code>images</code>.</p>
 <p>Dein Ordner sollte jetzt so aussehen:</p>
 <pre><code>spiel_nachname
@@ -301,9 +301,14 @@ score <span class="token operator">=</span> <span class="token number">0</span>
 </li>
 </ol>
 <h3 id="soundeffekte-hinzufügen"><strong>Soundeffekte hinzufügen</strong></h3>
+<p style="color: red;">Leider können aus irgendwelchen Gründen, die ich selbst nicht ganz verstehe, 
+    bei manchen Rechnern die Sounddateien nicht abgespielt werden. <br>
+    Falls das bei deinem Rechner der Fall ist, 
+    gib statt der Sounddatei einfach mithilfe des <code>print()</code>-Befehls den Namen der Datei im Terminal aus, bis ich eine Lösung gefunden habe.
+</span></p>
 <p>Jedes Mal, wenn der Spieler den Apfel berührt, soll ein Essgeräusch abgespielt werden.</p>
 <ol>
-<li>Lade die <a href="datei_projektarbeit/eating_sound.ogg" download="eating_sound.ogg" target="_blank">Sounddatei</a> herunter.</li>
+<li>Lade die <a href="datei_projekt/eating_sound.ogg" download="eating_sound.ogg" target="_blank">Sounddatei</a> herunter.</li>
 <li>Speichere sie im Ordner <code>sounds</code>.</li>
 </ol>
 <p>Der Ordner sollte so aussehen:</p>
@@ -318,14 +323,16 @@ score <span class="token operator">=</span> <span class="token number">0</span>
 </code></pre>
 <p>Füge diesen Code in die <code>update()</code>-Funktion ein:</p>
 <pre class=" language-python"><code class="prism  language-python"><span class="token keyword">if</span> apple<span class="token punctuation">.</span>colliderect<span class="token punctuation">(</span>player<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    sounds<span class="token punctuation">.</span>eating_sound<span class="token punctuation">.</span>play<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    sounds<span class="token punctuation">.</span>eating_sound<span class="token punctuation">.</span>play<span class="token punctuation">(</span><span class="token punctuation">)</span> # oder print("eating sound")
     score <span class="token operator">+=</span> <span class="token number">1</span>
     apple<span class="token punctuation">.</span>x <span class="token operator">=</span> random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">400</span><span class="token punctuation">)</span>
     apple<span class="token punctuation">.</span>y <span class="token operator">=</span> random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">400</span><span class="token punctuation">)</span>
 </code></pre>
 <h3 id="aufgabe-7"><strong>Aufgabe</strong></h3>
 <ol start="24">
-<li>Wie heißt die heruntergeladene Sounddatei? Erkläre, was die Codezeile <code>sounds.eating_sound.play()</code> macht.</li>
+<li>Wie heißt die heruntergeladene Sounddatei? Erkläre, was die Codezeile <code>sounds.eating_sound.play()</code> macht.
+    Was wird im Terminal ausgegeben, wenn du <code>sounds.eating_sound.play()</code> durch <code>print("eating sound")</code> ersetzt?
+</li>
 </ol>
 <hr>
 </div>
