@@ -6,6 +6,7 @@
     <title>Projektarbeit Pygame Zero</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs.min.css" />
     <link rel="stylesheet" href="../../../styles/style.css" />
 </head>
 
@@ -15,89 +16,101 @@
             <div style="order: 1; border: none; padding-bottom: 0px; padding-left: 0px;" class="Rtable-cell Rtable-cell">
                 <h2 style="color: purple;">Projektarbeit Pygame Zero &#127918;</h2> <br>
                 Der Zweck dieser Projektarbeit ist simpel. <br>
-                Du musst selbstständig ein Spiel programmieren und es bis nach den Ferien <span style="color: crimson; font-weight: bolder;">am 10.02.2025 zum Ende der Stunde abgeben</span>.
+                Du musst selbstständig ein Spiel programmieren und es bis nach den Ferien <span style="color: crimson; font-weight: bolder;">am 10.02.25 zum Ende der Stunde abgeben</span>.
             </div>
             <div style="height: 12px;"></div>
             <div style="border: solid 2px black; padding: 10px; font-size: smaller;">
                 <div style="background-color: yellow; padding: 6px; margin: -10px;">Behalte diese Kriterien im Kopf — ich achte auch bei der Bewertung darauf. Je mehr Kriterien erfüllt sind und je kreativer dein Spiel ist, desto besser wird es bewertet.</div>
-                <br>
-                <div style="height: 8px;"></div>
+                <br><div style="height: 8px;"></div>
                 <strong>Nur Code nutzen, den du verstehst</strong><br>
                 Schreibe kein kompliziertes Programm, wenn du den Code nicht erklären kannst.
                 <br><br>
                 <strong>Code-Bausteine</strong><br>
-                Du kannst die unten stehenden Code-Bausteine als Hilfe nutzen.
+                Du kannst die unten stehenden Code-Bausteine als Hilfe nutzen. <span style="color: crimson; font-weight: bolder;">Allerdings musst du sie an dein Spiel anpassen.</span>
                 <br><br>
                 <strong>Spielidee</strong><br>
-                    <ul style="margin-bottom: 0px; margin-top: 5px;">
-                      <li>Überlege dir zuerst eine einfache Spielidee.</li>
-                      <li>Du kannst dein Spiel später immer komplizierter machen.</li>
-                      <li>Es sollte klar sein, wie der Spieler das Spiel gewinnt oder verliert.</li>
-                      <li>Halte die Regeln einfach und verständlich.</li>
-                    </ul>
+                <ul style="margin-bottom: 0px; margin-top: 5px;">
+                    <li>Überlege dir zuerst eine einfache Spielidee.</li>
+                    <li>Du kannst dein Spiel später immer komplizierter machen.</li>
+                    <li>Es sollte klar sein, wie der Spieler das Spiel gewinnt oder verliert.</li>
+                    <li>Halte die Regeln einfach und verständlich.</li>
+                </ul>
                 <br>
                 <strong>Interaktivität</strong><br>
-                    <ul style="margin-bottom: 0px; margin-top: 5px;">
-                      <li>Dein Spiel muss interaktiv sein.</li>
-                      <li>Der Spieler sollte das Spiel mit der Tastatur, Maus oder Klicks steuern können.</li>
-                      <li>Reagiere auf Aktionen des Spielers, wie zum Beispiel das Erhöhen des Punktestands oder das Beenden des Spiels.</li>
-                    </ul>
+                <ul style="margin-bottom: 0px; margin-top: 5px;">
+                    <li>Dein Spiel muss interaktiv sein.</li>
+                    <li>Der Spieler sollte das Spiel mit der Tastatur, Maus oder Klicks steuern können.</li>
+                    <li>Reagiere auf Aktionen des Spielers, wie zum Beispiel das Erhöhen des Punktestands oder das Beenden des Spiels.</li>
+                </ul>
                 <br>
                 <strong>Bilder und Sounds</strong><br>
-                    <ul style="margin-bottom: 0px; margin-top: 5px;">
-                      <li>Verwende Sprites für Spielfiguren, Hintergründe und Objekte.</li>
-                      <li>Füge, wenn möglich, Sounds hinzu, um das Spiel spannender zu machen.</li>
-                      <li>Achte darauf, dass die Bilder gut sichtbar und passend sind.</li>
-                    </ul>
+                <ul style="margin-bottom: 0px; margin-top: 5px;">
+                    <li>Verwende Sprites für Spielfiguren, Hintergründe und Objekte.</li>
+                    <li>Füge, wenn möglich, Sounds hinzu, um das Spiel spannender zu machen.</li>
+                    <li>Achte darauf, dass die Bilder gut sichtbar und passend sind.</li>
+                </ul>
                 <br>
                 <strong>Code-Struktur</strong><br>
-                    <ul style="margin-bottom: 0px; margin-top: 5px;">
-                      <li>Organisiere deinen Code übersichtlich.</li>
-                      <li>Verwende sinnvolle Variablennamen und teile den Code in Funktionen auf.</li>
-                      <li>Vermeide unnötige Wiederholungen.</li>
-                    </ul>
+                <ul style="margin-bottom: 0px; margin-top: 5px;">
+                    <li>Organisiere deinen Code übersichtlich.</li>
+                    <li>Verwende sinnvolle Variablennamen und teile den Code in Funktionen auf.</li>
+                    <li>Vermeide unnötige Wiederholungen.</li>
+                </ul>
                 <br>
-               <strong>Fehlerfreiheit</strong><br>
-                    <ul style="margin-bottom: 0px; margin-top: 5px;">
-                      <li>Teste dein Spiel regelmäßig.</li>
-                      <li>Das Spiel sollte ohne Abstürze funktionieren.</li>
-                    </ul>
+                <strong>Fehlerfreiheit</strong><br>
+                <ul style="margin-bottom: 0px; margin-top: 5px;">
+                    <li>Teste dein Spiel regelmäßig.</li>
+                    <li>Das Spiel sollte ohne Abstürze funktionieren.</li>
+                </ul>
                 <br>
                 <strong>Herausforderung</strong><br>
-                    <ul style="margin-bottom: 0px; margin-top: 5px;">
-                      <li>Sorge dafür, dass das Spiel Spaß macht und eine gewisse Herausforderung bietet.</li>
-                      <li>Überlege, ob es verschiedene Level, Gegner oder Hindernisse geben kann.</li>
-                    </ul>
+                <ul style="margin-bottom: 0px; margin-top: 5px;">
+                    <li>Sorge dafür, dass das Spiel Spaß macht und eine gewisse Herausforderung bietet.</li>
+                    <li>Überlege, ob es verschiedene Level, Gegner oder Hindernisse geben kann.</li>
+                </ul>
                 <br>
                 <strong>Dokumentation</strong><br>
-                  Beschreibe dein Spiel kurz:
-                    <ul style="margin-bottom: 0px; margin-top: 5px;">
-                      <li>Name des Spiels</li>
-                      <li>Ziel des Spiels</li>
-                      <li>Steuerung</li>
-                      <li>Spielablauf</li>
-                    </ul>
+                Beschreibe dein Spiel kurz:
+                <ul style="margin-bottom: 0px; margin-top: 5px;">
+                    <li>Name des Spiels</li>
+                    <li>Ziel des Spiels</li>
+                    <li>Steuerung</li>
+                    <li>Spielablauf</li>
+                </ul>
                 <div style="height: 7px;"></div>
                 Sei außerdem bereit, deinen Code zu erklären.
-              </div>              
+            </div>
+            <br>
+            Ich werde diese Tabelle im Laufe der Wochen weiter ergänzen. 
             <div style="height: 12px;"></div>
             <div class="scrollable" style="font-size: smaller;">
-                <div>
-                    <table>
-                        <th colspan="2">Code-Bausteine</th>
+                <table>
+                 <th>Code-Bausteine</th>
                         <tr>
-                            <td colspan="2"> Bald verfügbar!</td>
+                            <td>
+                                <pre style="margin: 0px; font-size: smaller;"><code class="python" style="padding: 0px;"># Actor bewegen
+
+if keyboard.left and player.x > 0: 
+    player.x -= 5
+if keyboard.right and player.x < WIDTH: 
+    player.x += 5
+if keyboard.up and player.y > 0:
+    player.y -= 5                                
+if keyboard.down and player.y < HEIGHT:
+    player.y += 5
+</code></pre>
+                            </td>
                         </tr>
-                    </table>
-                </div>
+                </table>
             </div>
-            <br><br>
         </div>
     </div>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    <!-- Highlight.js for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
     <script>
         var coll = document.getElementsByClassName("collapsible");
         var i;
