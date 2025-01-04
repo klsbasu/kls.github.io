@@ -361,16 +361,6 @@
                             <b>Mausevents</b><br>
                             <span style="color:red; font-size: smaller;">Nicht relevant für die 1. KA</span>
                             <br><br>
-                            <pre style="margin-top: 2px;font-size: smaller; background-color: #EAEAEA; padding: 4px;">from gturtle import *
-
-def onMousePressed(x, y):
-    setPos(x, y)
-    dot(20)
-
-makeTurtle(mousePressed = onMousePressed)
-dot(20)</pre>
-                        </td>
-                        <td colspan="2">
                             Versuche selbständig, die<br>
                             <a href="https://www.python-online.ch/index.php?inhalt_links=turtle/navigation.inc.php&inhalt_mitte=turtle/mausevents.inc.php" target="_blank">Aufgaben 1 bis 3</a> 
                             zu bearbeiten. 
@@ -379,8 +369,17 @@ dot(20)</pre>
                             <br><br>
                             Speichere die Lösungen in einer Textdatei</b> <br>
                             mit dem Namen <i>Mausevents_nachname.txt</i>. 
-                            <br><br>
-                            <div style="font-size: smaller;  background-color: #EAEAEA; padding: 4px;">
+                        </td>
+                        <td colspan="2">
+<pre style="margin-top: 2px;font-size: smaller; background-color: #F8F8F8; padding: 4px;">from gturtle import *
+
+def onMousePressed(x, y):
+    setPos(x, y)
+    dot(20)
+
+makeTurtle(mousePressed = onMousePressed)
+dot(20)</pre>
+                            <div style="font-size: smaller; padding: 4px;">
                                 Mit <code style="font-size: smaller;">makeTurtle(mousePressed=onMousePressed)</code> wird die<br>
                                 Turtle so eingestellt, dass sie auf Mausklicks reagiert. <br>
                                 Wenn der Benutzer mit der Maus klickt, wird die Funktion <br>
@@ -395,19 +394,6 @@ dot(20)</pre>
                                <b>Mehrere Turtle-Objekte </b><br>
                                 <span style="color:red;font-size: smaller;">Nicht relevant für die 1. KA</span>
                                 <br><br>
-                                <pre style="margin-top:2px;font-size: smaller; background-color: #EAEAEA; padding: 4px;">from gturtle import *
-
-jojo = Turtle()
-jimmy = Turtle()
-                                    
-jojo.setPenColor("red")
-jojo.forward(100)
-                                    
-jimmy.setPenColor("blue")
-jimmy.right(90)
-jimmy.forward(200)</pre>
-                            </td>
-                            <td colspan="2">
                                 Versuche selbständig, die<br>
                                 <a href="https://www.jython.ch/index.php?inhalt_links=navigation.inc.php&inhalt_mitte=turtle/multipleturtle.inc.php" target="_blank">Aufgaben 1 bis 4</a> 
                                 zu bearbeiten. 
@@ -417,9 +403,22 @@ jimmy.forward(200)</pre>
                                 Speichere die Lösungen in einer Textdatei</b> <br>
                                 mit dem Namen <i>OOP_nachname.txt</i>.
                                 <br><br>
-                                <b>OOP</b> ist kurz für <a href="https://inf-schule.de/oop" target="_blank"><b style="color: black;">o</b>bjekt<b style="color: black;">o</b>rientierte <b style="color: black;">P</b>rogrammierung.</a><br><br>
-                                <div style="font-size: smaller; background-color: #EAEAEA; padding: 4px;">
-                                    Der linke Code erstellt zwei Turteln, <code style="font-size: smaller;">jojo</code> und <code style="font-size: smaller;">jimmy</code>, <br>
+                                <b>OOP</b> ist kurz für <a href="https://inf-schule.de/oop" target="_blank"><b style="color: black;">o</b>bjekt<b style="color: black;">o</b>rientierte <b style="color: black;">P</b>rogrammierung</a><br><br>
+                            </td>
+                            <td colspan="2">
+<pre style="margin-top:2px;font-size: smaller; background-color: #F8F8F8; padding: 4px;">from gturtle import *
+
+jojo = Turtle()
+jimmy = Turtle()
+                                    
+jojo.setPenColor("red")
+jojo.forward(100)
+                                    
+jimmy.setPenColor("blue")
+jimmy.right(90)
+jimmy.forward(200)</pre>                                
+                                <div style="font-size: smaller; padding: 4px;">
+                                    Der Code erstellt zwei Turteln, <code style="font-size: smaller;">jojo</code> und <code style="font-size: smaller;">jimmy</code>, <br>
                                     die im gleichen Fenster unterschiedliche Linien in <br>
                                     verschiedenen Farben zeichnen. Dabei bewegt sich jojo <br>
                                     100 Einheiten vorwärts mit einem roten Stift, und jimmy <br>
@@ -433,7 +432,17 @@ jimmy.forward(200)</pre>
                                     <b>Tastaturevents</b> <br>
                                     <span style="color:red; font-size: smaller;">Nicht relevant für die 1. KA</span>
                                     <br><br>
-                                    <pre style="margin-top:2px;font-size: smaller; background-color: #EAEAEA; padding: 4px;">from gturtle import *
+                                    Versuche selbständig, die<br>
+                                    <a href="https://www.python-online.ch/index.php?inhalt_links=turtle/navigation.inc.php&inhalt_mitte=turtle/keyevents.inc.php" target="_blank">Aufgaben 1 bis 3</a> 
+                                    zu bearbeiten. 
+                                    <br><br>
+                                    Schreibe deinen Code <a href="https://webtigerpython.ethz.ch/" target="_blank">hier</a> in der Beta-Version.
+                                    <br><br>
+                                    Speichere die Lösungen in einer Textdatei</b> <br>
+                                    mit dem Namen <i>Tastaturevents_nachname.txt</i>. 
+                                </td>
+                                <td colspan="2">
+<pre style="margin-top:2px;font-size: smaller; background-color: #F8F8F8; padding: 4px;">from gturtle import *
         
 def onKeyPressed(key):
     if key == "ArrowUp":
@@ -443,18 +452,7 @@ def onKeyPressed(key):
         forward(100)                      
 
 makeTurtle(keyPressed = onKeyPressed)</pre>
-                                </td>
-                                <td colspan="2">
-                                    Versuche selbständig, die<br>
-                                    <a href="https://www.python-online.ch/index.php?inhalt_links=turtle/navigation.inc.php&inhalt_mitte=turtle/keyevents.inc.php" target="_blank">Aufgaben 1 bis 3</a> 
-                                    zu bearbeiten. 
-                                    <br><br>
-                                    Schreibe deinen Code <a href="https://webtigerpython.ethz.ch/" target="_blank">hier</a> in der Beta-Version.
-                                    <br><br>
-                                    Speichere die Lösungen in einer Textdatei</b> <br>
-                                    mit dem Namen <i>Tastaturevents_nachname.txt</i>. 
-                                    <br><br>
-                                    <div style="font-size: smaller; background-color: #EAEAEA; padding: 4px;">
+                                    <div style="font-size: smaller; padding: 4px;">
                                             Mit <code style="font-size: smaller;">makeTurtle(keyPressed=onKeyPressed)</code> <br> 
                                             wird die Turtle so eingestellt, dass sie auf Tastendrücke <br>
                                             reagiert. Wenn der Benutzer eine Taste drückt, wird die Funktion <br>
