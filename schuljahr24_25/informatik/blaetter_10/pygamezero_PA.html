@@ -6,8 +6,28 @@
     <title>Projektarbeit Pygame Zero</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../styles/style.css" />
+    <style>
+        .vs-div {
+            color: #d4d4d4;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+        }
+
+        pre {
+            background: #1e1e1e;
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            overflow: auto;
+            max-height: 90vh;
+        }
+
+        code {
+            font-size: 12px !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,34 +36,58 @@
             <div style="order: 1; border: none; padding-bottom: 0px; padding-left: 0px;" class="Rtable-cell Rtable-cell">
                 <h2 style="color: purple;">Projektarbeit Pygame Zero &#127918;</h2> <br>
                 Der Zweck dieser Projektarbeit ist simpel. <br>
-                Du musst selbstständig ein Spiel programmieren und es bis nach den Ferien <span style="color: crimson; font-weight: bolder;">am 10.02.25 zum Ende der Stunde abgeben</span>.
+                Du musst selbstständig ein Spiel programmieren und es nach den Ferien <span style="color: crimson; font-weight: bolder;">bis zum Ende der Stunde am 10.02.25</span> abgeben.
             </div>
             <div style="height: 12px;"></div>
             <div style="border: solid 1px black; padding: 10px; font-size: smaller;">
-                <div style="background-color: yellow; padding: 6px; margin: -10px;">Behalte diese Kriterien im Kopf — ich achte auch bei der Bewertung darauf. Je mehr Kriterien erfüllt sind und je kreativer dein Spiel ist, desto besser wird es bewertet.</div>
+                <div style="background-color: yellow; padding: 6px; margin: -10px;">Behalte diese Kriterien im Kopf — darauf achte ich auch bei der Bewertung. Je mehr Kriterien erfüllt sind und je kreativer dein Spiel ist, desto besser wird es bewertet.</div>
                 <br><div style="height: 8px;"></div>
                 <strong>Nur Code nutzen, den du verstehst</strong><br>
                 Schreibe kein kompliziertes Programm, wenn du den Code nicht erklären kannst.
                 <br><br>
-                <strong>Code-Bausteine</strong><br>
-                Du kannst die unten stehenden Code-Bausteine als Hilfe nutzen. 
-                <span style="color: crimson; font-weight: bolder;">Allerdings musst du sie an dein Spiel anpassen und an den richtigen Stellen ergänzen, 
-                damit alles funktioniert.</span>
+                <strong>Hilfestellung</strong><br>
+                Arbeite weiterhin in deinem Spielordner.
+                <br><br>   
+                Lade die folgende <a href="datei_projekt/pgzhelper.py.zip" target="_blank"><b>zip-Datei</b></a> herunter und entpacke sie. Darin findest du die Python-Datei <code>pgzhelper.py</code>.
+                Kopiere diese Datei in deinen Spielordner.
+
+                Am Anfang deines Codes für dein Spiel muss Folgendes stehen:
+                <div style="height: 8px;"></div>
+                <div class="vs-div"><pre><code class="language-python"># für Pygame Zero
+import pgzrun  
+# für Pygame Zero Helper, den du gerade in deinen Spielordner kopiert hast
+from pgzhelper import *  
+# für zufällige Werte
+import random 
+# für mathematische Berechnungen
+import math</pre></code></div>
+                <div style="height: 8px;"></div>
+                Unten im Ordner <strong>spielvorlage</strong> findest du meinen Python-Code <code>spielvorlage.py</code>.
+                <br><br>
+                Halte den Ordner  <strong>spielvorlage</strong> <strong style="color: crimson;">separat</strong> von deinem eigenen Spielordner.
+                Kopiere nur die Code-Logik aus meinem Code, die du benötigst.
+                <br><br>
+                <span style="color: crimson; font-weight: bolder;">
+                    Aber Achtung: Kopiere den Code nicht einfach unverändert! Passe ihn an dein eigenes Spiel an und ergänze ihn an den passenden Stellen, damit alles funktioniert.
+                </span>                
                 <br><br>
                 <strong>Spielidee</strong><br>
                 <ul style="margin-bottom: 0px; margin-top: 5px;">
                     <li>Überlege dir zuerst eine einfache Spielidee.</li>
-                    <li>Du kannst dein Spiel später immer komplizierter machen.</li>
+                    <li>Du kannst dein Spiel später weiterentwickeln und komplexer gestalten.</li>
                     <li>Es sollte klar sein, wie der Spieler das Spiel gewinnt oder verliert.</li>
                     <li>Halte die Regeln einfach und verständlich.</li>
-                    <li>Lass dich von der Webseite <a href="https://quirkycort.github.io/tutorials/20-Pygame-Zero-Basics/10-Intro/10-intro.html" target="_blank"><b>A Posteriori</b></a> inspirieren!</li>
+                    <li>Lass dich von <a href='https://quirkycort.github.io/tutorials/20-Pygame-Zero-Basics/10-Intro/10-intro.html' target='_blank'>A Posteriori</a>, 
+                        dem <a href='datei_projekt/game_dev_cookbook.pdf' target='_blank'>Game Dev Cookbook</a>, 
+                        <a href='https://electronstudio.github.io/pygame-zero-book/' target='_blank'>Coding Games with Pygame Zero & Python</a> inspirieren.
+                    </li>
                 </ul>
                 <br>
                 <strong>Interaktivität</strong><br>
                 <ul style="margin-bottom: 0px; margin-top: 5px;">
                     <li>Dein Spiel muss interaktiv sein.</li>
                     <li>Der Spieler sollte das Spiel mit der Tastatur, Maus oder Klicks steuern können.</li>
-                    <li>Reagiere auf Aktionen des Spielers, wie zum Beispiel das Erhöhen des Punktestands oder das Beenden des Spiels.</li>
+                    <li>Reagiere auf Aktionen des Spielers, zum Beispiel das Erhöhen des Punktestands oder das Beenden des Spiels.</li>
                 </ul>
                 <br>
                 <strong>Bilder und Sounds</strong><br>
@@ -51,7 +95,9 @@
                     <li>Verwende Sprites für Spielfiguren, Hintergründe und Objekte.</li>
                     <li>Füge, wenn möglich, Sounds hinzu, um das Spiel spannender zu machen.</li>
                     <li>Achte darauf, dass die Bilder gut sichtbar und passend sind.</li>
-                    <li><b>Ressourcen:</b> <a href="https://opengameart.org/" target="_blank">OpenGameArt.org</a>, <a href="https://pokemondb.net/sprites" target="_blank">Pokémon sprite</a>, <a href="https://www.spriters-resource.com/" target="_blank">The Spriters Resource</a>.</li>
+                    <li><b>Ressourcen:</b> <a href="https://opengameart.org/" target="_blank">OpenGameArt.org</a>, <a href="https://pokemondb.net/sprites" target="_blank">Pokémon sprite</a>, <a href="https://www.spriters-resource.com/" target="_blank">The Spriters Resource</a>, 
+                    <a href="https://projectpokemon.org/home/docs/spriteindex_148/3d-models-generation-1-pok%C3%A9mon-r90/" target="_blank">Pokémon 3D Models</a>.
+                    </li>
                 </ul>
                 <br>
                 <strong>Code-Struktur</strong><br>
@@ -85,37 +131,32 @@
                 Sei außerdem bereit, deinen Code zu erklären.
             </div>
             <br>
-            Ich werde diese Tabelle im Laufe der Wochen weiter ergänzen. 
-            <div style="height: 12px;"></div>
             <div class="scrollable" style="font-size: smaller;">
-                <div>
-                <table>
-                 <th>Code-Bausteine</th>
-                        <tr>
-                            <td>
-                                <pre style="margin: 0px; font-size: smaller; line-height: 1.2;"><code class="python" style="padding: 0px;"># Actor bewegen
-
-if keyboard.left and player.x > 0: 
-    player.x -= 5
-if keyboard.right and player.x < WIDTH: 
-    player.x += 5
-if keyboard.up and player.y > 0:
-    player.y -= 5                                
-if keyboard.down and player.y < HEIGHT:
-    player.y += 5
-</code></pre>
-                            </td>
-                        </tr>
-                </table>
+                <div style="display: flex; gap: 20px; align-items: center;">
+                    <div>
+                        Den Ordner <b>spielvorlage</b> kannst du <a href="datei_projekt/spielvorlage.zip" target="_blank" download><b>hier als ZIP-Datei</b></a> herunterladen. 
+                        <br>
+                        Die Python-Datei <b>spielvorlage.py</b> befindet sich in diesem Ordner. <br>
+                        Du benötigst den gesamten Ordner mit seiner richtigen Struktur sowie <br>
+                        den notwendigen Bilddateien, damit der Code korrekt funktioniert. <br>
+                        Es ist kein fertiges Spiel, sondern nur eine Vorlage.
+                    </div>
+                    <div>
+                        <img src="datei_projekt/spiel.gif" alt="spiel gif" height="100px" width="100px">
+                    </div>
+                </div>
             </div>
-        </div>
+            
+<!--
+            <div class="vs-div">
+<pre><code class="language-python"># Spielvorlage
+
+</code></pre></div>-->
     </div>
 
-    <!-- Highlight.js for syntax highlighting -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script>
-        hljs.highlightAll();
-    </script>
+    <!-- Prism.js JavaScript for syntax highlighting -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
     <script>
         var coll = document.getElementsByClassName("collapsible");
         var i;
