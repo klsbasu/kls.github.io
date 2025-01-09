@@ -466,6 +466,58 @@ makeTurtle(keyPressed = onKeyPressed)</pre>
                                     mit dem Namen <i>Tastaturevents_nachname.txt</i>. 
                                 </td>
                                 </tr>
+                                <tr>
+                                    <td>
+<pre style="margin:0px;font-size: smaller; background-color: #F8F8F8; padding: 4px;">from gturtle import *
+from time import sleep
+
+posX = 0
+speedX = 2
+
+def paintBall(color):
+    setPenColor(color)
+    setPos(posX, 0)
+    
+    dot(21)
+
+def update():
+    global posX, speedX
+    
+    if posX >= 150:
+        speedX *= -1
+        
+    if posX <= -150:
+        speedX *= -1
+        
+    paintBall("white")
+    posX += speedX
+    paintBall("red")
+
+makeTurtle()
+hideTurtle()
+
+repeat:
+    key = getKeyCode()
+    if key != 0:
+        break
+    update()
+    sleep(0.05)</pre>
+                                    </td>
+                                    <td colspan="2">
+                                        <b>Zusatz: Animation</b> <br>
+                                        <span style="color:red; font-size: smaller;">Nicht relevant für die 1. KA</span>
+                                        <br><br>
+                                        Kopiere den linken Code und teste ihn <br>
+                                        in der normalen Version von <a href="https://webtigerjython.ethz.ch/" target="_blank">WebTigerJython</a>.
+                                        <br><br>
+                                        Versuche die Aufgaben auf  S. 143 ab Aufgabe 6 <br>
+                                        im <a href="https://tobiaskohn.ch/files/PythonTutorial.pdf" target="_blank">Buch</a>
+                                        zu bearbeiten.  
+                                        <br><br>
+                                        Speichere die Lösungen in einer Textdatei</b> <br>
+                                        mit dem Namen <i>Animation_nachname.txt</i>. 
+                                    </td>
+                                </tr>
                         <th colspan="3">
                             Die erste Klassenarbeit
                         </th>
