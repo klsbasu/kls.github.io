@@ -5,8 +5,8 @@
     <meta charset="UTF-8" />
     <title>Projektarbeit Pygame Zero</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/vs.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
     <link rel="stylesheet" href="../../../styles/style.css" />
     <style>
         .vs-div {
@@ -16,10 +16,7 @@
         }
 
         pre {
-            background: #1e1e1e;
-            border-radius: 8px;
-            padding: 16px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border: solid 2px black;
             overflow: auto;
             max-height: 90vh;
         }
@@ -53,14 +50,10 @@
 
                 Am Anfang deines Codes für dein Spiel muss Folgendes stehen:
                 <div style="height: 8px;"></div>
-                <div class="vs-div"><pre><code class="language-python"># für Pygame Zero
-import pgzrun  
-# für Pygame Zero Helper, den du gerade in deinen Spielordner kopiert hast
-from pgzhelper import *  
-# für zufällige Werte
-import random 
-# für mathematische Berechnungen
-import math</pre></code></div>
+                <div class="vs-div"><pre><code class="language-python">import pgzrun  # für Pygame Zero
+from pgzhelper import *  # für Pygame Zero Helper
+import random # für zufällige Werte
+import math # für Mathe</pre></code></div>
                 <div style="height: 8px;"></div>
                 Unten im Ordner <strong>spielvorlage</strong> findest du meinen Python-Code <code>spielvorlage.py</code>.
                 <br><br>
@@ -154,9 +147,13 @@ import math</pre></code></div>
 </code></pre></div>-->
     </div>
 
-    <!-- Prism.js JavaScript for syntax highlighting -->
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            document.querySelectorAll('pre code').forEach((el) => {
+                hljs.highlightElement(el);
+            });
+        });
+    </script>
     <script>
         var coll = document.getElementsByClassName("collapsible");
         var i;
