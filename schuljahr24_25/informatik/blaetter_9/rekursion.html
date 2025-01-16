@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rekursion</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="rekursion">Rekursion</h1>
+<p>Betrachte den folgenden Code:</p>
+<pre class=" language-python"><code class="prism  language-python"><span class="token keyword">from</span> gturtle <span class="token keyword">import</span> <span class="token operator">*</span>
+<span class="token keyword">import</span> random
+
+<span class="token keyword">def</span> <span class="token function">random_fill_color</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    r <span class="token operator">=</span> random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">)</span>
+    g <span class="token operator">=</span> random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">)</span>
+    b <span class="token operator">=</span> random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">)</span>
+    setFillColor<span class="token punctuation">(</span>r<span class="token punctuation">,</span> g<span class="token punctuation">,</span> b<span class="token punctuation">)</span>
+
+</code></pre>
+<hr>
+<p><strong>Aufgabe 1</strong><br>
+Erkläre in ein bis zwei Sätzen, was die Funktion <code>random_fill_color()</code> macht, wenn sie aufgerufen wird.</p>
+<hr>
+<p><strong>Aufgabe 2</strong><br>
+Schreibe eine Funktion <code>square()</code>, die ein Quadrat zeichnet, dessen Seitenlänge <strong>100 Pixel</strong> beträgt und das jedes Mal, wenn sie aufgerufen wird, mit einer zufälligen Farbe gefüllt ist. Verwende dafür die Funktion <code>random_fill_color()</code>.</p>
+<hr>
+<p>📚  <strong>Lies</strong> die Einführung und die Beispielerklärung zur Rekursion auf der Seite <a href="https://www.tigerjython4kids.ch/index.php?inhalt_links=turtle/navigation.inc.php&amp;inhalt_mitte=turtle/rekursionen.inc.php" target="_blank">TigerJython4Kids – Rekursion</a>.<br>
+<strong>Probiere</strong> den Beispielcode dort aus, um ein besseres Verständnis für Rekursion zu entwickeln.</p>
+<hr>
+<p><strong>Aufgabe 3</strong><br>
+Bearbeite <em>Aufgabe 1</em> aus der oben genannten Quelle und speichere die Lösung als Aufgabe 3.</p>
+<hr>
+<p><strong>Aufgabe 4</strong><br>
+Bearbeite <em>Aufgabe 2</em> aus der oben genannten Quelle und speichere die Lösung als Aufgabe 4.</p>
+<hr>
+<p><strong>Aufgabe 5</strong><br>
+Probiere den Code für den Pythagoras-Baum aus der Quelle <a href="https://programmierkonzepte.ch/index.php?inhalt_links=navigation.inc.php&amp;inhalt_mitte=turtle/rekursionen.inc.php" target="_blank">Programmieren Konzepte – Rekursion</a>. Passe den Code mithilfe der Funktion <code>random_fill_color()</code> so an, dass die folgende Zeichnung entsteht:</p>
+<img src="images_rekursion/farbig_pythagorasbaum.png" height="136px" width="200px" alt="Farbiger Pythagoras-Baum">
+<p><strong>Hinweis:</strong> Die Farben müssen nicht exakt passen, da sie zufällig erzeugt werden.</p>
+<hr>
+<p><strong>Aufgabe 6</strong><br>
+Bearbeite <em>Aufgabe 4*</em> aus der Quelle in Aufgabe 5 und speichere die Lösung als Aufgabe 6.</p>
+<hr>
+<p>Probiere den Code für Quadratmuster und Koch-Kurve aus der Quelle <a href="https://www.jython.ch/index.php?inhalt_links=navigation.inc.php&amp;inhalt_mitte=turtle/rekursionen.inc.php" target="_blank">Jython.ch – Rekursionen</a>.</p>
+<hr>
+<p><strong>Aufgabe 7</strong><br>
+Bearbeite <em>Aufgabe 1</em> aus der oben genannten Quelle und speichere die Lösung als Aufgabe 7.</p>
+<hr>
+<p><strong>Aufgabe 8</strong><br>
+Bearbeite <em>Aufgabe 4</em> aus der oben genannten Quelle und speichere die Lösung als Aufgabe 8.</p>
+<h2 id="gestalte-dein-eigenes-fraktal-kunstwerk">Gestalte dein eigenes Fraktal-Kunstwerk</h2>
+<p>Spiele mit dem Code aus den Quellen und erstelle deine eigenen Fraktale:</p>
+<ul>
+<li>Verwende Zufallsfarben, for- oder repeat-Schleifen, neue Winkel oder Formen, um deine Designs zu variieren.</li>
+<li>Kombiniere verschiedene Fraktale oder ändere die Rekursionsbedingungen, um spannende Muster zu erzeugen.</li>
+<li>Erstelle mindestens 10 unterschiedliche Fraktale – jedes soll sich von den anderen unterscheiden.</li>
+<li>Speichere deine Ergebnisse, indem du Screenshots machst und diese mit klaren Namen wie <code>Fraktal1.png</code>, in deinem Ordner abspeicherst.</li>
+</ul>
+<hr>
+</div>
+</body>
+
+</html>
