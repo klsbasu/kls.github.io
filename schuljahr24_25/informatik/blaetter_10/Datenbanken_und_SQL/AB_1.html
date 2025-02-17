@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AB 1</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+  <style>
+    /* Disable text selection and copying */
+    body {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+    }
+  </style>
+  <script>
+    // Disable right-click
+    document.addEventListener("contextmenu", function (event) {
+      event.preventDefault();
+    });
+
+    // Disable keyboard shortcuts for dev tools
+    document.addEventListener("keydown", function (event) {
+      if (
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && (event.key === "I" || event.key === "J" || event.key === "C")) ||
+        (event.ctrlKey && event.key === "U") ||
+        (event.ctrlKey && event.key === "A") || // Prevent Select All
+        (event.ctrlKey && event.key === "X") || // Prevent Cut
+        (event.ctrlKey && event.key === "C") || // Prevent Copy
+        (event.ctrlKey && event.key === "V") // Prevent Paste
+      ) {
+        event.preventDefault();
+      }
+    });
+
+    // Prevent dragging elements (text, images)
+    document.addEventListener("dragstart", function (event) {
+      event.preventDefault();
+    });
+  </script>
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="ab-1">AB 1</h1>
+<p>Bevor wir uns mit der Theorie von Datenbanken beschäftigen, schreiben wir zuerst einfache <strong>SQL-Abfragen</strong>. So bekommen wir einen ersten Eindruck davon, wie Datenbanken funktionieren.</p>
+<p><strong>SQL</strong> steht für <strong>Structured Query Language</strong> und wird genutzt, um Daten in einer Datenbank zu speichern, abzurufen, zu ändern oder zu löschen.</p>
+<h1 id="erste-sql-abfragen">Erste SQL-Abfragen</h1>
+<p>Nimm an, du bist der <strong>Administrator</strong> der Unternehmensdatenbank <strong>Northwind</strong>. Mit der Sprache SQL willst du die in diesem Unternehmen gespeicherten Daten analysieren und auswerten.</p>
+<p>Du nutzt den <a href="https://www.w3schools.com/sql/trysql.asp?filename=trysql_select_all" target="_blank">Online-SQL-Editor</a> von W3Schools, um auf die<br>
+<strong>Datenbank</strong> zuzugreifen. Du erstellst SQL-Abfragen, um wichtige Informationen aus der Datenbank zu erhalten.</p>
+<h2 id="alle-daten-einer-tabelle-anzeigen"><strong>Alle Daten einer Tabelle anzeigen</strong></h2>
+<p><strong>Beispiel 1</strong><br>
+Es sollen alle Datensätze (Zeilen) der Tabelle <code>Customers</code> angezeigt werden.</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span>
+<span class="token keyword">FROM</span> Customers<span class="token punctuation">;</span>
+</code></pre>
+<p><strong>Aufgabe 1</strong><br>
+Erstelle eine Abfrage, mit der alle Datensätze der Tabelle <code>Products</code> angezeigt werden.</p>
+<h2 id="spalten-attribute-anzeigen-und-sortieren"><strong>Spalten (Attribute) anzeigen und sortieren</strong></h2>
+<p><strong>Beispiel 2</strong><br>
+Es sollen von den Kunden nur <code>CustomerID</code>, <code>CustomerName</code> und <code>City</code> angezeigt werden:</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">SELECT</span> CustomerID<span class="token punctuation">,</span> CustomerName<span class="token punctuation">,</span> City
+<span class="token keyword">FROM</span> Customers<span class="token punctuation">;</span>
+</code></pre>
+<p><strong>Beispiel 3</strong><br>
+Das Ergebnis soll nach <code>City</code> sortiert werden:</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">SELECT</span> CustomerID<span class="token punctuation">,</span> CustomerName<span class="token punctuation">,</span> City
+<span class="token keyword">FROM</span> Customers
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> City<span class="token punctuation">;</span>
+</code></pre>
+<p><strong>Beispiel 4</strong><br>
+Um <strong>absteigend</strong> zu sortieren:</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">SELECT</span> CustomerID<span class="token punctuation">,</span> CustomerName<span class="token punctuation">,</span> City
+<span class="token keyword">FROM</span> Customers
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> City <span class="token keyword">DESC</span><span class="token punctuation">;</span>
+</code></pre>
+<p><em>Descending</em> bedeutet absteigend, <em>ascending</em> bedeutet aufsteigend.</p>
+<p><strong>Aufgabe 2</strong><br>
+Erstelle eine Abfrage, die <code>ProductName</code> und <code>Price</code> aller Produkte anzeigt.</p>
+<p><strong>Aufgabe 3</strong><br>
+Erstelle eine Abfrage, die die Ausgabe aus Aufgabe 2 nach <code>Price</code> <strong>absteigend</strong> sortiert.</p>
+<h2 id="anzeigen-bestimmter-datensätze-mit-where">Anzeigen bestimmter Datensätze mit WHERE</h2>
+<p><strong>Beispiel 5</strong><br>
+Es sollen alle Produkte angezeigt werden, deren Preis größer als 30 ist.</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">SELECT</span> ProductName<span class="token punctuation">,</span> Price
+<span class="token keyword">FROM</span> Products
+<span class="token keyword">WHERE</span> Price <span class="token operator">&gt;</span> <span class="token number">30</span><span class="token punctuation">;</span>
+</code></pre>
+<p><strong>Beispiel 6</strong><br>
+Es sollen nur die Kunden angezeigt werden, die in London wohnen:</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">SELECT</span> CustomerName<span class="token punctuation">,</span> City 
+<span class="token keyword">FROM</span> Customers
+<span class="token keyword">WHERE</span> City <span class="token operator">=</span> <span class="token string">"London"</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Wenn man nach Texten sucht, müssen diese Texte in Anführungsstrichen stehen! Also <code>"London"</code> und NICHT <code>London</code>.</p>
+<p><strong>Aufgabe 4</strong><br>
+Erstelle eine  Abfrage, die alle Produkte mit einem Preis von mindestens 90 anzeigt.</p>
+<p><strong>Aufgabe 5</strong><br>
+Erstelle eine  Abfrage, die alle Kunden aus Madrid anzeigt.</p>
+<h2 id="texte-filtern-mit-like">Texte filtern mit LIKE</h2>
+<p><strong>Beispiel 7</strong><br>
+Um alle Kunden anzuzeigen, deren Name mit  <em>Ma</em> beginnt, verwendet man das <code>%</code>-Zeichen als Platzhalter. Da nur ähnliche Datensätze gesucht werden, kann das Gleichheitszeichen <code>=</code> nicht verwendet werden. Stattdessen nutzt man das Schlüsselwort <code>LIKE</code>:</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> 
+<span class="token keyword">FROM</span> Customers
+<span class="token keyword">WHERE</span> CustomerName <span class="token operator">LIKE</span> <span class="token string">"Ma%"</span><span class="token punctuation">;</span>
+</code></pre>
+<p><strong>Aufgabe 6</strong><br>
+Erstelle eine Abfrage, die alle Kunden anzeigt, deren Name mit <em>A</em> beginnt.</p>
+<p><strong>Aufgabe 7</strong><br>
+Erstelle eine Abfrage, die alle Kunden anzeigt, deren Name <em>nn</em> enthält.</p>
+<h2 id="mehrere-bedingungen-prüfen-and--or">Mehrere Bedingungen prüfen: AND / OR</h2>
+<p><strong>Beispiel 8</strong><br>
+Es sollen alle Kunden aus Deutschland oder Frankreich angezeigt werden:</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> 
+<span class="token keyword">FROM</span> Customers
+<span class="token keyword">WHERE</span> Country <span class="token operator">=</span> <span class="token string">"Germany"</span> <span class="token operator">OR</span> Country <span class="token operator">=</span> <span class="token string">"France"</span><span class="token punctuation">;</span>
+</code></pre>
+<p><strong>Beispiel 9</strong><br>
+Es sollen alle Kunden angezeigt werden, die aus Deutschland kommen und deren Name mit <em>D</em> beginnt:</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> 
+<span class="token keyword">FROM</span> Customers
+<span class="token keyword">WHERE</span> Country <span class="token operator">=</span> <span class="token string">"Germany"</span> <span class="token operator">AND</span> CustomerName <span class="token operator">LIKE</span> <span class="token string">"D%"</span><span class="token punctuation">;</span>
+</code></pre>
+<p><strong>Aufgabe 8</strong><br>
+Erstelle eine Abfrage, die alle Kategorien mit der  CategoryID 2, 4 oder 6 anzeigt.</p>
+<p><strong>Aufgabe 9</strong><br>
+Erstelle eine Abfrage, die alle  Mitarbeiter anzeigt, deren  EmployeeID zwischen  1 und 4 liegt.</p>
+<h2 id="datumswerte-filtern">Datumswerte filtern</h2>
+<p>In dieser <strong>Datenbank</strong> wird das <strong>US-Format</strong> für Datumswerte verwendet:<br>
+<code>MM/DD/YYYY</code> → z. B. <code>7/4/1996</code> (4. Juli 1996).<br>
+Es gibt jedoch auch andere Formate wie <code>YYYY-MM-DD</code> oder <code>DD/MM/YYYY</code>, die je nach Datenbank-System unterschiedlich sein können.</p>
+<p><strong>Beispiel 10</strong><br>
+Es sollen alle Bestellungen aus dem  Jahr 1997 angezeigt werden:</p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">SELECT</span> OrderID<span class="token punctuation">,</span> CustomerID<span class="token punctuation">,</span> OrderDate
+<span class="token keyword">FROM</span> Orders
+<span class="token keyword">WHERE</span> YEAR<span class="token punctuation">(</span>OrderDate<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">1997</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Die Funktion <code>YEAR(OrderDate)</code> extrahiert das  Jahr aus dem Datumswert in der Spalte <code>OrderDate</code>.<br>
+Damit können alle Bestellungen aus einem bestimmten Jahr gefiltert werden.</p>
+<p><strong>Aufgabe 10</strong><br>
+Erstelle eine  Abfrage, die alle Bestellungen aus dem Dezember 1996 anzeigt.</p>
+<h2 id="sql-operatoren-–-ein-überblick">SQL-Operatoren – Ein Überblick</h2>
+
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>=</code></td>
+<td>Gleichheit</td>
+</tr>
+<tr>
+<td><code>&lt;&gt;</code> oder <code>!=</code></td>
+<td>Ungleichheit</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>Größer als</td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>Kleiner als</td>
+</tr>
+<tr>
+<td><code>&gt;=</code></td>
+<td>Größer oder gleich</td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td>Kleiner oder gleich</td>
+</tr>
+<tr>
+<td><code>LIKE</code></td>
+<td>Suche nach Mustern</td>
+</tr>
+<tr>
+<td><code>AND</code></td>
+<td>Beide Bedingungen müssen erfüllt sein</td>
+</tr>
+<tr>
+<td><code>OR</code></td>
+<td>Mindestens eine Bedingung muss erfüllt sein</td>
+</tr>
+</tbody>
+</table><h2 id="terra1-datenbank">terra1-Datenbank</h2>
+<p>Du nutzt jetzt <a href="https://inf-schule-db.informatik.uni-kl.de/SQLterra1.php" target="_blank">diesen Editor</a>, um auf die terra1-Datenbank zuzugreifen.</p>
+<p>Klicke auf Datenbankschema ein-/ausblenden, um die Struktur der Datenbank anzuzeigen.</p>
+<p>Die  <strong>terra1-Datenbank</strong> wurde speziell für den Informatikunterricht entwickelt und enthält geografische Informationen zu Ländern, Städten, Flüssen und Bergen.</p>
+<p><strong>Gib nur die SQL-Abfragen an, nicht die Ergebnisse.</strong></p>
+<p><strong>Aufgabe 11</strong><br>
+Schreibe SQL-Befehle, um:<br>
+a) Alle Orte in Frankreich auszugeben.<br>
+b) Alle Orte in Deutschland auszugeben, mit Name, Länge und Breite.</p>
+<p><strong>Aufgabe 12</strong><br>
+a) Gib alle Länder aus. Zeige Name, Einwohner und Hauptstadt an. Sortiere nach Einwohner absteigend.<br>
+b) Gib alle Länder in Europa aus. Zeige nur die Namen.</p>
+<p><strong>Aufgabe 13</strong><br>
+a) Welche Länder haben zwischen 10 und 100 Mio. Einwohner? Sortiere nach Einwohner absteigend.<br>
+b) Welche Länder haben <em>Arm</em> oder <em>Bein</em> im Namen?<br>
+c) Gibt es Orte, die <em>Arm</em> oder <em>Bein</em> im Namen haben?</p>
+<p><strong>Aufgabe 14</strong><br>
+Welche Länder liegen in Asien oder Australien?</p>
+<hr>
+</div>
+</body>
+
+</html>
