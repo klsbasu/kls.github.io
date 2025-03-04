@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
     <link rel="stylesheet" href="../../styles/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include Prism JS for syntax highlighting -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-sql.min.js"></script>
 </head>
 
 <body>
@@ -249,6 +253,26 @@
                             <td>
                                 <a href="https://drive.google.com/file/d/1zo_aoKQaIxgF45UvVm_e2kUWb0-TuwVv/view?usp=sharing" target="_blank">AB 4</a><br>
                                 <a href="https://drive.google.com/file/d/1zvMEAFr_wj_hu8fJOoYAJFixTxM08m7j/view?usp=sharing" target="_blank"></a><span style="color: black;">Lsg</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>Interessante Infos aus Datenbanken gewinnen</b><br>
+                                <div style="height: 6px;"></div>
+                                Formuliere deine eigenen Fragen und beantworte <br>
+                                sie mithilfe einer SQL-Abfrage.
+                                <div style="height: 6px;"></div>
+                                <i>Welche Regisseure haben die meisten Horror-Filme gemacht?</i>
+                                <div style="height: 6px;"></div>
+<pre style="margin: 0px; padding: 0px; background-color: white;"><code code class="language-sql" style="background-color: white;">select regisseur, count(*) as anzahl_filme
+from Film
+where genre1 LIKE "%Horror%" and regisseur is not null
+group by regisseur
+order by anzahl_filme desc;</code></pre>
+                            </td>
+                            <td>
+                                <a href="https://www.dbiu.de/filmundfernsehen/" target="_blank">Film und <br>
+                                    Fernsehen</a>
                             </td>
                         </tr>
                     </table>
