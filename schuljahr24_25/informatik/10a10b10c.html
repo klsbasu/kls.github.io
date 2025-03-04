@@ -266,7 +266,7 @@
                                 <div style="height: 6px;"></div>
 <pre style="margin: 0px; padding: 0px; background-color: white;"><code code class="language-sql" style="background-color: white;">select regisseur, count(*) as anzahl_filme
 from Film
-where genre1 LIKE "%Horror%" and regisseur is not null
+where genre1 like "%Horror%" and regisseur is not null
 group by regisseur
 order by anzahl_filme desc;</code></pre>
                             </td>
