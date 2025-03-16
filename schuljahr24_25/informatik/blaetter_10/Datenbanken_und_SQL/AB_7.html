@@ -6,6 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AB 7</title>
   <link rel="stylesheet" href="https://stackedit.io/style.css" />
+  <style>
+    /* Disable text selection and copying */
+    body {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+    }
+  </style>
+  <script>
+    // Disable right-click
+    document.addEventListener("contextmenu", function (event) {
+      event.preventDefault();
+    });
+
+    // Disable keyboard shortcuts for dev tools
+    document.addEventListener("keydown", function (event) {
+      if (
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && (event.key === "I" || event.key === "J" || event.key === "C")) ||
+        (event.ctrlKey && event.key === "U") ||
+        (event.ctrlKey && event.key === "A") || // Prevent Select All
+        (event.ctrlKey && event.key === "X") || // Prevent Cut
+        (event.ctrlKey && event.key === "C") || // Prevent Copy
+        (event.ctrlKey && event.key === "V") // Prevent Paste
+      ) {
+        event.preventDefault();
+      }
+    });
+
+    // Prevent dragging elements (text, images)
+    document.addEventListener("dragstart", function (event) {
+      event.preventDefault();
+    });
+  </script>
 </head>
 
 <body class="stackedit">
