@@ -10,7 +10,163 @@
 
 <body class="stackedit">
   <div class="stackedit__html"><h1 id="ab-7">AB 7</h1>
-<p><em>Bald verfügbar!</em></p>
+<p>Wenn du dich bei deinem InstaHub einloggst, hast du drei Möglichkeiten, um deine Datenbank zu untersuchen:
+<img src="images/login.png" alt="">
+</p>
+<ol>
+<li>
+<p>Du kannst reines SQL schreiben.</p>
+</li>
+<li>
+<p>Du schreibst die Frage, und die KI erstellt die entsprechende SQL-Abfrage.</p>
+</li>
+<li>
+<p>Du arbeitest mit der GUI (Graphical User Interface), in der du Tabellen und Spalten auswählst sowie Filter anwendest.</p>
+</li>
+</ol>
+<h2 id="abfragen-mit-ki">Abfragen mit KI</h2>
+<p>Um die folgenden Aufgaben zu lösen, kannst du entweder reines SQL schreiben oder die Aufgaben mithilfe von KI lösen. Versuche es zuerst selbst.</p>
+<p>Es kann vorkommen, dass du eine Fehlermeldung erhältst:
+<img src="images/eingabe_nicht_umsetzbar.png" alt="">
+</p>
+<p>Überprüfe noch einmal, was du geschrieben hast, oder formuliere deine Frage präziser.</p>
+<p>Es ist immer gut, einen Überblick darüber zu haben, in welcher Tabelle und unter welcher Spalte du die richtigen Datenwerte findest.</p>
+<p><strong>Aufgabe 0</strong><br>
+Bevor du deine Datenbank untersuchst, finde heraus, welche Tabellen überhaupt abgefragt werden können. Notiere sie.</p>
+<p><strong>Aufgabe 1</strong><br>
+Gib die Wohnorte aller Mitglieder aus.</p>
+<p><strong>Aufgabe 2</strong><br>
+Ordne die Mitglieder nach deren Größe. Das größte Mitglied soll die Liste anführen.</p>
+<p><strong>Aufgabe 3</strong><br>
+Zeige wie groß das kleinste Mitglied ist.</p>
+<p><strong>Aufgabe 4</strong><br>
+Zeige an wann sich zuletzt ein Mitglied registriert hat.</p>
+<p><strong>Aufgabe 5</strong><br>
+Gib die Anzahl der Mitglieder pro Stadt aus.<br>
+Erkläre zudem die Bedeutung von <code>NULL</code>-Werten in diesem Kontext und wie sie sich auf die Abfrage auswirken können.</p>
+<p><strong>Aufgabe 6</strong><br>
+Von welchen Mitgliedern beginnt der Vorname mit einem B?</p>
+<p><strong>Aufgabe 7</strong><br>
+Finde alle Berliner die Marc heißen.</p>
+<p><strong>Aufgabe 8</strong><br>
+Sortiere alle Männer nach ihrer Körpergröße, welche mindestens 16 Jahre alt sind.</p>
+<p><strong>Aufgabe 9</strong><br>
+Erna sucht eine Bekannte aus Berlin. Ihr Vorname war entweder  <em>Bea</em>  oder  <em>Naomi</em>.</p>
+<p><strong>Aufgabe 10</strong><br>
+Wähle alle Felix aus, die nicht aus Berlin kommen.</p>
+<h2 id="prompt-erstellen">Prompt Erstellen</h2>
+<p>Bei den folgenden Aufgaben ist die SQL-Abfrage bereits gegeben.</p>
+<p>Deine Aufgabe ist es, eine passende <strong>natürliche Sprachbeschreibung (<em>Prompt</em>)</strong> zu formulieren, die eine KI in eine solche SQL-Abfrage umwandeln könnte.</p>
+<p>Denke daran: Je präziser dein Prompt, desto genauer wird die SQL-Abfrage sein.</p>
+<p><strong>Aufgabe 11</strong></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">SELECT</span> username 
+<span class="token keyword">FROM</span> users 
+<span class="token keyword">LIMIT</span> <span class="token number">25</span>
+</code></pre>
+<p><strong>Aufgabe 12</strong></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">SELECT</span> <span class="token function">MAX</span><span class="token punctuation">(</span>centimeters<span class="token punctuation">)</span> 
+<span class="token keyword">AS</span> <span class="token string">"Maximale Körpergröße:"</span> 
+<span class="token keyword">FROM</span> users
+</code></pre>
+<p><strong>Aufgabe 13</strong></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">SELECT</span> <span class="token function">COUNT</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> 
+<span class="token keyword">AS</span> <span class="token string">"Registrierte Mitglieder"</span> 
+<span class="token keyword">FROM</span> users
+</code></pre>
+<p><strong>Aufgabe 14</strong></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">SELECT</span> username 
+<span class="token keyword">FROM</span> users 
+<span class="token keyword">WHERE</span> username <span class="token operator">LIKE</span> <span class="token string">"ameli%"</span>
+</code></pre>
+<p><strong>Aufgabe 15</strong></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">SELECT</span> username<span class="token punctuation">,</span> city 
+<span class="token keyword">FROM</span> users 
+<span class="token keyword">WHERE</span> city <span class="token operator">=</span> <span class="token string">"Berlin"</span> <span class="token operator">AND</span> name <span class="token operator">LIKE</span> <span class="token string">"Fabian%"</span>
+</code></pre>
+<p><strong>Aufgabe 16</strong></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">SELECT</span> username<span class="token punctuation">,</span> name 
+<span class="token keyword">FROM</span> users 
+<span class="token keyword">WHERE</span> city <span class="token operator">=</span> <span class="token string">"Berlin"</span> <span class="token operator">AND</span> <span class="token punctuation">(</span>gender <span class="token operator">=</span> <span class="token string">"male"</span> <span class="token operator">OR</span> gender <span class="token operator">=</span> <span class="token string">"female"</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="abfragen-mit-mehreren-tabellen">Abfragen mit mehreren Tabellen</h2>
+<p>Bisher wissen wir, wie man Abfragen erstellt, die sich auf genau eine Tabelle beziehen. Manchmal reicht das aber nicht, weil die benötigten Daten auf mehrere Tabellen verteilt sind.</p>
+<p>In dieser Abbildung ist ein Teil der InstaHub-Datenbank als <strong>Entity-Relationship-Modell (ERM)</strong> visualisiert:
+<img src="images/InstaHub_ERM.png" alt="">
+</p>
+<p>Jede Tabelle enthält außerdem noch die Attribute <code>created_at</code> und <code>updated_at</code>.</p>
+<p><strong>Beispiel</strong><br>
+Erstelle eine Liste der Fotos aller Benutzer. Diese Liste soll so aussehen:
+<img src="images/Beispiel_ERM.png" alt="">
+</p>
+<p>Dabei solltest du beachten, dass der <strong>username</strong> aus der Tabelle <code>users</code> stammt, während sich alle anderen Attribute in der Tabelle <code>photos</code> befinden. Die Daten stammen also aus zwei Tabellen.</p>
+<p><strong>Lösung</strong></p>
+<pre class=" language-sql"><code class="prism  language-sql"><span class="token keyword">SELECT</span> username<span class="token punctuation">,</span> user_id<span class="token punctuation">,</span> description<span class="token punctuation">,</span> url 
+<span class="token keyword">FROM</span> users<span class="token punctuation">,</span> photos 
+<span class="token keyword">WHERE</span> users<span class="token punctuation">.</span>id <span class="token operator">=</span> photos<span class="token punctuation">.</span>user_id<span class="token punctuation">;</span>
+</code></pre>
+<p>Die <code>id</code> aus der <code>users</code>-Tabelle muss mit der <code>user_id</code> aus der <code>photos</code>-Tabelle übereinstimmen:
+<img src="images/Beispiel_users_photos.png" alt="">
+</p>
+<p>Die obige Abfrage könnte man so übersetzen:</p>
+<ul>
+<li>Zeig mir ein paar Spalten aus den beiden Tabellen users und photos an.</li>
+<li>Achte dabei auf folgendes: Wenn du mir einen Benutzer zeigst, dann<br>
+will ich auch nur die Bilder von genau diesem Benutzer sehen – Die <code>id</code>    des Benutzers muss also mit der <code>user_id</code> übereinstimmen, die beim Bild gespeichert ist!</li>
+</ul>
+<hr>
+<div style="color: red;">
+<p>Für die folgenden Aufgaben müssen alle Abfragen <strong>ohne die explizite Verwendung der <code>JOIN</code>-Anweisung</strong> formuliert werden. Außerdem darfst du keine Unterabfragen (<code>SELECT</code> innerhalb eines <code>WHERE</code>) verwenden.</p>
+<p>Die Instahub-KI ist für solche Aufgaben nicht wirklich hilfreich, da sie die Antworten standardmäßig mit <code>JOIN</code> erstellt.</p>
+</div>
+<p><strong>Aufgabe 17</strong><br>
+Erstelle eine Abfrage, mit der für jeden Benutzer angezeigt wird, welche Kommentare dieser Benutzer bereits geschrieben hat.</p>
+<p><strong>Aufgabe 18</strong><br>
+Welche Kommentare hat die Benutzerin <em>aktivlese_alina</em> bisher verfasst?<br>
+Das Abfrageergebnis soll diese Attribute enthalten:</p>
+<ul>
+<li><code>username</code></li>
+<li><code>user_id</code></li>
+<li><code>body</code></li>
+</ul>
+<p><strong>Aufgabe 19</strong><br>
+Wie viele Kommentare hat die Benutzerin <em>aktivlese_alina</em> bisher geschrieben?<br>
+Wichtig: Da die <code>id</code> in beiden Tabellen vorkommt, musst du konkret angeben, aus welcher Tabelle sie stammt.<br>
+Nicht: <code>SELECT id</code><br>
+Sondern: <code>SELECT users.id</code></p>
+<p><strong>Aufgabe 20</strong><br>
+Lass dir für jeden Benutzer anzeigen, wie viele Bilder dieser Benutzer hochgeladen hat.</p>
+<p><strong>Aufgabe 21</strong><br>
+Wie oft hat der Benutzer <em>aktivlese_alina</em> ein Foto „geliked“? Das Ergebnis soll so aussehen.</p>
+<p><strong>Aufgabe 22</strong><br>
+Ermittle, welche Fotos am beliebtesten sind.<br>
+Erstelle hierzu eine Abfrage, die für jedes Foto anzeigt, wie viele Likes es hat (<code>id</code>, <code>Anzahl_Likes</code>, <code>description</code>).<br>
+Sortiere das Ergebnis nach der Anzahl der Likes in absteigender Reihenfolge.</p>
+<p><strong>Aufgabe 23</strong><br>
+Wie viele Follower hat die Benutzerin <em>aktivlese_alina</em>?<br>
+Hinweis:<br>
+In der Tabelle <code>follows</code> stehen zwei IDs:</p>
+<ul>
+<li><code>follower_id</code>: Die ID des Benutzers, der folgt.</li>
+<li><code>following_id</code>: Die ID des Benutzers, dem gefolgt wird.</li>
+</ul>
+<p><strong>Aufgabe 24</strong><br>
+Für jeden Benutzer soll angezeigt werden, wie viele Follower dieser hat.<br>
+Ergebnis-Attribute:</p>
+<ul>
+<li><code>username</code></li>
+<li><code>Anzahl_Follower</code></li>
+</ul>
+<p><strong>Aufgabe 25</strong><br>
+Wie in Aufgabe 24 sollst du für jeden Benutzer die Anzahl der Follower ermitteln.<br>
+Zeige aber nur Benutzer an, die mindestens 10 Follower haben.</p>
+<p><strong>Aufgabe 26</strong><br>
+Suche nach Fotos, in deren Beschreibung die Worte <em>Strand</em> und <em>Sonne</em> vorkommen.<br>
+Erstelle eine Abfrage mit diesen Attributen:</p>
+<ul>
+<li><code>username</code></li>
+<li><code>id</code></li>
+<li><code>description</code></li>
+</ul>
 <hr>
 </div>
 </body>
