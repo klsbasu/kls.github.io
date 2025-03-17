@@ -9,38 +9,82 @@
   <style>
     /* Disable text selection and copying */
     body {
-      user-select: none;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
     }
-  </style>
-  <script>
-    // Disable right-click
-    document.addEventListener("contextmenu", function (event) {
-      event.preventDefault();
-    });
 
-    // Disable keyboard shortcuts for dev tools
-    document.addEventListener("keydown", function (event) {
+    /* Hide elements from print */
+    @media print {
+        body {
+            display: none;
+        }
+    }
+</style>
+<script>
+  // Disable right-click
+  document.addEventListener("contextmenu", function (event) {
+      event.preventDefault();
+  });
+
+  // Disable keyboard shortcuts for dev tools and printing
+  document.addEventListener("keydown", function (event) {
       if (
-        event.key === "F12" ||
-        (event.ctrlKey && event.shiftKey && (event.key === "I" || event.key === "J" || event.key === "C")) ||
-        (event.ctrlKey && event.key === "U") ||
-        (event.ctrlKey && event.key === "A") || // Prevent Select All
-        (event.ctrlKey && event.key === "X") || // Prevent Cut
-        (event.ctrlKey && event.key === "C") || // Prevent Copy
-        (event.ctrlKey && event.key === "V") // Prevent Paste
+          event.key === "F12" || 
+          event.key === "F11" || // Prevent fullscreen mode
+          event.key === "PrintScreen" || // Block PrintScreen
+          (event.ctrlKey && event.key === "P") || // Prevent printing
+          (event.ctrlKey && event.shiftKey && ["I", "J", "C", "K"].includes(event.key)) || // Prevent DevTools shortcuts
+          (event.ctrlKey && ["U", "S", "A", "X", "C", "V"].includes(event.key)) // Prevent view source, save, copy, cut, paste
       ) {
-        event.preventDefault();
+          event.preventDefault();
+          return false;
       }
-    });
+  });
 
-    // Prevent dragging elements (text, images)
-    document.addEventListener("dragstart", function (event) {
+  // Prevent dragging elements (text, images)
+  document.addEventListener("dragstart", function (event) {
       event.preventDefault();
-    });
-  </script>
+  });
+
+  // Disable PrintScreen functionality
+  document.addEventListener("keyup", function (event) {
+      if (event.key === "PrintScreen") {
+          navigator.clipboard.writeText("");
+          alert("Screenshots are disabled on this page.");
+      }
+  });
+
+  // Attempt to prevent DevTools using console tampering
+  (function () {
+      function blockDevTools() {
+          console.clear();
+          console.log("%cDevTools is disabled!", "color: red; font-size: 20px; font-weight: bold;");
+          setTimeout(blockDevTools, 1000);
+      }
+      try {
+          Object.defineProperty(console, "_commandLineAPI", {
+              get: function () {
+                  throw new Error("DevTools is disabled!");
+              }
+          });
+      } catch (e) {}
+      blockDevTools();
+  })();
+
+  // Detect DevTools opening
+  let devtoolsOpen = false;
+  const element = new Image();
+  Object.defineProperty(element, "id", {
+      get: function () {
+          devtoolsOpen = true;
+          alert("DevTools is disabled on this site!");
+          window.location.reload();
+      }
+  });
+  console.log("%c", element);
+</script>
 </head>
 
 <body class="stackedit">
