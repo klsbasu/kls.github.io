@@ -7,7 +7,6 @@
   <title>AB 7</title>
   <link rel="stylesheet" href="https://stackedit.io/style.css" />
   <style>
-    /* Disable text selection and copying */
     body {
         user-select: none;
         -webkit-user-select: none;
@@ -15,7 +14,6 @@
         -ms-user-select: none;
     }
 
-    /* Hide elements from print */
     @media print {
         body {
             display: none;
@@ -23,32 +21,28 @@
     }
 </style>
 <script>
-  // Disable right-click
   document.addEventListener("contextmenu", function (event) {
       event.preventDefault();
   });
 
-  // Disable keyboard shortcuts for dev tools and printing
   document.addEventListener("keydown", function (event) {
       if (
           event.key === "F12" || 
-          event.key === "F11" || // Prevent fullscreen mode
-          event.key === "PrintScreen" || // Block PrintScreen
-          (event.ctrlKey && event.key === "P") || // Prevent printing
-          (event.ctrlKey && event.shiftKey && ["I", "J", "C", "K"].includes(event.key)) || // Prevent DevTools shortcuts
-          (event.ctrlKey && ["U", "S", "A", "X", "C", "V"].includes(event.key)) // Prevent view source, save, copy, cut, paste
+          event.key === "F11" || 
+          event.key === "PrintScreen" || 
+          (event.ctrlKey && event.key === "P") || 
+          (event.ctrlKey && event.shiftKey && ["I", "J", "C", "K"].includes(event.key)) || 
+          (event.ctrlKey && ["U", "S", "A", "X", "C", "V"].includes(event.key)) 
       ) {
           event.preventDefault();
           return false;
       }
   });
 
-  // Prevent dragging elements (text, images)
   document.addEventListener("dragstart", function (event) {
       event.preventDefault();
   });
 
-  // Disable PrintScreen functionality
   document.addEventListener("keyup", function (event) {
       if (event.key === "PrintScreen") {
           navigator.clipboard.writeText("");
@@ -56,7 +50,6 @@
       }
   });
 
-  // Attempt to prevent DevTools using console tampering
   (function () {
       function blockDevTools() {
           console.clear();
@@ -73,7 +66,6 @@
       blockDevTools();
   })();
 
-  // Detect DevTools opening
   let devtoolsOpen = false;
   const element = new Image();
   Object.defineProperty(element, "id", {
