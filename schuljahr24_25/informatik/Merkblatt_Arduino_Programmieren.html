@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="de">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Komplette Arduino-Befehlsliste</title>
+      <link rel="stylesheet" href="../../styles/style.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+      <style>
+         body { font-size: smaller; }
+         pre { margin:0px; font-size: smaller; padding: 0px; }
+         pre > code { font-size: larger; padding: 4px !important; }
+         tr > th { background-color: #fafde9; }
+         h2 { margin-bottom: 4px; }
+      </style>
+   </head>
+   <body>
+      <h2 style="color: purple; margin: 0;">Programmiren in der Arduino-IDE</h2>
+      <br><br>
+      <div class="scrollable">
+         <div>
+            <table>
+               <thead>
+                  <tr>
+                     <th colspan="3">Grundlegende Struktur</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>void setup()</code></td>
+                     <td>Wird einmal zu Beginn ausgeführt.</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2" style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">void setup() {
+  pinMode(13, OUTPUT);  // Pin 13 als Ausgang definieren (z.B. LED)
+}</code></pre>
+                     </td>
+                  </tr>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>void loop()</code></td>
+                     <td>Wird danach endlos wiederholt.</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2" style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">void loop() {
+  digitalWrite(13, HIGH);  // LED einschalten
+  delay(500);              // 500 ms warten
+  digitalWrite(13, LOW);   // LED ausschalten
+  delay(500);              // 500 ms warten
+}</code></pre>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+      <br><br>
+      <div class="scrollable">
+         <div>
+            <table>
+               <thead>
+                  <tr>
+                     <th colspan="3">Datentypen</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>int</code></td>
+                     <td>Ganze Zahl</td>
+                     <td style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">int zahl = 42;  // Ganze Zahl speichern</code></pre>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><code>long</code></td>
+                     <td>Große Ganzzahl</td>
+                     <td style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">long grosseZahl = 1234567890;  // Sehr große Zahl</code></pre>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><code>float</code></td>
+                     <td>Kommazahl</td>
+                     <td style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">float spannung = 3.3;  // Kommazahl speichern</code></pre>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><code>byte</code></td>
+                     <td>8 Bit positive Zahl</td>
+                     <td style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">byte ledPin = 13;  // Wert zwischen 0 und 255</code></pre>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><code>bool</code></td>
+                     <td>Wahrheitswert</td>
+                     <td style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">bool istAn = true;  // true oder false speichern</code></pre>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><code>String</code></td>
+                     <td>Zeichenkette (Text)</td>
+                     <td style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">String name = "Arduino";  // Text speichern</code></pre>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+      <br><br>
+      <div class="scrollable">
+         <div>
+            <table>
+               <thead>
+                  <tr>
+                     <th colspan="3">Eingabe und Ausgabe</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>pinMode(Pin, Modus)</code></td>
+                     <td>Setzt Pin als INPUT oder OUTPUT.</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2" style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">pinMode(13, OUTPUT);  // Pin 13 als Ausgang setzen</code></pre>
+                     </td>
+                  </tr>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>digitalWrite(Pin, Wert)</code></td>
+                     <td>Setzt digitalen Pin auf HIGH oder LOW.</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2" style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">digitalWrite(13, HIGH);  // Pin 13 auf HIGH (z.B. LED an)</code></pre>
+                     </td>
+                  </tr>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>digitalRead(Pin)</code></td>
+                     <td>Liest digitalen Pin (HIGH/LOW).</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2" style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">int taster = digitalRead(2);  // Zustand von Taster an Pin 2 lesen</code></pre>
+                     </td>
+                  </tr>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>analogRead(Pin)</code></td>
+                     <td>Liest analogen Wert (0–1023).</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2" style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">int sensorWert = analogRead(A0);  // Sensorwert von Pin A0 lesen</code></pre>
+                     </td>
+                  </tr>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>analogWrite(Pin, Wert)</code></td>
+                     <td>Gibt PWM-Signal (0–255) aus.</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2" style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">analogWrite(9, 128);  // PWM-Signal mit halber Stärke an Pin 9</code></pre>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+      <br><br>
+      <div class="scrollable">
+         <div>
+            <table>
+               <thead>
+                  <tr>
+                     <th colspan="3">Zeitfunktionen</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>delay(ms)</code></td>
+                     <td>Programm pausiert für bestimmte Zeit in ms.</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2" style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">delay(1000);  // 1 Sekunde warten</code></pre>
+                     </td>
+                  </tr>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>millis()</code></td>
+                     <td>Millisekunden seit Programmstart.</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2" style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">unsigned long zeit = millis();  // Zeit seit Start speichern</code></pre>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+      <br><br>
+      <div class="scrollable">
+         <div>
+            <table>
+               <thead>
+                  <tr>
+                     <th colspan="3">Bedingungen</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td colspan="2">
+                        <b>Vergleichsoperatoren:</b> <code>==</code>, <code>!=</code>, <code>></code>, <code><</code>, <code>>=</code>, <code><=</code> <br><br>
+                        <b>Logische Operatoren:</b> <code>&&</code> (UND), <code>||</code> (ODER)
+                     </td>
+                  </tr>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>if(Bedingung)</code></td>
+                     <td>Führt Code aus, wenn Bedingung erfüllt ist.</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2" style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">if (taster == HIGH) {
+  digitalWrite(13, HIGH);  // LED einschalten, wenn Taster gedrückt
+}</code></pre>
+                     </td>
+                  </tr>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>else</code></td>
+                     <td>Führt Code aus, wenn vorherige Bedingung falsch war.</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2" style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">else {
+  digitalWrite(13, LOW);  // LED ausschalten, wenn Taster nicht gedrückt
+}</code></pre>
+                     </td>
+                  </tr>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>else if(Bedingung)</code></td>
+                     <td>Weitere Bedingungen prüfen.</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2" style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">else if (zahl > 10) {
+  Serial.println("Groß");  // Ausgabe, wenn Bedingung zutrifft
+}</code></pre>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+      <br><br>
+      <div class="scrollable">
+         <div>
+            <table>
+               <thead>
+                  <tr>
+                     <th colspan="3">Schleifen</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>for(Initialisierung; Bedingung; Aktualisierung)</code></td>
+                     <td>Wiederholt Anweisungen eine feste Anzahl Mal.</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2" style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">for (int i = 0; i < 10; i++) {
+  // 10-mal etwas tun
+}</code></pre>
+                     </td>
+                  </tr>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>while(Bedingung)</code></td>
+                     <td>Wiederholt solange Bedingung erfüllt ist.</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2" style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">while (x < 5) {
+  // solange x kleiner als 5 ist
+}</code></pre>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+      <br><br>
+      <div class="scrollable">
+         <div>
+            <table>
+               <thead>
+                  <tr>
+                     <th colspan="3">Serielle Kommunikation</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>Serial.begin(baudrate)</code></td>
+                     <td>Startet serielle Kommunikation.</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2" style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">Serial.begin(9600);  // Kommunikation mit 9600 Baud starten</code></pre>
+                     </td>
+                  </tr>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>Serial.print(Daten)</code></td>
+                     <td>Daten ausgeben ohne Zeilenumbruch.</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2" style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">Serial.print("Hallo");  // Gibt "Hallo" aus (kein Umbruch)</code></pre>
+                     </td>
+                  </tr>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>Serial.println(Daten)</code></td>
+                     <td>Daten ausgeben mit Zeilenumbruch.</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2" style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">Serial.println("Welt");  // Gibt "Welt" mit Zeilenumbruch aus</code></pre>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+      <br><br>
+      <div class="scrollable">
+         <div>
+            <table>
+               <thead>
+                  <tr>
+                     <th colspan="3">Eigene Funktionen</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>Datentyp Funktionsname(Parameter)</code></td>
+                     <td>Definiert eine eigene Funktion.</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2" style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">int addiere(int a, int b) {
+  return a + b;  // Gibt die Summe von a und b zurück
+}</code></pre>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+      <br><br>
+      <div class="scrollable">
+         <div>
+            <table>
+               <thead>
+                  <tr>
+                     <th colspan="3">Zufallszahlen</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>randomSeed(Wert)</code></td>
+                     <td>Initialisiert den Zufallsgenerator.</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2" style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">randomSeed(analogRead(A0));  // Startwert für Zufallszahlen setzen</code></pre>
+                     </td>
+                  </tr>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>random(Max)</code></td>
+                     <td>Gibt Zufallszahl 0 bis Max-1.</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2" style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">random(10);  // Zufallszahl von 0 bis 9</code></pre>
+                     </td>
+                  </tr>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>random(Min, Max)</code></td>
+                     <td>Gibt Zufallszahl zwischen Min und Max-1.</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2" style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">random(5, 15);  // Zufallszahl von 5 bis 14</code></pre>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+      <br><br>
+      <div class="scrollable">
+         <div>
+            <table>
+               <thead>
+                  <tr>
+                     <th colspan="3">Tonausgabe</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>tone(Pin, Frequenz)</code></td>
+                     <td>Spielt einen Ton.</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2" style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">tone(8, 440);  // Spielt Ton mit 440 Hz</code></pre>
+                     </td>
+                  </tr>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>tone(Pin, Frequenz, Dauer)</code></td>
+                     <td>Spielt Ton für bestimmte Dauer.</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2" style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">tone(8, 440, 500);  // Ton für 500 ms abspielen</code></pre>
+                     </td>
+                  </tr>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>noTone(Pin)</code></td>
+                     <td>Stoppt Ton auf Pin.</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2" style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">noTone(8);  // Ton auf Pin 8 stoppen</code></pre>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+      <br><br>
+      <div class="scrollable">
+         <div>
+            <table>
+               <thead>
+                  <tr>
+                     <th colspan="3">LCD-Display Steuerung</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td colspan="2">
+                        Bibliothek <code>#include &lt;SerLCD.h&gt;</code> erforderlich.
+                     </td>
+                  </tr>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>lcd.setPosition(Zeile, Spalte)</code></td>
+                     <td>Setzt den Cursor.</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2" style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">lcd.setPosition(1, 0);  // Cursor in Zeile 1, Spalte 0 setzen</code></pre>
+                     </td>
+                  </tr>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>lcd.print(Text)</code></td>
+                     <td>Text auf LCD ausgeben.</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2" style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">lcd.print("Hallo");  // Gibt "Hallo" auf dem Display aus</code></pre>
+                     </td>
+                  </tr>
+                  <tr style="border-top: solid 4px black;">
+                     <td><code>lcd.clear()</code></td>
+                     <td>Display löschen.</td>
+                  </tr>
+                  <tr>
+                     <td colspan="2" style="background-color: #f3f3f3;">
+                        <pre><code class="language-cpp">lcd.clear();  // Löscht den LCD-Inhalt</code></pre>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script>
+   </body>
+</html>
